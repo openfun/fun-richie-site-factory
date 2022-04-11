@@ -13,7 +13,7 @@ OPTIONS:
 COMMAND:
   check_configuration  check that the \".circleci/config.yml\" file is up-to-date
   update               generate the \".circleci/config.yml\" file for
-                       the current diff as compared to the master branch
+                       the current diff as compared to the main branch
 "
 }
 
@@ -31,7 +31,7 @@ OPTIONS:
 
 function check_changes() {
     to="${CIRCLE_SHA1:-HEAD}"
-    git whatchanged --name-only --pretty="" origin/master.."${to}" | grep "${1}" &> /dev/null
+    git whatchanged --name-only --pretty="" origin/main.."${to}" | grep "${1}" &> /dev/null
 }
 
 # Utility function that updates circle configuration site-factory file according to
@@ -82,7 +82,7 @@ function update_sources() {
         image=$(grep "^name = " "${site_path}/src/backend/setup.cfg" | cut -c 8- || \
             echo "${site}")
 
-        changelog_ignored_branch="master"
+        changelog_ignored_branch="main"
         if \
             [ "$1" = true ] && \
             ! check_changes "^${site_path}/CHANGELOG.md" ;
@@ -141,13 +141,13 @@ for each site and running only the necessary jobs"
 
 # Utility function that checks if the circle configuration committed to git
 # corresponds to the state of the project so that the workflows and jobs are
-# run according to what has changed as compared to the "master" branch.
+# run according to what has changed as compared to the "main" branch.
 #
 # Usage: check_configuration [-i | --ignore-changelog | ignore-changelog] [-h | --help | help]
 function check_configuration() {
     help="Utility function that checks if the circle configuration committed to git
 corresponds to the state of the project so that the workflows and jobs are
-run according to what has changed as compared to the \"master\" branch."
+run according to what has changed as compared to the \"main\" branch."
 
     while true; do
         case "${1}" in

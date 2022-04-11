@@ -13,7 +13,7 @@ ${SITE}:
         site: ${SITE}
         filters:
           branches:
-            ignore: master
+            ignore: main
           tags:
             only: /${SITE}-.*/
 
@@ -66,7 +66,7 @@ ${SITE}:
     #
     # Publish docker images only if all build, lint and test jobs succeed and
     # if the CI workflow has been triggered by a git tag starting with the
-    # letter v or by a PR merged to the master branch
+    # letter v or by a PR merged to the main branch
     - hub:
         name: hub-${SITE}
         site: ${SITE}

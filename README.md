@@ -184,7 +184,7 @@ To release all the sites handled in the site factory:
 bin/release --commit
 ```
 
-After merging release commits to the master branch, you can tag them automatically by running:
+After merging release commits to the main branch, you can tag them automatically by running:
 
 ```
 bin/tag -c

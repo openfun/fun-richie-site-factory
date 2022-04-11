@@ -40,9 +40,9 @@ hub:
     - run:
         name: Check that the changelog, versions and tag are always in sync
         command: bin/ci check_tag << parameters.site >> "$CIRCLE_TAG"
-    # Publish images to DockerHub only for tags and the master branch:
+    # Publish images to DockerHub only for tags and the main branch:
     #   - for a v1.0.1 tag, publish Docker tags "1.0.1"  and "latest"
-    #   - for the master branch, publish a "master" tag
+    #   - for the main branch, publish a "main" tag
     #
     # Nota bene: logged user (see "Login to DockerHub" step) must have write
     # permission for the project's repository; this also implies that the
@@ -53,7 +53,7 @@ hub:
             - << pipeline.git.tag >>
             - equal:
                 - << pipeline.git.branch >>
-                - master
+                - main
         steps:
           # Login to DockerHub to Publish new images
           #
@@ -77,7 +77,7 @@ hub:
               command: |
                 docker images fundocker/<< parameters.image_name >>
                 # Display either:
-                # - DOCKER_TAG: master (Git branch)
+                # - DOCKER_TAG: main (Git branch)
                 # or
                 # - DOCKER_TAG: 1.1.2 (Git tag v1.1.2)
                 echo "DOCKER_TAG: ${DOCKER_TAG}"
@@ -85,7 +85,7 @@ hub:
                 if [[ -n "$CIRCLE_TAG" ]]; then
                     docker tag << parameters.site >>:production fundocker/<< parameters.image_name >>:latest
                 fi
-                docker images | grep -E "^fundocker/<< parameters.image_name >>\s*(${DOCKER_TAG}.*|latest|master)"
+                docker images | grep -E "^fundocker/<< parameters.image_name >>\s*(${DOCKER_TAG}.*|latest|main)"
           - run:
               name: Tag nginx image
               command: |
@@ -95,7 +95,7 @@ hub:
                 if [[ -n "$CIRCLE_TAG" ]]; then
                     docker tag << parameters.site >>-nginx:production fundocker/<< parameters.image_name >>-nginx:latest
                 fi
-                docker images | grep -E "^fundocker/<< parameters.image_name >>-nginx\s*(${DOCKER_TAG}.*|latest|master)"
+                docker images | grep -E "^fundocker/<< parameters.image_name >>-nginx\s*(${DOCKER_TAG}.*|latest|main)"
           # Publish images
           - run:
               name: Publish app image

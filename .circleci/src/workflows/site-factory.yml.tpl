@@ -12,7 +12,7 @@ site-factory:
         ci_update_options: "${CI-UPDATE-OPTIONS}"
         filters:
           branches:
-            ignore: master
+            ignore: main
     # Lint bash scripts in /bin
     - lint-bash:
         filters:

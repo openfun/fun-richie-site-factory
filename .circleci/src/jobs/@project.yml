@@ -12,7 +12,7 @@ lint-git:
     - run:
         name: enforce absence of print statements in code
         command: |
-          ! git diff origin/master..HEAD -- . ':(exclude).circleci' | grep "print("
+          ! git diff origin/main..HEAD -- . ':(exclude).circleci' | grep "print("
     - run:
         name: Check absence of fixup commits
         command: |
@@ -22,9 +22,9 @@ lint-git:
         command: |
           pip install --user gitlint
     - run:
-        name: lint commit messages added to master
+        name: lint commit messages added to main
         command: |
-          ~/.local/bin/gitlint --commits origin/master..HEAD
+          ~/.local/bin/gitlint --commits origin/main..HEAD
 
 # Check that the ".circleci/config.yml" file has been updated in the current branch
 check-configuration:
