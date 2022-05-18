@@ -8,6 +8,10 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Changed
+
+- Update href of Help button to target an internal page with id "help"
+
 ## [1.16.0] - 2022-04-07
 
 ### Changed
