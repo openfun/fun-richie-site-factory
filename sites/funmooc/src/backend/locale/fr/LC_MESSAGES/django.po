@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-04 15:58+0200\n"
+"POT-Creation-Date: 2022-06-23 22:19+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -81,11 +81,31 @@ msgstr "Établissements"
 msgid "Contributors"
 msgstr "Contributeurs"
 
-#: funmooc/settings.py:513 funmooc/settings.py:528
+#: funmooc/settings.py:513
+msgid "Weekly pace"
+msgstr "Rythme hebdomadaire"
+
+#: funmooc/settings.py:519
+msgid "Self-paced"
+msgstr "À son rythme"
+
+#: funmooc/settings.py:520
+msgid "Less than one hour"
+msgstr "Moins d'une heure"
+
+#: funmooc/settings.py:521
+msgid "One to two hours"
+msgstr "Une à deux heures"
+
+#: funmooc/settings.py:522
+msgid "More than two hours"
+msgstr "Plus de deux heures"
+
+#: funmooc/settings.py:536 funmooc/settings.py:551
 msgid "English"
 msgstr "Anglais"
 
-#: funmooc/settings.py:513 funmooc/settings.py:536
+#: funmooc/settings.py:536 funmooc/settings.py:559
 msgid "French"
 msgstr "Français"
 

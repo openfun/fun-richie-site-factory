@@ -460,6 +460,14 @@ $r-theme: (
     base-color: r-color('ocean-blue'),
     base-color-light: r-color('white'),
   ),
+  sale-tunnel: (
+    primary-button-scheme: $lipstick-scheme,
+    primary-button-is-outlined: false,
+    secondary-button-scheme: $ocean-blue-scheme,
+    secondary-button-is-outlined: true,
+    tertiary-button-scheme: $darkish-blue-scheme,
+    tertiary-button-is-outlined: false,
+  ),
   steps-breadcrumb: (
     icon-background-active: r-color(purplish-grey),
     icon-background: transparent,
@@ -483,5 +491,5 @@ $r-theme: (
     icon-success-color: r-color('white'),
     title-color: r-color('charcoal'),
     subtitle-color: r-color(purplish-grey),
-  )
+  ),
 );
