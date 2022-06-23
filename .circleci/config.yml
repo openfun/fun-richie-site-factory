@@ -43,7 +43,7 @@ jobs:
         working_directory: ~/fun/sites/<< parameters.site >>
     build-front-production:
         docker:
-            - image: circleci/node:14
+            - image: cimg/node:16.15
         parameters:
             site:
                 type: string
@@ -70,7 +70,7 @@ jobs:
         working_directory: ~/fun/sites/<< parameters.site >>/src/frontend/
     check-changelog:
         docker:
-            - image: circleci/buildpack-deps:stretch-scm
+            - image: cimg/base:2022.06
         parameters:
             site:
                 type: string
@@ -98,7 +98,7 @@ jobs:
         docker:
             - environment:
                 RICHIE_SITE: << parameters.site >>
-              image: circleci/buildpack-deps:stretch
+              image: cimg/base:2022.06
         parameters:
             image_name:
                 type: string
@@ -242,7 +242,7 @@ jobs:
         working_directory: ~/fun
     lint-front:
         docker:
-            - image: circleci/node:14
+            - image: cimg/node:16.15
         parameters:
             site:
                 type: string
@@ -281,7 +281,7 @@ jobs:
         working_directory: ~/fun
     no-change:
         docker:
-            - image: circleci/buildpack-deps:stretch-scm
+            - image: cimg/base:2022.06
         steps:
             - run: echo "Everything is up-to-date ✅"
         working_directory: ~/fun
@@ -302,7 +302,7 @@ jobs:
                 POSTGRES_DB: richie
                 POSTGRES_PASSWORD: pass
                 POSTGRES_USER: richie_user
-              image: circleci/postgres:9.6-alpine-ram
+              image: cimg/postgres:9.6
             - environment:
                 ALLOW_EMPTY_PASSWORD: "yes"
                 REDIS_REPLICATION_MODE: master
