@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-05 09:34+0100\n"
+"POT-Creation-Date: 2022-06-24 17:21+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,29 +21,49 @@ msgstr ""
 msgid "Unsorted uploads are not allowed."
 msgstr "Les téléchargements non classés sont interdits"
 
-#: funcorporate/settings.py:312 funcorporate/settings.py:334
+#: funcorporate/settings.py:316 funcorporate/settings.py:338
 msgid "English"
 msgstr "Anglais"
 
-#: funcorporate/settings.py:312 funcorporate/settings.py:342
+#: funcorporate/settings.py:316 funcorporate/settings.py:346
 msgid "French"
 msgstr "Français"
 
-#: funcorporate/settings.py:352
+#: funcorporate/settings.py:356
 msgid "Teaser"
 msgstr "Accroche"
 
-#: funcorporate/settings.py:366
+#: funcorporate/settings.py:370
 msgid "Training domains"
 msgstr "Domaines de formation"
 
-#: funcorporate/settings.py:379
+#: funcorporate/settings.py:383
 msgid "Organizations"
 msgstr "Établissements"
 
-#: funcorporate/settings.py:391
+#: funcorporate/settings.py:395
 msgid "Persons"
 msgstr "Professeurs"
+
+#: funcorporate/settings.py:414
+msgid "Weekly pace"
+msgstr "Rythme hebdomadaire"
+
+#: funcorporate/settings.py:420
+msgid "Self-paced"
+msgstr "À votre rythme"
+
+#: funcorporate/settings.py:421
+msgid "Less than one hour"
+msgstr "Moins d'une heure"
+
+#: funcorporate/settings.py:422
+msgid "One to two hours"
+msgstr "Une à deux heures"
+
+#: funcorporate/settings.py:423
+msgid "More than two hours"
+msgstr "Plus de deux heures"
 
 #: templates/courses/cms/course_detail.html:5
 msgid "Would you like to offer this training to your employees?"
