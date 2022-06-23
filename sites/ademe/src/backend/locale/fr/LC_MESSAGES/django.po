@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-03 18:45+0100\n"
+"POT-Creation-Date: 2022-06-24 18:55+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,54 +16,41 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ademe/settings.py:224
+#: ademe/settings.py:225
 msgid "Dashboard"
 msgstr "Tableau de bord"
 
-#: ademe/settings.py:225
+#: ademe/settings.py:226
 msgid "{base_url:s}/dashboard"
 msgstr ""
 
-#: ademe/settings.py:228
+#: ademe/settings.py:229
 msgid "Profile"
 msgstr "Profil"
 
-#: ademe/settings.py:229
+#: ademe/settings.py:230
 msgid "{base_url:s}/u/(username)"
 msgstr ""
 
-#: ademe/settings.py:232
+#: ademe/settings.py:233
 msgid "Account"
 msgstr "Compte"
 
-#: ademe/settings.py:233
+#: ademe/settings.py:234
 msgid "{base_url:s}/account/settings"
 msgstr ""
 
-#: ademe/settings.py:315
+#: ademe/settings.py:316
 msgid "Teaser"
 msgstr "Accroche"
 
-#: ademe/settings.py:410 ademe/settings.py:433
+#: ademe/settings.py:414 ademe/settings.py:437
 msgid "French"
 msgstr "Français"
 
-#: ademe/settings.py:410 ademe/settings.py:425
+#: ademe/settings.py:414 ademe/settings.py:429
 msgid "English"
 msgstr "Anglais"
-
-#: templates/courses/cms/course_detail.html:17
-msgctxt "course_detail__title"
-msgid "Other course runs"
-msgstr "Autres sessions"
-
-#: templates/courses/cms/course_detail.html:26
-msgid "No other open course runs"
-msgstr "Aucune autre session ouverte"
-
-#: templates/courses/cms/course_detail.html:30
-msgid "No open course runs"
-msgstr "Aucune session ouverte"
 
 #: templates/richie/base.html:8
 msgid "Contact us"
@@ -76,6 +63,16 @@ msgstr "Rechercher parmis nos cours"
 #: templates/richie/large_banner/hero-intro.html:24
 msgid "Explore our catalog"
 msgstr "Explorer notre catalogue"
+
+msgctxt "course_detail__title"
+msgid "Other course runs"
+msgstr "Autres sessions"
+
+msgid "No other open course runs"
+msgstr "Aucune autre session ouverte"
+
+msgid "No open course runs"
+msgstr "Aucune session ouverte"
 
 msgid "Help"
 msgstr "Aide"

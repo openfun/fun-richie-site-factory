@@ -1,7 +1,7 @@
 
 
 // Theme schemes
-$r-theme: (
+$r-theme: map-merge($r-theme, (
   banner: (
     error: $burnt-orange-scheme,
     warning: $pumpkin-orange-scheme,
@@ -452,4 +452,4 @@ $r-theme: (
     base-color: r-color('turquoise-blue'),
     base-color-light: r-color('white'),
   ),
-);
+));
