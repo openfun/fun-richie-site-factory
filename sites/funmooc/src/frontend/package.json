@@ -35,14 +35,14 @@
   },
   "homepage": "https://github.com/openfun/richie-site-factory#readme",
   "dependencies": {
-    "richie-education": "2.14.1",
-    "tarteaucitronjs": "1.9.5"
+    "richie-education": "2.15.0",
+    "tarteaucitronjs": "1.9.6"
   },
   "devDependencies": {
-    "@formatjs/cli": "4.8.2",
-    "eslint": "8.9.0",
-    "nodemon": "2.0.15",
-    "prettier": "2.5.1",
-    "sass": "1.49.8"
+    "@formatjs/cli": "5.0.2",
+    "eslint": "8.18.0",
+    "nodemon": "2.0.16",
+    "prettier": "2.7.1",
+    "sass": "1.53.0"
   }
 }

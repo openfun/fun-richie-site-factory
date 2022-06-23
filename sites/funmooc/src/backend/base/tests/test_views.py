@@ -135,7 +135,7 @@ class DjangoCheckSeoTestCase(TestCase):
         """
         Check that Django Check SEO is accessible by an admin user
         """
-        url = "/django-check-seo/?page=/"
+        url = "/django-check-seo/?page=/en/"
         response = self.client.get(url)
 
         # - Anonymous user is redirected to the admin login page
