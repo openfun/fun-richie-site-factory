@@ -1,5 +1,5 @@
 // Theme schemes
-$r-theme: (
+$r-theme: map-merge($r-theme, (
   // Used from styleguide to build available scheme to demonstrate, used to create button variant
   banner:
     (
@@ -344,6 +344,7 @@ $r-theme: (
     plan-title-color: r-color('blue-green'),
     license-label-color: r-color('denim'),
     checkmark-list-decoration: url('../../richie/images/components/checkmark.svg'),
+    checkmark-list-decoration-color: r-color('blue-green'),
     view-more-runs-color: r-color('blue-green'),
     run-catalog-visibility-hidden-logo: url('../../richie/images/catalog_visibility/hidden.svg'),
     run-catalog-visibility-course-only-logo: url('../../richie/images/catalog_visibility/course_only.svg'),
@@ -426,4 +427,4 @@ $r-theme: (
     base-color: r-color('denim'),
     base-color-light: r-color('white'),
   )
-);
+));
