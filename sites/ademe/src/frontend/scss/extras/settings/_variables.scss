@@ -1,0 +1,36 @@
+// Place here any custom Richie and bootstrap variables.
+// To change the variables defined in:
+// https://github.com/openfun/richie/blob/master/src/frontend/scss/settings/_variables.scss
+
+// Should be near to expected 14px from mockup
+$font-size-base: 0.875rem;
+
+// Adjust heading sizes
+$extra-font-size: 2.375rem;
+$h1-font-size: 3rem;
+$h2-font-size: 2rem;
+$h6-font-size: 0.9375rem;
+// Buttons + Forms
+//
+// Shared variables that are reassigned to `$input-` and `$btn-` specific variables.
+
+$input-btn-font-size: 0.8125rem;
+
+// Topbar height is required to be able to preserve space in some context like
+// when the tobpar is an absolute position, so content won't be placed below.
+// You will probably need to adjust it along logo height.
+$r-topbar-height: rem-calc(143px);
+
+// Header logo width is required for SVG logos
+$r-topbar-logo-width-sm: rem-calc(190px); //7.1875rem;
+$r-topbar-logo-width-lg: $r-topbar-logo-width-sm;
+
+// Header logo width is required for SVG logos
+$r-footer-logo-width-sm: $r-topbar-logo-width-sm;
+$r-footer-logo-width-lg: $r-footer-logo-width-sm;
+
+// Aside column width in course detail, if 'null' content and aside columns take
+// full width like common blocks. Usefull if you plan to remove course run from
+// template
+$r-course-aside: 25%;
+$r-course-subheader-aside: 25%;
