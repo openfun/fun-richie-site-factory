@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-05 09:33+0100\n"
+"POT-Creation-Date: 2022-06-24 12:02+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,31 +21,51 @@ msgstr ""
 msgid "Unsorted uploads are not allowed."
 msgstr "Les téléchargements non classés sont interdits"
 
-#: funcampus/settings.py:241
+#: funcampus/settings.py:242
 msgid "Teaser"
 msgstr "Accroche"
 
-#: funcampus/settings.py:322
+#: funcampus/settings.py:326
 msgid "Diplomas"
 msgstr "Diplômes"
 
-#: funcampus/settings.py:335
+#: funcampus/settings.py:339
 msgid "Domains and mentions"
 msgstr "Domaines et mentions"
 
-#: funcampus/settings.py:348
+#: funcampus/settings.py:352
 msgid "Levels"
 msgstr "Niveaux"
 
-#: funcampus/settings.py:361
+#: funcampus/settings.py:365
 msgid "Skills"
 msgstr "Compétences"
 
-#: funcampus/settings.py:381 funcampus/settings.py:403
+#: funcampus/settings.py:385
+msgid "Weekly pace"
+msgstr "Rythme hebdomadaire"
+
+#: funcampus/settings.py:391
+msgid "Self-paced"
+msgstr "À votre rythme"
+
+#: funcampus/settings.py:392
+msgid "Less than one hour"
+msgstr "Moins d'une heure"
+
+#: funcampus/settings.py:393
+msgid "One to two hours"
+msgstr "Une à deux heures"
+
+#: funcampus/settings.py:394
+msgid "More than two hours"
+msgstr "Plus de deux heures"
+
+#: funcampus/settings.py:408 funcampus/settings.py:430
 msgid "English"
 msgstr "Anglais"
 
-#: funcampus/settings.py:381 funcampus/settings.py:411
+#: funcampus/settings.py:408 funcampus/settings.py:438
 msgid "French"
 msgstr "Français"
 
