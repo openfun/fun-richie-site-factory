@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-23 19:01+0100\n"
+"POT-Creation-Date: 2022-06-24 17:59+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -57,20 +57,40 @@ msgstr "Public"
 msgid "English"
 msgstr "Anglais"
 
-#: cnfpt/settings.py:405 cnfpt/settings.py:428 cnfpt/settings.py:738
-#: cnfpt/settings.py:753
+#: cnfpt/settings.py:405 cnfpt/settings.py:428 cnfpt/settings.py:772
+#: cnfpt/settings.py:787
 msgid "French"
 msgstr "Français"
 
-#: cnfpt/settings.py:570
+#: cnfpt/settings.py:581
 msgid "Availability"
 msgstr "Disponibilité"
 
-#: cnfpt/settings.py:583
+#: cnfpt/settings.py:594
 msgid "Subjects"
 msgstr "Thématiques"
 
-#: templates/courses/cms/course_detail.html:14
+#: cnfpt/settings.py:612
+msgid "Weekly pace"
+msgstr "Rythme hebdomadaire"
+
+#: cnfpt/settings.py:618
+msgid "Self-paced"
+msgstr "À votre rythme"
+
+#: cnfpt/settings.py:619
+msgid "Less than one hour"
+msgstr "Moins d'une heure"
+
+#: cnfpt/settings.py:620
+msgid "One to two hours"
+msgstr "Une à deux heures"
+
+#: cnfpt/settings.py:621
+msgid "More than two hours"
+msgstr "Plus de deux heures"
+
+#: templates/courses/cms/course_detail.html:11
 msgctxt "course_detail__title"
 msgid "Audience"
 msgstr "Public"

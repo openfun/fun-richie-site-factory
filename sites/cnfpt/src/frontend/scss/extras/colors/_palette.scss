@@ -4,7 +4,7 @@
 
 // Named colors
 // ---------
-$palette: (
+$palette: recursive-map-merge($palette, (
   'black': #000000,
   'black-two': #3a3a3a,
   'dark': #29303b,
@@ -24,4 +24,4 @@ $palette: (
   'twilight-two': #3a3677,
   'berry': #a7145a,
   'berry-two': #8c1742,
-);
+));
