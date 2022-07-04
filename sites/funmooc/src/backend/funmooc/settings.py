@@ -708,6 +708,11 @@ class Base(StyleguideMixin, DRFMixin, RichieCoursesConfigurationMixin, Configura
                     environ_prefix=None,
                 ),
             },
+            "search": {
+                "BACKEND": "django.core.cache.backends.locmem.LocMemCache",
+                "LOCATION": "search_cache",
+                "TIMEOUT": 60,
+            },
         }
     )
 
