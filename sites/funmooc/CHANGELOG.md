@@ -8,6 +8,8 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [1.17.1] - 2022-07-04
+
 ### Added
 
 - Enable "search" loc mem cache
@@ -546,7 +548,8 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 - Static and media files are stored in AWS S3 buckets and distributed _via_
   Amazon CloudFront
 
-[unreleased]: https://github.com/openfun/richie-site-factory/compare/funmooc-1.17.0...HEAD
+[unreleased]: https://github.com/openfun/richie-site-factory/compare/funmooc-1.17.1...HEAD
+[1.17.1]: https://github.com/openfun/richie-site-factory/compare/funmooc-1.17.0...funmooc-1.17.1
 [1.17.0]: https://github.com/openfun/richie-site-factory/compare/funmooc-1.16.0...funmooc-1.17.0
 [1.16.0]: https://github.com/openfun/richie-site-factory/compare/funmooc-1.15.2...funmooc-1.16.0
 [1.15.2]: https://github.com/openfun/richie-site-factory/compare/funmooc-1.15.1...funmooc-1.15.2
