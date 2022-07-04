@@ -8,6 +8,8 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [1.18.0] - 2022-07-04
+
 ### Added
 
 - Enable "search" loc mem cache
@@ -247,7 +249,8 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 - First `funcampus` image
 
-[unreleased]: https://github.com/openfun/richie-site-factory/compare/funcampus-1.17.0...HEAD
+[unreleased]: https://github.com/openfun/richie-site-factory/compare/funcampus-1.18.0...HEAD
+[1.18.0]: https://github.com/openfun/richie-site-factory/compare/funcampus-1.17.0...funcampus-1.18.0
 [1.17.0]: https://github.com/openfun/richie-site-factory/compare/funcampus-1.16.0...funcampus-1.17.0
 [1.16.0]: https://github.com/openfun/richie-site-factory/compare/funcampus-1.15.0...funcampus-1.16.0
 [1.15.0]: https://github.com/openfun/richie-site-factory/compare/funcampus-1.14.0...funcampus-1.15.0
