@@ -8,6 +8,8 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.9.0] - 2022-07-04
+
 ### Added
 
 - Enable "search" loc mem cache
@@ -82,7 +84,8 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 - First `ademe` image
 
-[unreleased]: https://github.com/openfun/richie-site-factory/compare/ademe-0.8.0...HEAD
+[unreleased]: https://github.com/openfun/richie-site-factory/compare/ademe-0.9.0...HEAD
+[0.9.0]: https://github.com/openfun/richie-site-factory/compare/ademe-0.8.0...ademe-0.9.0
 [0.8.0]: https://github.com/openfun/richie-site-factory/compare/ademe-0.7.0...ademe-0.8.0
 [0.7.0]: https://github.com/openfun/richie-site-factory/compare/ademe-0.6.0...ademe-0.7.0
 [0.6.0]: https://github.com/openfun/richie-site-factory/compare/ademe-0.5.0...ademe-0.6.0
