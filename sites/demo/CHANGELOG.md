@@ -8,6 +8,8 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [1.19.0] - 2022-07-04
+
 ### Added
 
 - Enable "search" loc mem cache
@@ -281,7 +283,8 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 First demo image for richie to 2.0.0-beta.7
 
-[unreleased]: https://github.com/openfun/richie-site-factory/compare/demo-1.18.0...HEAD
+[unreleased]: https://github.com/openfun/richie-site-factory/compare/demo-1.19.0...HEAD
+[1.19.0]: https://github.com/openfun/richie-site-factory/compare/demo-1.18.0...demo-1.19.0
 [1.18.0]: https://github.com/openfun/richie-site-factory/compare/demo-1.17.0...demo-1.18.0
 [1.17.0]: https://github.com/openfun/richie-site-factory/compare/demo-1.16.0...demo-1.17.0
 [1.16.0]: https://github.com/openfun/richie-site-factory/compare/demo-1.15.0...demo-1.16.0
