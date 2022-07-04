@@ -8,6 +8,10 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Added
+
+- Enable "search" loc mem cache
+
 ## [1.17.0] - 2022-06-24
 
 ### Changed
