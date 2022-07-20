@@ -8,6 +8,10 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Fixed
+
+- Move factory-boy from dev requirements to base requirements
+
 ## [1.17.1] - 2022-07-04
 
 ### Added
