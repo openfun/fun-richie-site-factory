@@ -8,6 +8,8 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [1.14.1] - 2022-07-20
+
 ### Fixed
 
 - Move factory-boy from dev requirements to base requirements
@@ -281,7 +283,8 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 Initial release
 
-[unreleased]: https://github.com/openfun/richie-site-factory/compare/cnfpt-1.14.0...HEAD
+[unreleased]: https://github.com/openfun/richie-site-factory/compare/cnfpt-1.14.1...HEAD
+[1.14.1]: https://github.com/openfun/richie-site-factory/compare/cnfpt-1.14.0...cnfpt-1.14.1
 [1.14.0]: https://github.com/openfun/richie-site-factory/compare/cnfpt-1.13.0...cnfpt-1.14.0
 [1.13.0]: https://github.com/openfun/richie-site-factory/compare/cnfpt-1.12.0...cnfpt-1.13.0
 [1.12.0]: https://github.com/openfun/richie-site-factory/compare/cnfpt-1.11.0...cnfpt-1.12.0
