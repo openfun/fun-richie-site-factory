@@ -8,6 +8,8 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [1.19.1] - 2022-07-20
+
 ### Fixed
 
 - Move factory-boy from dev requirements to base requirements
@@ -287,7 +289,8 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 First demo image for richie to 2.0.0-beta.7
 
-[unreleased]: https://github.com/openfun/richie-site-factory/compare/demo-1.19.0...HEAD
+[unreleased]: https://github.com/openfun/richie-site-factory/compare/demo-1.19.1...HEAD
+[1.19.1]: https://github.com/openfun/richie-site-factory/compare/demo-1.19.0...demo-1.19.1
 [1.19.0]: https://github.com/openfun/richie-site-factory/compare/demo-1.18.0...demo-1.19.0
 [1.18.0]: https://github.com/openfun/richie-site-factory/compare/demo-1.17.0...demo-1.18.0
 [1.17.0]: https://github.com/openfun/richie-site-factory/compare/demo-1.16.0...demo-1.17.0
