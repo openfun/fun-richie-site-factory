@@ -201,6 +201,15 @@ class Base(StyleguideMixin, DRFMixin, RichieCoursesConfigurationMixin, Configura
     LOGIN_REDIRECT_URL = "/"
     LOGOUT_REDIRECT_URL = "/"
 
+    # Joanie
+    """
+    NB: Richie picks all Joanie's settings from the JOANIE namespace on the
+    settings, hence the nesting of all Joanie's values inside that prop
+    """
+    JOANIE = {
+        "BASE_URL": values.Value(environ_name="JOANIE_BASE_URL", environ_prefix=None),
+    }
+
     # Internationalization
     TIME_ZONE = "Europe/Paris"
     USE_I18N = True
