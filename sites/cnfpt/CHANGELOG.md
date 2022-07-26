@@ -8,6 +8,10 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Added
+
+- Add JOANIE settings configurable through environment variables
+
 ## [1.14.1] - 2022-07-20
 
 ### Fixed

@@ -270,6 +270,15 @@ class Base(StyleguideMixin, DRFMixin, RichieCoursesConfigurationMixin, Configura
         environ_prefix=None,
     )
 
+    # Joanie
+    """
+    NB: Richie picks all Joanie's settings from the JOANIE namespace on the
+    settings, hence the nesting of all Joanie's values inside that prop
+    """
+    JOANIE = {
+        "BASE_URL": values.Value(environ_name="JOANIE_BASE_URL", environ_prefix=None),
+    }
+
     # Internationalization
     TIME_ZONE = "Europe/Paris"
     USE_I18N = True
