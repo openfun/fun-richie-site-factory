@@ -42,6 +42,8 @@
 
 // Page component styles
 @import 'richie-education/scss/components/index';
+// @FIXME This is a temporary fix as this stylesheet is not yet imported in richie-education
+@import 'richie-education/js/components/AddressesManagement/styles';
 
 // Page component overrides
 @import './components/subheader';
