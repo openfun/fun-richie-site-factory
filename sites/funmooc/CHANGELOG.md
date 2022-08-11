@@ -10,6 +10,7 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Changed
 
+- Change help button label to "FAQ"
 - Upgrade richie to 2.15.1
 
 ## [1.18.0] - 2022-07-28

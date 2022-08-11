@@ -110,8 +110,8 @@ msgid "French"
 msgstr "Français"
 
 #: templates/richie/base.html:18
-msgid "Help"
-msgstr "Aide"
+msgid "FAQ"
+msgstr "FAQ"
 
 #: templates/richie/base.html:28
 msgid "https://www.france-universite-numerique.fr/en/"
