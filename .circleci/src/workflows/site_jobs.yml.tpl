@@ -15,7 +15,7 @@ ${SITE}:
           branches:
             ignore: main
           tags:
-            only: /${SITE}-.*/
+            only: /^${SITE}-.*/
 
     # Front-end jobs
     #
@@ -25,7 +25,7 @@ ${SITE}:
         site: ${SITE}
         filters:
           tags:
-            only: /${SITE}-.*/
+            only: /^${SITE}-.*/
     - lint-front:
         name: lint-front-${SITE}
         site: ${SITE}
@@ -33,7 +33,7 @@ ${SITE}:
           - build-front-production-${SITE}
         filters:
           tags:
-            only: /${SITE}-.*/
+            only: /^${SITE}-.*/
 
     # Backend jobs
     #
@@ -44,7 +44,7 @@ ${SITE}:
         site: ${SITE}
         filters:
           tags:
-            only: /${SITE}-.*/
+            only: /^${SITE}-.*/
     - lint-back:
         name: lint-back-${SITE}
         site: ${SITE}
@@ -52,7 +52,7 @@ ${SITE}:
           - build-back-${SITE}
         filters:
           tags:
-            only: /${SITE}-.*/
+            only: /^${SITE}-.*/
     - test-back:
         name: test-back-${SITE}
         site: ${SITE}
@@ -60,7 +60,7 @@ ${SITE}:
           - build-back-${SITE}
         filters:
           tags:
-            only: /${SITE}-.*/
+            only: /^${SITE}-.*/
 
     # DockerHub publication.
     #
