@@ -19,7 +19,7 @@
 
   /**
    *
-   * An object to initialize then use AT Internet SmartTag.
+   * An object to initialize then use Piano Analytics Tag.
    *
    * @param metadata - analytics context
    *
@@ -34,7 +34,7 @@
    *    + root_page_id: level2
    *
    */
-  function SmartTag(metadata) {
+  function PATag(metadata) {
     this.data = null;
     this.level2 = metadata.dimensions.root_page_id;
     this.organizations = deserialize(metadata.dimensions.organizations_codes);
@@ -61,30 +61,23 @@
       var name = chapters.shift();
 
       this.data = {
-        level2: this.level2,
-        name: name || '/',
+        page: name || '/',
+        site_level2: this.level2,
       };
 
       chapters.forEach(function (chapter, index) {
-        self.data['chapter' + (index + 1)] = '[' + chapter + ']';
+        self.data['page_chapter' + (index + 1)] = chapter;
       });
-    };
 
-    /**
-     * Dispatch data on page load
-     * Set customVars, customObject and internalSearch if it is relevant
-     * then dispatch a record.
-     */
-    this.dispatch = function () {
       // Detail language
       var lang = (document.documentElement.lang || '-').split('-')[0].toLowerCase();
       if (lang) {
-        this.tag.customVars.set({ site: { 1: '[' + lang + ']' } });
+        self.data.langue = lang;
       }
 
       // Detail organizations related to the page
       if (this.organizations && this.organizations.length > 0) {
-        var serializedOrganizations =
+        self.data['a:s:organizations'] =
           '[' +
           this.organizations
             .map(function (organization) {
@@ -92,29 +85,43 @@
             })
             .toString() +
           ']';
-        this.tag.setProp('a:s:organizations', serializedOrganizations, true);
       }
-
-      // Detail search query if there is
-      var search_query = new URL(location.href).searchParams.get('query');
-      if (search_query) {
-        this.tag.internalSearch.set({
-          keyword: search_query,
-        });
-      }
-
-      // Dispatch data
-      this.tag.page.set(this.data);
-      this.tag.dispatch();
     };
 
     /**
-     * Instantiate the Xiti tag
-     * Check if ATInternet exists then create a new tag.
+     * Dispatch data on page display
+     * Set internalSearch if it is relevant then dispatch a record.
+     */
+    this.dispatch = function () {
+      // Detail search query if there is
+      var searchParams = new URL(location.href).searchParams;
+
+      if (searchParams.has('query')) {
+        var searchQuery = searchParams.get('query');
+        var searchLimit = searchParams.get('limit') || 0;
+        var searchOffset = searchParams.get('offset') || 0;
+        this.tag.sendEvent('internal_search_result.display', Object.assign({
+          ise_keyword: searchQuery,
+          ise_page: 1 + (searchOffset / searchLimit),
+        }, this.data));
+      }
+
+      // Dispatch data
+      this.tag.sendEvent('page.display', this.data);
+    };
+
+    /**
+     * Configure the PA tag
+     * Check if `pa` exists then configure the tag with our site information.
      */
     this.createTag = function () {
-      if (ATInternet) {
-        this.tag = new ATInternet.Tracker.Tag({ site: this.siteId, secure: true });
+      if (pa) {
+        this.tag = pa;
+        this.tag.setConfigurations({
+          collectDomain: 'https://logs1409.xiti.com',
+          secure: true,
+          site: this.siteId,
+        });
       }
     };
 
@@ -130,11 +137,9 @@
         var name = $target.innerText || $target.classList.value.replace(' ', '.');
 
         var parameters = self.data;
-        parameters.elem = $target;
-        parameters.name = name;
-        parameters.type = 'action';
+        parameters.page = name;
 
-        self.tag.click.send(parameters);
+        self.tag.sendEvent('click.action', parameters, { elem: $target, event: event });
       }
 
       // Some browsers do not implement `HTMLCollection.forEach` method
@@ -146,9 +151,9 @@
     };
 
     /**
-     * Initialize SmartTag
+     * Initialize PATag
      *
-     * Create smartTag, populate data then dispatch a record
+     * Create PATag, populate data then dispatch a record
      * and add click listeners on buttons
      */
     this.init = function () {
@@ -161,23 +166,23 @@
 
   var context = window.__funmooc_context__.analytics;
 
-  tarteaucitron.services.xitiFun = {
+  tarteaucitron.services.paFun = {
     key: 'xiti',
     type: 'analytic',
-    name: 'Xiti',
+    name: 'Piano Analytics',
     uri: 'https://www.atinternet.com/societe/rgpd-et-vie-privee/',
     needConsent: false,
-    cookies: ['atid', 'idrxvr', 'atuserid', 'atidx', 'atidvisitor'],
+    cookies: ['pa_vid', 'pa_privacy'],
     js: function () {
-      var smarttag_url = 'https://tag.aticdn.net/' + context.id + '/smarttag.js';
+      var pa_url = 'https://tag.aticdn.net/piano-analytics.js';
       function onLoad() {
-        var smartTag = new SmartTag(context);
-        smartTag.init();
-        // expose smartTag globally
-        window.smartTag = smartTag;
+        const PA = new PATag(context);
+        PA.init()
+        // expose PATag globally
+        window.PA = PA;
       }
-      tarteaucitron.addScript(smarttag_url, '', onLoad);
+      tarteaucitron.addScript(pa_url, '', onLoad);
     },
   };
-  tarteaucitron.job.push('xitiFun');
+  tarteaucitron.job.push('paFun');
 })();

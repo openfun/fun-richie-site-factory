@@ -10,6 +10,7 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Changed
 
+- Migrate web analytics to piano analytics
 - Change help button label to "FAQ"
 - Upgrade richie to 2.15.1
 
