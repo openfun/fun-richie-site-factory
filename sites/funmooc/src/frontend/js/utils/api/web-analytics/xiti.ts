@@ -10,26 +10,26 @@ import { BaseWebAnalyticsApi } from 'richie-education/js/utils/api/web-analytics
  *
  */
 export default class FunXitiApi extends BaseWebAnalyticsApi {
-  tag: any;
+  PA: any;
 
   constructor() {
     super();
 
-    const smartTag = (window as any)?.smartTag;
+    const PA = (window as any)?.PA;
 
     // User has denied being tracked or an adblocker has blocked the tag initialization.
-    if (smartTag === undefined) {
+    if (PA === undefined) {
       return;
     }
 
-    this.tag = smartTag.tag;
+    this.PA = PA;
   }
 
   sendEvent(category: string, action: string, label: string): void {
-    this.tag?.setProp('s:resource_link', label, false);
-    this.tag?.click.send({
-      name: category,
-      type: 'action',
+    this.PA?.tag.sendEvent('click.action', {
+      ...this.PA?.data,
+      click: category,
+      's:resource_link': label,
     });
   }
 }
