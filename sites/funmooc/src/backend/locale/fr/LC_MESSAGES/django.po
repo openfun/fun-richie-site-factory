@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-06-23 22:19+0200\n"
+"POT-Creation-Date: 2022-09-11 22:36+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,93 +21,101 @@ msgstr ""
 msgid "Unsorted uploads are not allowed."
 msgstr "Les téléchargements non classés sont interdits"
 
-#: funmooc/settings.py:223
+#: funmooc/settings.py:224
 msgid "Dashboard"
 msgstr "Tableau de bord"
 
-#: funmooc/settings.py:224
+#: funmooc/settings.py:225
 msgid "{base_url:s}/dashboard"
 msgstr ""
 
-#: funmooc/settings.py:227
+#: funmooc/settings.py:228
 msgid "Profile"
 msgstr "Profil"
 
-#: funmooc/settings.py:228
+#: funmooc/settings.py:229
 msgid "{base_url:s}/u/(username)"
 msgstr ""
 
-#: funmooc/settings.py:231
+#: funmooc/settings.py:232
 msgid "Account"
 msgstr "Compte"
 
-#: funmooc/settings.py:232
+#: funmooc/settings.py:233
 msgid "{base_url:s}/account/settings"
 msgstr ""
 
-#: funmooc/settings.py:317
+#: funmooc/settings.py:327
 msgid "Teaser"
 msgstr "Accroche"
 
-#: funmooc/settings.py:401 funmooc/settings.py:405
+#: funmooc/settings.py:411 funmooc/settings.py:415
 msgid "New courses"
 msgstr "Nouveaux cours"
 
-#: funmooc/settings.py:416
+#: funmooc/settings.py:426
 msgid "Availability"
 msgstr "Disponibilité"
 
-#: funmooc/settings.py:426
+#: funmooc/settings.py:436
 msgid "Languages"
 msgstr "Langues"
 
-#: funmooc/settings.py:441
+#: funmooc/settings.py:451
 msgid "Types"
 msgstr ""
 
-#: funmooc/settings.py:454
+#: funmooc/settings.py:464
 msgid "Subjects"
 msgstr "Thématiques"
 
-#: funmooc/settings.py:467
+#: funmooc/settings.py:477
 msgid "Collections"
 msgstr "Collections"
 
-#: funmooc/settings.py:480
+#: funmooc/settings.py:490
 msgid "Organizations"
 msgstr "Établissements"
 
-#: funmooc/settings.py:493
+#: funmooc/settings.py:503
 msgid "Contributors"
 msgstr "Contributeurs"
 
-#: funmooc/settings.py:513
+#: funmooc/settings.py:516
+msgid "Licences"
+msgstr "Licences"
+
+#: funmooc/settings.py:535
 msgid "Weekly pace"
 msgstr "Rythme hebdomadaire"
 
-#: funmooc/settings.py:519
+#: funmooc/settings.py:541
 msgid "Self-paced"
 msgstr "À son rythme"
 
-#: funmooc/settings.py:520
+#: funmooc/settings.py:542
 msgid "Less than one hour"
 msgstr "Moins d'une heure"
 
-#: funmooc/settings.py:521
+#: funmooc/settings.py:543
 msgid "One to two hours"
 msgstr "Une à deux heures"
 
-#: funmooc/settings.py:522
+#: funmooc/settings.py:544
 msgid "More than two hours"
 msgstr "Plus de deux heures"
 
-#: funmooc/settings.py:536 funmooc/settings.py:551
+#: funmooc/settings.py:558 funmooc/settings.py:573
 msgid "English"
 msgstr "Anglais"
 
-#: funmooc/settings.py:536 funmooc/settings.py:559
+#: funmooc/settings.py:558 funmooc/settings.py:581
 msgid "French"
 msgstr "Français"
+
+#: funmooc/settings.py:783
+msgid "Pashto"
+msgstr "Pachtoun"
 
 #: templates/richie/base.html:18
 msgid "FAQ"

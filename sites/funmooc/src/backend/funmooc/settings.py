@@ -4,6 +4,7 @@ Django settings for FUN-MOOC project.
 import json
 import os
 
+from django.conf import global_settings
 from django.utils.translation import gettext_lazy as _
 
 # pylint: disable=ungrouped-imports
@@ -773,6 +774,14 @@ class Base(StyleguideMixin, DRFMixin, RichieCoursesConfigurationMixin, Configura
         Set cache prefix specific to release so existing cache is invalidated for new deployments.
         """
         return f"cms_{get_release():s}_"
+
+    # pylint: disable=invalid-name
+    @property
+    def ALL_LANGUAGES(self):
+        """Add extra languages for course runs"""
+        return [(language, _(name)) for language, name in global_settings.LANGUAGES] + [
+            ("ps", _("Pashto"))
+        ]
 
     @classmethod
     def post_setup(cls):
