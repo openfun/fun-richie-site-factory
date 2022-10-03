@@ -8,6 +8,8 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.10.0] - 2022-10-03
+
 ### Added
 
 - Add JOANIE settings configurable through environment variables
@@ -102,7 +104,8 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 - First `ademe` image
 
-[unreleased]: https://github.com/openfun/richie-site-factory/compare/ademe-0.9.1...HEAD
+[unreleased]: https://github.com/openfun/richie-site-factory/compare/ademe-0.10.0...HEAD
+[0.10.0]: https://github.com/openfun/richie-site-factory/compare/ademe-0.9.1...ademe-0.10.0
 [0.9.1]: https://github.com/openfun/richie-site-factory/compare/ademe-0.9.0...ademe-0.9.1
 [0.9.0]: https://github.com/openfun/richie-site-factory/compare/ademe-0.8.0...ademe-0.9.0
 [0.8.0]: https://github.com/openfun/richie-site-factory/compare/ademe-0.7.0...ademe-0.8.0
