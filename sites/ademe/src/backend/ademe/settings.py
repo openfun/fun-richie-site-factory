@@ -253,12 +253,13 @@ class Base(StyleguideMixin, DRFMixin, RichieCoursesConfigurationMixin, Configura
                 environ_prefix=None,
             ),
             "COURSE_REGEX": values.Value(
-                r"^.*/courses/(?P<course_id>.*)/course/?$",
+                r"^.*/courses/(?P<course_id>.*)/info/?$",
                 environ_name="EDX_COURSE_REGEX",
                 environ_prefix=None,
             ),
+            "COURSE_RUN_SYNC_NO_UPDATE_FIELDS": ["languages"],
             "JS_COURSE_REGEX": values.Value(
-                r"^.*/courses/(.*)/course/?$",
+                r"^.*/courses/(.*)/info/?$",
                 environ_name="EDX_JS_COURSE_REGEX",
                 environ_prefix=None,
             ),
