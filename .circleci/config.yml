@@ -213,9 +213,6 @@ jobs:
             - run:
                 command: ~/.local/bin/bandit -qr .
                 name: Lint code with bandit
-            - run:
-                command: ~/.local/bin/raincoat
-                name: Lint code with raincoat
         working_directory: ~/fun/sites/<< parameters.site >>/src/backend/
     lint-bash:
         docker:
