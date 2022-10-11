@@ -16,6 +16,10 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 - Upgrade richie to 2.15.1
 
+### Fixed
+
+- Fix course urls in Richie LMS backends configuration
+
 ## [0.9.1] - 2022-07-20
 
 ### Fixed
