@@ -8,6 +8,10 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Fixed
+
+- Xiti issues when a course page has only one organization. 
+
 ## [1.19.0] - 2022-10-18
 
 ### Changed
