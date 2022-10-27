@@ -3,16 +3,17 @@
    * Deserialize a context analytic dimension
    *
    * @param dimension - string with items joined by ' | '
+   * @param toArray - flag to enforce to return result as Array
    * @return data
-   *    - undefined if the dimension string was empty
-   *    - A single value if the dimension cannot be split
-   *    - An array of value if dimension has been split
+   *    - [] || undefined if the dimension string was empty
+   *    - [value] or value if the dimension cannot be split
+   *    - An array of values if dimension has been split
    */
-  function deserialize(dimension) {
+  function deserialize(dimension, toArray = false) {
     const data = dimension.split(' | ');
     if (data.length === 1) {
-      if (!data[0].trim()) return undefined;
-      return data[0];
+      if (!data[0].trim()) return toArray ? [] : undefined;
+      return toArray ? data : data[0];
     }
     return data;
   }
@@ -37,7 +38,7 @@
   function PATag(metadata) {
     this.data = null;
     this.level2 = metadata.dimensions.root_page_id;
-    this.organizations = deserialize(metadata.dimensions.organizations_codes);
+    this.organizations = deserialize(metadata.dimensions.organizations_codes, true);
     this.siteId = metadata.id;
     this.tag = null;
 
