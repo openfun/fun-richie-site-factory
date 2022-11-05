@@ -117,6 +117,28 @@ class DRFMixin:
     }
 
 
+COURSE_RUN_FILTERS = {
+    "availability": {
+        "class": "richie.apps.search.filter_definitions.AvailabilityFilterDefinition",
+        "params": {
+            "human_name": _("Availability"),
+            "is_drilldown": True,
+            "min_doc_count": 0,
+            "sorting": "conf",
+        },
+    },
+    "languages": {
+        "class": "richie.apps.search.filter_definitions.LanguagesFilterDefinition",
+        "params": {
+            "human_name": _("Languages"),
+            # There are too many available languages to show them all, all the time.
+            # Eg. 200 languages, 190+ of which will have 0 matching courses.
+            "min_doc_count": 1,
+        },
+    },
+}
+
+
 class Base(StyleguideMixin, DRFMixin, RichieCoursesConfigurationMixin, Configuration):
     """
     This is the base configuration every configuration (aka environnement) should inherit from. It
@@ -403,127 +425,87 @@ class Base(StyleguideMixin, DRFMixin, RichieCoursesConfigurationMixin, Configura
     )
 
     # Search
-    RICHIE_FILTERS_CONFIGURATION = [
-        (
-            "richie.apps.search.filter_definitions.StaticChoicesFilterDefinition",
-            {
+    RICHIE_FILTERS_CONFIGURATION = {
+        "new": {
+            "class": "richie.apps.search.filter_definitions.StaticChoicesFilterDefinition",
+            "params": {
                 "fragment_map": {"new": [{"term": {"is_new": True}}]},
                 "human_name": _("New courses"),
                 "min_doc_count": 0,
-                "name": "new",
-                "position": 0,
                 "values": {"new": _("New courses")},
             },
-        ),
-        (
-            "richie.apps.search.filter_definitions.NestingWrapper",
-            {
-                "name": "course_runs",
-                "filters": [
-                    (
-                        "richie.apps.search.filter_definitions.AvailabilityFilterDefinition",
-                        {
-                            "human_name": _("Availability"),
-                            "is_drilldown": True,
-                            "min_doc_count": 0,
-                            "name": "availability",
-                            "position": 1,
-                        },
-                    ),
-                    (
-                        "richie.apps.search.filter_definitions.LanguagesFilterDefinition",
-                        {
-                            "human_name": _("Languages"),
-                            # There are too many available languages to show them all, all the
-                            # time. Eg. 200 languages, 190+ of which will have 0 matching courses.
-                            "min_doc_count": 1,
-                            "name": "languages",
-                            "position": 5,
-                            "sorting": "count",
-                        },
-                    ),
-                ],
-            },
-        ),
-        (
-            "richie.apps.search.filter_definitions.IndexableHierarchicalFilterDefinition",
-            {
+        },
+        "course_runs": {
+            "class": "richie.apps.search.filter_definitions.NestingWrapper",
+            "params": {"filters": COURSE_RUN_FILTERS},
+        },
+        "types": {
+            "class": "richie.apps.search.filter_definitions.IndexableHierarchicalFilterDefinition",
+            "params": {
                 "human_name": _("Types"),
                 "is_autocompletable": True,
                 "is_searchable": True,
                 "min_doc_count": 0,
-                "name": "types",
-                "position": 2,
                 "reverse_id": "types",
                 "term": "categories",
             },
-        ),
-        (
-            "richie.apps.search.filter_definitions.IndexableHierarchicalFilterDefinition",
-            {
+        },
+        "subjects": {
+            "class": "richie.apps.search.filter_definitions.IndexableHierarchicalFilterDefinition",
+            "params": {
                 "human_name": _("Subjects"),
                 "is_autocompletable": True,
                 "is_searchable": True,
                 "min_doc_count": 0,
-                "name": "subjects",
-                "position": 3,
                 "reverse_id": "subjects",
                 "term": "categories",
             },
-        ),
-        (
-            "richie.apps.search.filter_definitions.IndexableHierarchicalFilterDefinition",
-            {
+        },
+        "collections": {
+            "class": "richie.apps.search.filter_definitions.IndexableHierarchicalFilterDefinition",
+            "params": {
                 "human_name": _("Collections"),
                 "is_autocompletable": True,
                 "is_searchable": True,
                 "min_doc_count": 0,
-                "name": "collections",
-                "position": 4,
                 "reverse_id": "collections",
                 "term": "categories",
             },
-        ),
-        (
-            "richie.apps.search.filter_definitions.IndexableHierarchicalFilterDefinition",
-            {
+        },
+        "organizations": {
+            "class": "richie.apps.search.filter_definitions.IndexableHierarchicalFilterDefinition",
+            "params": {
                 "human_name": _("Organizations"),
                 "is_autocompletable": True,
                 "is_searchable": True,
                 "min_doc_count": 0,
-                "name": "organizations",
-                "position": 5,
                 "reverse_id": "organizations",
                 "term": "organizations",
             },
-        ),
-        (
-            "richie.apps.search.filter_definitions.IndexableFilterDefinition",
-            {
+        },
+        "persons": {
+            "class": "richie.apps.search.filter_definitions.IndexableFilterDefinition",
+            "params": {
                 "human_name": _("Contributors"),
                 "is_autocompletable": True,
                 "is_searchable": True,
                 "min_doc_count": 0,
-                "name": "persons",
-                "position": 6,
                 "reverse_id": "persons",
                 "term": "persons",
             },
-        ),
-        (
-            "richie.apps.search.filter_definitions.IndexableFilterDefinition",
-            {
+        },
+        "licences": {
+            "class": "richie.apps.search.filter_definitions.IndexableFilterDefinition",
+            "params": {
                 "human_name": _("Licences"),
                 "is_autocompletable": True,
                 "is_searchable": True,
                 "min_doc_count": 0,
-                "name": "licences",
-                "position": 6,
             },
-        ),
-        (
-            "richie.apps.search.filter_definitions.StaticChoicesFilterDefinition",
-            {
+        },
+        "pace": {
+            "class": "richie.apps.search.filter_definitions.StaticChoicesFilterDefinition",
+            "params": {
                 "fragment_map": {
                     "self-paced": [
                         {"bool": {"must_not": {"exists": {"field": "pace"}}}}
@@ -534,8 +516,6 @@ class Base(StyleguideMixin, DRFMixin, RichieCoursesConfigurationMixin, Configura
                 },
                 "human_name": _("Weekly pace"),
                 "min_doc_count": 0,
-                "name": "pace",
-                "position": 7,
                 "sorting": "conf",
                 "values": {
                     "self-paced": _("Self-paced"),
@@ -544,7 +524,19 @@ class Base(StyleguideMixin, DRFMixin, RichieCoursesConfigurationMixin, Configura
                     "gt-2h": _("More than two hours"),
                 },
             },
-        ),
+        },
+    }
+    RICHIE_FILTERS_PRESENTATION = [
+        "new",
+        "availability",
+        "languages",
+        "types",
+        "subjects",
+        "collections",
+        "organizations",
+        "persons",
+        "licences",
+        "pace",
     ]
 
     # Languages
