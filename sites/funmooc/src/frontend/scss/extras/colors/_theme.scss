@@ -1,5 +1,5 @@
 // Theme schemes
-$r-theme: (
+$r-theme: map-merge($r-theme, (
   banner: (
     error: $lipstick-scheme,
     warning: $indianred3-scheme,
@@ -492,4 +492,4 @@ $r-theme: (
     title-color: r-color('black-two'),
     subtitle-color: r-color('battleship-grey'),
   ),
-);
+));

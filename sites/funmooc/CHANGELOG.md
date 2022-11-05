@@ -8,6 +8,10 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Changed
+
+- Upgrade richie to 2.17.0
+
 ### Fixed
 
 - Xiti issues when a course page has only one organization. 
