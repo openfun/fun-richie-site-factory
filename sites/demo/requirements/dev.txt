@@ -8,7 +8,7 @@ pylint-django==2.5.3
 pytest==7.1.2
 pytest-cov==3.0.0
 pytest-django==4.5.2
-raincoat==1.0.1
+raincoat==1.2.4
 
 # Testing html
 lxml==4.9.1
