@@ -685,6 +685,36 @@ class Development(Base):
     # Django Check SEO
     DJANGO_CHECK_SEO_FORCE_HTTP = True
 
+    RICHIE_DEMO_PAGES_INFO = {
+        "annex": {
+            "title": {"en": "Annex", "fr": "Annexe"},
+            "in_navigation": False,
+            "template": "richie/single_column.html",
+            "children": {
+                "annex__about": {
+                    "title": {"en": "About", "fr": "A propos"},
+                    "in_navigation": True,
+                    "template": "richie/single_column.html",
+                },
+                "annex__sitemap": {
+                    "title": {"en": "Sitemap", "fr": "Plan de site"},
+                    "in_navigation": True,
+                    "template": "richie/single_column.html",
+                },
+                "contact": {
+                    "title": {"en": "Contact", "fr": "Contact"},
+                    "in_navigation": True,
+                    "template": "richie/single_column.html",
+                },
+                "login-error": {
+                    "title": {"en": "Login error", "fr": "Erreur de connexion"},
+                    "in_navigation": False,
+                    "template": "richie/single_column.html",
+                },
+            },
+        },
+    }
+
 
 class Test(Base):
     """Test environment settings"""
