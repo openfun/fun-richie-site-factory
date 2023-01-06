@@ -4,7 +4,6 @@
   padding: 0;
 
   @include media-breakpoint-up($r-topbar-breakpoint) {
-
     &--over {
       // NOTE: Remove useless padding
       padding: 0;

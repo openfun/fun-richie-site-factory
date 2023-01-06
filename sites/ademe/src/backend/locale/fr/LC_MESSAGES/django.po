@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-13 16:32+0100\n"
+"POT-Creation-Date: 2023-01-16 12:11+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -51,6 +51,17 @@ msgstr "Français"
 #: ademe/settings.py:448 ademe/settings.py:463
 msgid "English"
 msgstr "Anglais"
+
+#: templates/courses/cms/fragment_course_glimpse.html:68
+#, python-format
+msgid ""
+"\n"
+"                            Produced by %(count)s partners\n"
+"                        "
+msgstr ""
+"\n"
+"                            Produit par %(count)s partenaires\n"
+"                        "
 
 #: templates/richie/base.html:8
 msgid "Contact us"

@@ -15,4 +15,11 @@
     // NOTE: Left alignment is prefered for run sessions
     text-align: left;
   }
+
+  &__intro {
+    // NOTE: Remove useless top margin
+    .social-network-badges {
+      margin-top: 0;
+    }
+  }
 }
