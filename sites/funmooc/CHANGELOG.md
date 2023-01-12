@@ -8,6 +8,11 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Changed
+
+- Update some styles to display properly CourseProductItem
+- Upgrade richie to 2.18.0
+
 ## [1.20.0] - 2022-11-10
 
 ### Changed

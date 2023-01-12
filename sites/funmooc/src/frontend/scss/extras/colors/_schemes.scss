@@ -134,3 +134,11 @@ $clear-red-scheme: (
   background: r-color('white'),
   hover-font-color: r-color('lipstick'),
 );
+$clear-blue-scheme: (
+  font-color: r-color('ocean-blue'),
+  h1-color: r-color('ocean-blue'),
+  h2-color: r-color('ocean-blue'),
+  svg-color: r-color('ocean-blue'),
+  background: r-color('white'),
+  hover-font-color: r-color('darkish-blue'),
+);
