@@ -654,7 +654,7 @@ workflows:
             - check-changelog:
                 filters:
                     branches:
-                        ignore: /.*/
+                        ignore: main
                 name: check-changelog-funmooc
                 site: funmooc
             - lint-changelog:
