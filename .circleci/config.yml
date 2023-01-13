@@ -344,7 +344,7 @@ workflows:
             - check-changelog:
                 filters:
                     branches:
-                        ignore: /.*/
+                        ignore: main
                 name: check-changelog-ademe
                 site: ademe
             - lint-changelog:
