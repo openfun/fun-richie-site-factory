@@ -201,15 +201,6 @@ class Base(StyleguideMixin, DRFMixin, RichieCoursesConfigurationMixin, Configura
     LOGIN_REDIRECT_URL = "/"
     LOGOUT_REDIRECT_URL = "/"
 
-    # Joanie
-    """
-    NB: Richie picks all Joanie's settings from the JOANIE namespace on the
-    settings, hence the nesting of all Joanie's values inside that prop
-    """
-    JOANIE = {
-        "BASE_URL": values.Value(environ_name="JOANIE_BASE_URL", environ_prefix=None),
-    }
-
     # Internationalization
     TIME_ZONE = "Europe/Paris"
     USE_I18N = True
@@ -328,62 +319,54 @@ class Base(StyleguideMixin, DRFMixin, RichieCoursesConfigurationMixin, Configura
     )
 
     # Search
-    RICHIE_FILTERS_CONFIGURATION = [
-        (
-            "richie.apps.search.filter_definitions.IndexableHierarchicalFilterDefinition",
-            {
+    RICHIE_FILTERS_CONFIGURATION = {
+        "diplomas": {
+            "class": "richie.apps.search.filter_definitions.IndexableHierarchicalFilterDefinition",
+            "params": {
                 "human_name": _("Diplomas"),
                 "is_autocompletable": True,
                 "is_searchable": True,
                 "min_doc_count": 0,
-                "name": "diplomas",
-                "position": 1,
                 "reverse_id": "diplomas",
                 "term": "categories",
             },
-        ),
-        (
-            "richie.apps.search.filter_definitions.IndexableHierarchicalFilterDefinition",
-            {
+        },
+        "domains": {
+            "class": "richie.apps.search.filter_definitions.IndexableHierarchicalFilterDefinition",
+            "params": {
                 "human_name": _("Domains and mentions"),
                 "is_autocompletable": True,
                 "is_searchable": True,
                 "min_doc_count": 0,
-                "name": "domains",
-                "position": 2,
                 "reverse_id": "domains",
                 "term": "categories",
             },
-        ),
-        (
-            "richie.apps.search.filter_definitions.IndexableHierarchicalFilterDefinition",
-            {
+        },
+        "levels": {
+            "class": "richie.apps.search.filter_definitions.IndexableHierarchicalFilterDefinition",
+            "params": {
                 "human_name": _("Levels"),
                 "is_autocompletable": True,
                 "is_searchable": True,
                 "min_doc_count": 0,
-                "name": "levels",
-                "position": 3,
                 "reverse_id": "levels",
                 "term": "categories",
             },
-        ),
-        (
-            "richie.apps.search.filter_definitions.IndexableHierarchicalFilterDefinition",
-            {
+        },
+        "skills": {
+            "class": "richie.apps.search.filter_definitions.IndexableHierarchicalFilterDefinition",
+            "params": {
                 "human_name": _("Skills"),
                 "is_autocompletable": True,
                 "is_searchable": True,
                 "min_doc_count": 0,
-                "name": "skills",
-                "position": 4,
                 "reverse_id": "skills",
                 "term": "categories",
             },
-        ),
-        (
-            "richie.apps.search.filter_definitions.StaticChoicesFilterDefinition",
-            {
+        },
+        "pace": {
+            "class": "richie.apps.search.filter_definitions.StaticChoicesFilterDefinition",
+            "params": {
                 "fragment_map": {
                     "self-paced": [
                         {"bool": {"must_not": {"exists": {"field": "pace"}}}}],
@@ -393,8 +376,6 @@ class Base(StyleguideMixin, DRFMixin, RichieCoursesConfigurationMixin, Configura
                 },
                 "human_name": _("Weekly pace"),
                 "min_doc_count": 0,
-                "name": "pace",
-                "position": 5,
                 "sorting": "conf",
                 "values": {
                     "self-paced": _("Self-paced"),
@@ -403,7 +384,15 @@ class Base(StyleguideMixin, DRFMixin, RichieCoursesConfigurationMixin, Configura
                     "gt-2h": _("More than two hours"),
                 },
             },
-        ),
+        },
+    }
+
+    RICHIE_FILTERS_PRESENTATION = [
+        "diplomas",
+        "domains",
+        "levels",
+        "skills",
+        "pace",
     ]
 
     # Languages
