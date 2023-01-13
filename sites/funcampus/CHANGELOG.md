@@ -8,13 +8,9 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
-### Added
-
-- Add JOANIE settings configurable through environment variables
-
 ### Changed
 
-- Upgrade richie to 2.15.1
+- Upgrade richie to 2.18.0
 
 ## [1.18.1] - 2022-07-20
 

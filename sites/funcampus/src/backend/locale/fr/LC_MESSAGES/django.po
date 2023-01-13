@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-06-24 12:02+0200\n"
+"POT-Creation-Date: 2023-01-13 15:21+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,43 +29,43 @@ msgstr "Accroche"
 msgid "Diplomas"
 msgstr "Diplômes"
 
-#: funcampus/settings.py:339
+#: funcampus/settings.py:337
 msgid "Domains and mentions"
 msgstr "Domaines et mentions"
 
-#: funcampus/settings.py:352
+#: funcampus/settings.py:348
 msgid "Levels"
 msgstr "Niveaux"
 
-#: funcampus/settings.py:365
+#: funcampus/settings.py:359
 msgid "Skills"
 msgstr "Compétences"
 
-#: funcampus/settings.py:385
+#: funcampus/settings.py:377
 msgid "Weekly pace"
 msgstr "Rythme hebdomadaire"
 
-#: funcampus/settings.py:391
+#: funcampus/settings.py:381
 msgid "Self-paced"
 msgstr "À votre rythme"
 
-#: funcampus/settings.py:392
+#: funcampus/settings.py:382
 msgid "Less than one hour"
 msgstr "Moins d'une heure"
 
-#: funcampus/settings.py:393
+#: funcampus/settings.py:383
 msgid "One to two hours"
 msgstr "Une à deux heures"
 
-#: funcampus/settings.py:394
+#: funcampus/settings.py:384
 msgid "More than two hours"
 msgstr "Plus de deux heures"
 
-#: funcampus/settings.py:408 funcampus/settings.py:430
+#: funcampus/settings.py:406 funcampus/settings.py:428
 msgid "English"
 msgstr "Anglais"
 
-#: funcampus/settings.py:408 funcampus/settings.py:438
+#: funcampus/settings.py:406 funcampus/settings.py:436
 msgid "French"
 msgstr "Français"
 
@@ -77,6 +77,11 @@ msgstr ""
 #: templates/courses/cms/course_detail.html:6 templates/richie/base.html:23
 msgid "Contact us"
 msgstr "Nous contacter"
+
+#: templates/courses/cms/fragment_course_glimpse.html:5
+#: templates/courses/cms/fragment_course_glimpse.html:6
+msgid "Course duration"
+msgstr "Durée du cours"
 
 #: templates/richie/base.html:20
 msgid "Dashboard"
