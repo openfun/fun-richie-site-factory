@@ -1,0 +1,6 @@
+{
+  "components.CourseGlimpseFooter.dateIconAlt": {
+    "description": "Course duration logo alternative text for screen reader users",
+    "message": "Durée du cours"
+  }
+}
