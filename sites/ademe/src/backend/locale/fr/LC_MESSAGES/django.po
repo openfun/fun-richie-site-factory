@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-06 07:17+0100\n"
+"POT-Creation-Date: 2023-01-13 16:32+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -40,15 +40,15 @@ msgstr "Compte"
 msgid "{base_url:s}/account/settings"
 msgstr ""
 
-#: ademe/settings.py:326
+#: ademe/settings.py:350
 msgid "Teaser"
 msgstr "Accroche"
 
-#: ademe/settings.py:424 ademe/settings.py:447
+#: ademe/settings.py:448 ademe/settings.py:471
 msgid "French"
 msgstr "Français"
 
-#: ademe/settings.py:424 ademe/settings.py:439
+#: ademe/settings.py:448 ademe/settings.py:463
 msgid "English"
 msgstr "Anglais"
 
