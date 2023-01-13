@@ -1,8 +1,10 @@
 {% extends "courses/cms/fragment_course_glimpse.html" %}
+{% load i18n %}
 {% block course_glimpse_footer %}
 <div class="course-{{ course_variant }}-footer">
   <div class="course-{{ course_variant }}-footer__date">
-    <svg role="img" aria-hidden="true" class="icon">
+    <svg role="img" aria-label="{% trans "Course duration" %}" class="icon icon--medium">
+      <title>{% trans "Course duration" %}</title>
       <use xlink:href="#icon-clock" />
     </svg>
     {{course.get_duration_display|default:"NA"}}

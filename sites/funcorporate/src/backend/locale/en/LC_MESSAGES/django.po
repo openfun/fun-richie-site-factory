@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-06-24 17:21+0200\n"
+"POT-Creation-Date: 2023-01-13 16:00+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -37,31 +37,31 @@ msgstr ""
 msgid "Training domains"
 msgstr ""
 
-#: funcorporate/settings.py:383
+#: funcorporate/settings.py:381
 msgid "Organizations"
 msgstr ""
 
-#: funcorporate/settings.py:395
+#: funcorporate/settings.py:391
 msgid "Persons"
 msgstr "Teachers"
 
-#: funcorporate/settings.py:414
+#: funcorporate/settings.py:408
 msgid "Weekly pace"
 msgstr ""
 
-#: funcorporate/settings.py:420
+#: funcorporate/settings.py:412
 msgid "Self-paced"
 msgstr ""
 
-#: funcorporate/settings.py:421
+#: funcorporate/settings.py:413
 msgid "Less than one hour"
 msgstr ""
 
-#: funcorporate/settings.py:422
+#: funcorporate/settings.py:414
 msgid "One to two hours"
 msgstr ""
 
-#: funcorporate/settings.py:423
+#: funcorporate/settings.py:415
 msgid "More than two hours"
 msgstr ""
 
@@ -71,6 +71,11 @@ msgstr ""
 
 #: templates/courses/cms/course_detail.html:6 templates/richie/base.html:22
 msgid "Contact us"
+msgstr ""
+
+#: templates/courses/cms/fragment_course_glimpse.html:6
+#: templates/courses/cms/fragment_course_glimpse.html:7
+msgid "Course duration"
 msgstr ""
 
 #: templates/richie/base.html:18

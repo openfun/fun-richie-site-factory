@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-06-24 17:21+0200\n"
+"POT-Creation-Date: 2023-01-13 16:00+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -37,31 +37,31 @@ msgstr "Accroche"
 msgid "Training domains"
 msgstr "Domaines de formation"
 
-#: funcorporate/settings.py:383
+#: funcorporate/settings.py:381
 msgid "Organizations"
 msgstr "Établissements"
 
-#: funcorporate/settings.py:395
+#: funcorporate/settings.py:391
 msgid "Persons"
 msgstr "Professeurs"
 
-#: funcorporate/settings.py:414
+#: funcorporate/settings.py:408
 msgid "Weekly pace"
 msgstr "Rythme hebdomadaire"
 
-#: funcorporate/settings.py:420
+#: funcorporate/settings.py:412
 msgid "Self-paced"
 msgstr "À votre rythme"
 
-#: funcorporate/settings.py:421
+#: funcorporate/settings.py:413
 msgid "Less than one hour"
 msgstr "Moins d'une heure"
 
-#: funcorporate/settings.py:422
+#: funcorporate/settings.py:414
 msgid "One to two hours"
 msgstr "Une à deux heures"
 
-#: funcorporate/settings.py:423
+#: funcorporate/settings.py:415
 msgid "More than two hours"
 msgstr "Plus de deux heures"
 
@@ -72,6 +72,11 @@ msgstr "Vous souhaitez proposer cette formation à vos salariés&nbsp;?"
 #: templates/courses/cms/course_detail.html:6 templates/richie/base.html:22
 msgid "Contact us"
 msgstr "Nous contacter"
+
+#: templates/courses/cms/fragment_course_glimpse.html:6
+#: templates/courses/cms/fragment_course_glimpse.html:7
+msgid "Course duration"
+msgstr "Durée du cours"
 
 #: templates/richie/base.html:18
 msgid "Dashboard"

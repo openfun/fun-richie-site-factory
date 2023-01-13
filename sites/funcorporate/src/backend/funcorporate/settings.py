@@ -197,15 +197,6 @@ class Base(StyleguideMixin, DRFMixin, RichieCoursesConfigurationMixin, Configura
     LOGIN_REDIRECT_URL = "/"
     LOGOUT_REDIRECT_URL = "/"
 
-    # Joanie
-    """
-    NB: Richie picks all Joanie's settings from the JOANIE namespace on the
-    settings, hence the nesting of all Joanie's values inside that prop
-    """
-    JOANIE = {
-        "BASE_URL": values.Value(environ_name="JOANIE_BASE_URL", environ_prefix=None),
-    }
-
     # Internationalization
     TIME_ZONE = "Europe/Paris"
     USE_I18N = True
@@ -372,47 +363,41 @@ class Base(StyleguideMixin, DRFMixin, RichieCoursesConfigurationMixin, Configura
     }
 
     # Search
-    RICHIE_FILTERS_CONFIGURATION = [
-        (
-            "richie.apps.search.filter_definitions.IndexableHierarchicalFilterDefinition",
-            {
+    RICHIE_FILTERS_CONFIGURATION = {
+        "domains": {
+            "class": "richie.apps.search.filter_definitions.IndexableHierarchicalFilterDefinition",
+            "params": {
                 "human_name": _("Training domains"),
                 "is_autocompletable": True,
                 "is_searchable": True,
                 "min_doc_count": 0,
-                "name": "domains",
-                "position": 1,
                 "reverse_id": "domains",
                 "term": "categories",
             },
-        ),
-        (
-            "richie.apps.search.filter_definitions.IndexableHierarchicalFilterDefinition",
-            {
+        },
+        "organizations": {
+            "class": "richie.apps.search.filter_definitions.IndexableHierarchicalFilterDefinition",
+            "params": {
                 "human_name": _("Organizations"),
                 "is_autocompletable": True,
                 "is_searchable": True,
                 "min_doc_count": 0,
-                "name": "organizations",
-                "position": 2,
                 "reverse_id": "organizations",
             },
-        ),
-        (
-            "richie.apps.search.filter_definitions.IndexableFilterDefinition",
-            {
+        },
+        "persons": {
+            "class": "richie.apps.search.filter_definitions.IndexableFilterDefinition",
+            "params": {
                 "human_name": _("Persons"),
                 "is_autocompletable": True,
                 "is_searchable": True,
                 "min_doc_count": 0,
-                "name": "persons",
-                "position": 3,
                 "reverse_id": "persons",
             },
-        ),
-        (
-            "richie.apps.search.filter_definitions.StaticChoicesFilterDefinition",
-            {
+        },
+        "pace": {
+            "class": "richie.apps.search.filter_definitions.StaticChoicesFilterDefinition",
+            "params": {
                 "fragment_map": {
                     "self-paced": [
                         {"bool": {"must_not": {"exists": {"field": "pace"}}}}],
@@ -422,8 +407,6 @@ class Base(StyleguideMixin, DRFMixin, RichieCoursesConfigurationMixin, Configura
                 },
                 "human_name": _("Weekly pace"),
                 "min_doc_count": 0,
-                "name": "pace",
-                "position": 4,
                 "sorting": "conf",
                 "values": {
                     "self-paced": _("Self-paced"),
@@ -432,7 +415,14 @@ class Base(StyleguideMixin, DRFMixin, RichieCoursesConfigurationMixin, Configura
                     "gt-2h": _("More than two hours"),
                 },
             },
-        ),
+        },
+    }
+
+    RICHIE_FILTERS_PRESENTATION = [
+        "domains",
+        "organizations",
+        "persons",
+        "pace",
     ]
 
     # - Django Parler
