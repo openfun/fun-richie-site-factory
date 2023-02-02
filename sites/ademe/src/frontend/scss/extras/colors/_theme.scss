@@ -92,7 +92,7 @@ $r-theme: map-merge($r-theme,
     background-image: url("../../richie/images/components/wave-white.svg"),
   ),
   block-schemes: (
-    empty-color: r-color("battleship-grey"),
+    empty-color: r-color("pale-grey"),
     divider: r-color("pale-grey"),
     variants: (
       clear: $peppermint-scheme,
