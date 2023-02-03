@@ -10,6 +10,7 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Changed
 
+- Upgrade richie to 2.19.0
 - Improve accessibility by using lighter color for empty course label
 
 ## [1.21.0] - 2023-01-16
