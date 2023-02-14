@@ -19,6 +19,11 @@
 </li>
 {% endblock topbar_contact %}
 
+{% block branding_topbar %}
+    {% get_current_language as LANGUAGE_CODE %}
+    <img src="{% get_static_prefix %}richie/images/logo-{{LANGUAGE_CODE}}.svg" class="topbar__logo" alt="{{ SITE.name }}">
+{% endblock branding_topbar %}
+
 {% block body_footer_title %}{% endblock body_footer_title %}
 
 {% block body_js %}{% endblock body_js %}
