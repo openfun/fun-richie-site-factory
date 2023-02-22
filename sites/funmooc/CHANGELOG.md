@@ -10,6 +10,7 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Changed
 
+- Upgrade richie to 2.20.1
 - Replace header logo with a new one
 
 ## [1.22.0] - 2023-02-03
