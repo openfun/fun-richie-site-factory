@@ -11,6 +11,7 @@ from django.views.generic import TemplateView
 from django.views.static import serve
 
 from cms.sitemaps import CMSSitemap
+from richie.apps.courses.urls import urlpatterns as courses_urlpatterns
 from richie.apps.search.urls import urlpatterns as search_urlpatterns
 from richie.plugins.urls import urlpatterns as plugins_urlpatterns
 
@@ -26,7 +27,7 @@ urlpatterns = [
     path(r"sitemap.xml", sitemap, {"sitemaps": {"cmspages": CMSSitemap}}),
     re_path(
         r"api/{}/".format(API_PREFIX),
-        include([*search_urlpatterns, *plugins_urlpatterns]),
+        include([*courses_urlpatterns, *search_urlpatterns, *plugins_urlpatterns]),
     ),
     path(r"", include("filer.server.urls")),
     path(r"django-check-seo/", include("django_check_seo.urls")),

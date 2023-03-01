@@ -8,6 +8,10 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Fixed
+
+- Add missing api course urls to urlpatterns to be able to use page autocomplete
+
 ## [1.21.0] - 2023-02-22
 
 ### Changed
