@@ -8,6 +8,8 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [1.21.1] - 2023-03-01
+
 ### Fixed
 
 - Add missing api course urls to urlpatterns to be able to use page autocomplete
@@ -277,7 +279,8 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 - First `funcampus` image
 
-[unreleased]: https://github.com/openfun/richie-site-factory/compare/funcampus-1.21.0...HEAD
+[unreleased]: https://github.com/openfun/richie-site-factory/compare/funcampus-1.21.1...HEAD
+[1.21.1]: https://github.com/openfun/richie-site-factory/compare/funcampus-1.21.0...funcampus-1.21.1
 [1.21.0]: https://github.com/openfun/richie-site-factory/compare/funcampus-1.20.0...funcampus-1.21.0
 [1.20.0]: https://github.com/openfun/richie-site-factory/compare/funcampus-1.19.0...funcampus-1.20.0
 [1.19.0]: https://github.com/openfun/richie-site-factory/compare/funcampus-1.18.1...funcampus-1.19.0
