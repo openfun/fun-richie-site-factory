@@ -518,14 +518,10 @@ class Base(StyleguideMixin, DRFMixin, RichieCoursesConfigurationMixin, Configura
     }
 
     # Web Analytics
-    WEB_ANALYTICS_PROVIDER = values.Value(
-        None, environ_name="WEB_ANALYTICS_PROVIDER", environ_prefix=None
-    )
-    WEB_ANALYTICS_LOCATION = values.Value(
-        "head", environ_name="WEB_ANALYTICS_LOCATION", environ_prefix=None
-    )
-    WEB_ANALYTICS_ID = values.Value(
-        None, environ_name="WEB_ANALYTICS_ID", environ_prefix=None
+    WEB_ANALYTICS = values.DictValue(
+        None,
+        environ_name="WEB_ANALYTICS",
+        environ_prefix=None,
     )
 
     # Demo
@@ -623,9 +619,9 @@ class Base(StyleguideMixin, DRFMixin, RichieCoursesConfigurationMixin, Configura
     # For more details about CMS_CACHE_DURATION, see :
     # http://docs.django-cms.org/en/latest/reference/configuration.html#cms-cache-durations
     CMS_CACHE_DURATIONS = values.DictValue(
-        {"menus": 0, "content": 0, "permissions": 0}
+        {"menus": 3600, "content": 86400, "permissions": 86400}
     )
-    MAX_BROWSER_CACHE_TTL = 0
+    MAX_BROWSER_CACHE_TTL = 600
 
     # Sessions
     SESSION_ENGINE = values.Value("django.contrib.sessions.backends.cache")
