@@ -165,7 +165,12 @@
     };
   }
 
-  var context = window.__funmooc_context__.analytics;
+  // Find the xiti provider through all analytic providers then bind dimensions to the context
+  var context = window.__funmooc_context__.analytics.find(function (context) {
+    return context.provider === 'xiti';
+  });
+  if (context === undefined) return;
+  context.dimensions = window.__funmooc_context__.dimensions;
 
   tarteaucitron.services.paFun = {
     key: 'xiti',
