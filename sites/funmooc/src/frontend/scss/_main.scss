@@ -43,8 +43,6 @@
 
 // Page component styles
 @import 'richie-education/scss/components/index';
-// @FIXME This is a temporary fix as this stylesheet is not yet imported in richie-education
-@import 'richie-education/js/components/AddressesManagement/styles';
 
 // Page component overrides
 @import './components/subheader';
@@ -59,4 +57,3 @@
 @import 'richie-education/scss/trumps/cms';
 // IE11 patchs
 @import 'richie-education/scss/trumps/ie11-fixes';
-

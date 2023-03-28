@@ -1,5 +1,5 @@
 /* eslint-disable class-methods-use-this */
-import { BaseWebAnalyticsApi } from 'richie-education/js/utils/api/web-analytics/base';
+import { BaseWebAnalyticsApi } from 'richie-education/js/api/web-analytics/base';
 
 /**
  *
@@ -9,7 +9,7 @@ import { BaseWebAnalyticsApi } from 'richie-education/js/utils/api/web-analytics
  * It will send events to the xiti.
  *
  */
-export default class FunXitiApi extends BaseWebAnalyticsApi {
+export default class XitiApi extends BaseWebAnalyticsApi {
   PA: any;
 
   constructor() {
