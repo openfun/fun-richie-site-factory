@@ -4,7 +4,7 @@ import { defineMessages, FormattedMessage, useIntl } from 'react-intl';
 import { CommonDataProps } from 'richie-education/js/types/commonDataProps';
 import { Course } from 'richie-education/js/types/Course';
 import { Icon } from 'richie-education/js/components/Icon';
-import { CourseGlimpseFooter } from 'richie-education/js/components/CourseGlimpse/CourseGlimpseFooter';
+import { CourseGlimpseFooter } from 'richie-education/js/widgets/Search/components/CourseGlimpse/CourseGlimpseFooter';
 
 export interface CourseGlimpseProps {
   course: Course;
