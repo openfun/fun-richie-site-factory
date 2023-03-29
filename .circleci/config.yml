@@ -52,8 +52,8 @@ jobs:
                 path: ~/fun
             - restore_cache:
                 keys:
-                    - v1-front-dependencies-<< parameters.site >>-{{ checksum "yarn.lock" }}
-                    - v1-front-dependencies-<< parameters.site >>-
+                    - v2-front-dependencies-<< parameters.site >>-{{ checksum "yarn.lock" }}
+                    - v2-front-dependencies-<< parameters.site >>-
             - run:
                 command: yarn install --frozen-lockfile
                 name: Install frontend dependencies (with locked dependencies)
@@ -64,7 +64,7 @@ jobs:
                 command: yarn build-ts-production
                 name: Build application js (production mode)
             - save_cache:
-                key: v1-front-dependencies-<< parameters.site >>-{{ checksum "yarn.lock" }}
+                key: v2-front-dependencies-<< parameters.site >>-{{ checksum "yarn.lock" }}
                 paths:
                     - ./node_modules
         working_directory: ~/fun/sites/<< parameters.site >>/src/frontend/
@@ -251,8 +251,8 @@ jobs:
                 path: ~/fun
             - restore_cache:
                 keys:
-                    - v1-front-dependencies-<< parameters.site >>-{{ checksum "yarn.lock" }}
-                    - v1-front-dependencies-<< parameters.site >>-
+                    - v2-front-dependencies-<< parameters.site >>-{{ checksum "yarn.lock" }}
+                    - v2-front-dependencies-<< parameters.site >>-
             - run:
                 command: yarn lint
                 name: Lint frontend code with prettier & eslint
