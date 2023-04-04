@@ -1,5 +1,5 @@
 {
   "overrides": {
-    "CourseGlimpse/index.tsx": "../../../../../../../js/widgets/Search/components/CourseGlimpse/index.tsx"
+    "CourseGlimpse/index.tsx": "../../../../../js/components/CourseGlimpse/index.tsx"
   }
 }
