@@ -8,6 +8,8 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [1.22.0] - 2023-04-04
+
 ### Changed
 
 - Upgrade richie to 2.21.0
@@ -283,7 +285,8 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 - First `funcampus` image
 
-[unreleased]: https://github.com/openfun/richie-site-factory/compare/funcampus-1.21.1...HEAD
+[unreleased]: https://github.com/openfun/richie-site-factory/compare/funcampus-1.22.0...HEAD
+[1.22.0]: https://github.com/openfun/richie-site-factory/compare/funcampus-1.21.1...funcampus-1.22.0
 [1.21.1]: https://github.com/openfun/richie-site-factory/compare/funcampus-1.21.0...funcampus-1.21.1
 [1.21.0]: https://github.com/openfun/richie-site-factory/compare/funcampus-1.20.0...funcampus-1.21.0
 [1.20.0]: https://github.com/openfun/richie-site-factory/compare/funcampus-1.19.0...funcampus-1.20.0
