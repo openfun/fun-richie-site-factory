@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-13 16:00+0100\n"
+"POT-Creation-Date: 2023-08-09 17:14+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -45,23 +45,23 @@ msgstr "Établissements"
 msgid "Persons"
 msgstr "Professeurs"
 
-#: funcorporate/settings.py:408
+#: funcorporate/settings.py:409
 msgid "Weekly pace"
 msgstr "Rythme hebdomadaire"
 
-#: funcorporate/settings.py:412
+#: funcorporate/settings.py:413
 msgid "Self-paced"
 msgstr "À votre rythme"
 
-#: funcorporate/settings.py:413
+#: funcorporate/settings.py:414
 msgid "Less than one hour"
 msgstr "Moins d'une heure"
 
-#: funcorporate/settings.py:414
+#: funcorporate/settings.py:415
 msgid "One to two hours"
 msgstr "Une à deux heures"
 
-#: funcorporate/settings.py:415
+#: funcorporate/settings.py:416
 msgid "More than two hours"
 msgstr "Plus de deux heures"
 

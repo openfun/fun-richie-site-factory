@@ -1,10 +1,10 @@
 {% extends "courses/cms/course_detail.html" %}
 {% load i18n %}
 
-{% block run_open_single %}
+{% block course_run_subheader %}
     <p class="subheader__cta-legend">{% trans "Would you like to offer this training to your employees?" %}</p>
     <a href="https://www.fun-corporate.help/hc/fr/requests/new" class="subheader__cta">{% trans "Contact us" %}</a>
-{% endblock run_open_single %}
+{% block course_run_subheader %}
 
 {% comment %}Disable licences part. It does not make sens in FUN Corporate.{% endcomment %}
 {% block licenses %}{% endblock licenses %}
