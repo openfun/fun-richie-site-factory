@@ -1,13 +1,48 @@
 import React, { memo } from 'react';
 import { defineMessages, FormattedMessage, useIntl } from 'react-intl';
 
+import { CourseState } from 'richie-education/js/types';
+import { Nullable } from 'richie-education/js/types/utils';
 import { CommonDataProps } from 'richie-education/js/types/commonDataProps';
-import { Course } from 'richie-education/js/types/Course';
-import { Icon } from 'richie-education/js/components/Icon';
+import { Icon, IconTypeEnum } from 'richie-education/js/components/Icon';
 import { CourseGlimpseFooter } from 'richie-education/js/components/CourseGlimpse/CourseGlimpseFooter';
+import CourseLink from 'richie-education/js/components/CourseGlimpse/CourseLink';
+
+export interface CourseGlimpseCourse {
+  id: string;
+  product_id?: string;
+  code: Nullable<string>;
+  course_url?: string;
+  course_route?: string;
+  cover_image?: Nullable<{
+    src: string;
+    sizes?: string;
+    srcset?: string;
+  }>;
+  title: string;
+  organization: {
+    title: string;
+    image?: Nullable<{
+      src: string;
+      sizes?: string;
+      srcset?: string;
+    }>;
+  };
+  icon?: Nullable<{
+    title: string;
+    src: string;
+    sizes?: string;
+    srcset?: string;
+  }>;
+  state: CourseState;
+  nb_course_runs?: number;
+  organizations?: string[];
+  duration: string;
+  effort: string;
+}
 
 export interface CourseGlimpseProps {
-  course: Course;
+  course: CourseGlimpseCourse;
 }
 
 const messages = defineMessages({
@@ -41,11 +76,16 @@ const messages = defineMessages({
 const CourseGlimpseBase = ({ context, course }: CourseGlimpseProps & CommonDataProps) => {
   const intl = useIntl();
   return (
-    <div className="course-glimpse">
+    <div className="course-glimpse" data-testid="course-glimpse">
       {/* the media link is only here for mouse users, so hide it for keyboard/screen reader users.
       Keyboard/sr will focus the link on the title */}
       <div aria-hidden="true" className="course-glimpse__media">
-        <a tabIndex={-1} href={course.absolute_url}>
+        <CourseLink
+          tabIndex={-1}
+          className="course-glimpse__link"
+          href={course.course_url}
+          to={course.course_route}
+        >
           {/* alt forced to empty string because it's a decorative image */}
           {course.cover_image ? (
             <img
@@ -59,41 +99,45 @@ const CourseGlimpseBase = ({ context, course }: CourseGlimpseProps & CommonDataP
               <FormattedMessage {...messages.cover} />
             </div>
           )}
-        </a>
+        </CourseLink>
       </div>
       <div className="course-glimpse__content">
         <div className="course-glimpse__wrapper">
           <h3 className="course-glimpse__title">
-            <a className="course-glimpse__link" href={course.absolute_url}>
+            <CourseLink
+              className="course-glimpse__link"
+              href={course.course_url}
+              to={course.course_route}
+            >
               <span className="course-glimpse__title-text">{course.title}</span>
-            </a>
+            </CourseLink>
           </h3>
-          {course.organization_highlighted_cover_image && course.organizations.length < 2 ? (
+          {course.organization.image && course.organizations!.length < 2 ? (
             <div className="course-glimpse__organization-logo">
               {/* alt forced to empty string because the organization name is rendered after */}
               <img
                 alt=""
-                sizes={course.organization_highlighted_cover_image.sizes}
-                src={course.organization_highlighted_cover_image.src}
-                srcSet={course.organization_highlighted_cover_image.srcset}
+                sizes={course.organization.image.sizes}
+                src={course.organization.image.src}
+                srcSet={course.organization.image.srcset}
               />
             </div>
           ) : null}
           <div className="course-glimpse__metadata course-glimpse__metadata--organization">
             <Icon
-              name="icon-org"
+              name={IconTypeEnum.ORG}
               title={intl.formatMessage(messages.organizationIconAlt)}
               size="small"
             />
-            {course.organizations.length === 1 ? (
-              <span className="title">{course.organization_highlighted}</span>
+            {course.organizations!.length === 1 ? (
+              <span className="title">{course.organization.title}</span>
             ) : null}
-            {course.organizations.length > 1 ? (
+            {course.organizations!.length > 1 ? (
               <span className="title">
                 <FormattedMessage
                   {...messages.organizationCountLabel}
                   values={{
-                    organizationCount: course.organizations.length,
+                    organizationCount: course.organizations!.length,
                   }}
                 />
               </span>
@@ -101,7 +145,7 @@ const CourseGlimpseBase = ({ context, course }: CourseGlimpseProps & CommonDataP
           </div>
           <div className="course-glimpse__metadata course-glimpse__metadata--code">
             <Icon
-              name="icon-barcode"
+              name={IconTypeEnum.BARCODE}
               title={intl.formatMessage(messages.codeIconAlt)}
               size="small"
             />
@@ -126,7 +170,7 @@ const CourseGlimpseBase = ({ context, course }: CourseGlimpseProps & CommonDataP
             </span>
           </div>
         ) : null}
-        <CourseGlimpseFooter context={context} course={course} />
+        <CourseGlimpseFooter context={context} courseState={course.state} />
       </div>
     </div>
   );
@@ -139,3 +183,4 @@ const areEqual: (
   prevProps.context === newProps.context && prevProps.course.id === newProps.course.id;
 
 export const CourseGlimpse = memo(CourseGlimpseBase, areEqual);
+export { getCourseGlimpseProps } from 'richie-education/js/components/CourseGlimpse/utils';
