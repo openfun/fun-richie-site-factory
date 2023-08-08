@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-16 12:11+0100\n"
+"POT-Creation-Date: 2023-08-09 14:51+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -52,6 +52,17 @@ msgstr "Français"
 msgid "English"
 msgstr "Anglais"
 
+#: templates/courses/cms/fragment_course_glimpse.html:10
+msgid "Cover"
+msgstr "Couverture"
+
+#: templates/courses/cms/fragment_course_glimpse.html:53
+#: templates/courses/cms/fragment_course_glimpse.html:54
+#: templates/courses/cms/fragment_course_glimpse.html:63
+#: templates/courses/cms/fragment_course_glimpse.html:64
+msgid "Organization"
+msgstr "Établissement"
+
 #: templates/courses/cms/fragment_course_glimpse.html:68
 #, python-format
 msgid ""
@@ -62,6 +73,16 @@ msgstr ""
 "\n"
 "                            Produit par %(count)s partenaires\n"
 "                        "
+
+#: templates/courses/cms/fragment_course_glimpse.html:75
+#: templates/courses/cms/fragment_course_glimpse.html:76
+msgid "Course code"
+msgstr "Code du cours"
+
+#: templates/courses/cms/fragment_course_glimpse.html:95
+#: templates/courses/cms/fragment_course_glimpse.html:96
+msgid "Course date"
+msgstr "Date du cours"
 
 #: templates/richie/base.html:8
 msgid "Contact us"
@@ -74,16 +95,3 @@ msgstr "Rechercher parmis nos cours"
 #: templates/richie/large_banner/hero-intro.html:24
 msgid "Explore our catalog"
 msgstr "Explorer notre catalogue"
-
-msgctxt "course_detail__title"
-msgid "Other course runs"
-msgstr "Autres sessions"
-
-msgid "No other open course runs"
-msgstr "Aucune autre session ouverte"
-
-msgid "No open course runs"
-msgstr "Aucune session ouverte"
-
-msgid "Help"
-msgstr "Aide"
