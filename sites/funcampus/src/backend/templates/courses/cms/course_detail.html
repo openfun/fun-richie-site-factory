@@ -1,10 +1,10 @@
 {% extends "courses/cms/course_detail.html" %}
 {% load cms_tags i18n %}
 
-{% block run_open_single %}
+{% block course_run_subheader %}
     <p class="subheader__cta-legend">{% trans "Are you a teacher who would like to use this course with your students?" %}</p>
     <a href="{% page_url 'contact' %}" class="subheader__cta">{% trans "Contact us" %}</a>
-{% endblock run_open_single %}
+{% endblock course_run_subheader %}
 {% comment %}Disable licences part. It does not make sens in FUN campus.{% endcomment %}
 {% block licenses %}{% endblock licenses %}
 {% comment %}Disable content parts related to course runs{% endcomment %}
