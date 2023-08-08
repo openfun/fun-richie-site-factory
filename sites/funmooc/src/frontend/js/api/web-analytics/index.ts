@@ -2,6 +2,7 @@ import { Maybe } from 'richie-education/js/types/utils';
 import { WebAnalyticsAPI } from 'richie-education/js/types/web-analytics';
 import context from 'richie-education/js/utils/context';
 import { handle } from 'richie-education/js/utils/errors/handle';
+//@ts-ignore
 import XitiApi from '../../../../../js/api/web-analytics/xiti';
 
 enum FunMoocWebAnalyticsBackend {
