@@ -400,7 +400,8 @@ class Base(StyleguideMixin, DRFMixin, RichieCoursesConfigurationMixin, Configura
             "params": {
                 "fragment_map": {
                     "self-paced": [
-                        {"bool": {"must_not": {"exists": {"field": "pace"}}}}],
+                        {"bool": {"must_not": {"exists": {"field": "pace"}}}}
+                    ],
                     "lt-1h": [{"range": {"pace": {"lt": 60}}}],
                     "1h-2h": [{"range": {"pace": {"gte": 60, "lte": 120}}}],
                     "gt-2h": [{"range": {"pace": {"gt": 120}}}],
