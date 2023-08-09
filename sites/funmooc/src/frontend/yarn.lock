@@ -12332,10 +12332,10 @@ tar@^6.1.13:
     mkdirp "^1.0.3"
     yallist "^4.0.0"
 
-tarteaucitronjs@1.13.0:
-  version "1.13.0"
-  resolved "https://registry.yarnpkg.com/tarteaucitronjs/-/tarteaucitronjs-1.13.0.tgz#5fe7612dcf7ecebe09d15f6cdbb2314cbb34dca9"
-  integrity sha512-9oDLdNoax0zVeio3Ps7YtURtRgpLXIsTno1hqZGAIx38nCxWdfuB8ancC5PUyjKYwbPCDGkc1fKFvoHxUZ1HDw==
+tarteaucitronjs@1.14.0:
+  version "1.14.0"
+  resolved "https://registry.yarnpkg.com/tarteaucitronjs/-/tarteaucitronjs-1.14.0.tgz#fefe00f81cbce821ccc872bad041903ce087554a"
+  integrity sha512-NjuzYq6gvoEdzSH9aO2+N3fJdjJ0tdtwrWT8vLYVHoPjoPMha29h5ULN3dHx8VPG1anzZzlBSczVHSe0h1IRpQ==
 
 telejson@^7.0.3:
   version "7.1.0"
