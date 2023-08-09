@@ -2,10 +2,7 @@
   .category-badge-list {
     // NOTE: Enforce the right badge variant
     .category-badge {
-      @include r-button-colors(
-        r-theme-val(subheader, category-badge),
-        $apply-border: true
-      );
+      @include r-button-colors(r-theme-val(subheader, category-badge), $apply-border: true);
     }
   }
 
