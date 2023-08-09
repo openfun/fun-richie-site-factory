@@ -8,7 +8,6 @@ import { CourseState } from 'richie-education/js/types';
 import CourseLink from 'richie-education/js/components/CourseGlimpse/CourseLink';
 import { CourseGlimpseFooter } from './CourseGlimpseFooter';
 
-
 // FIXME: This is a custom implementation of the original function
 // to fix a regression introduced by the upgrade to Richie 2.23.0.
 // This should be removed once the FUN Corporate website is upgraded to the next Richie version.

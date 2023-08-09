@@ -17,7 +17,9 @@ const messages = defineMessages({
  * <CourseGlimpseFooter />.
  * This is spun off from <CourseGlimpse /> to allow easier override through webpack.
  */
-export const CourseGlimpseFooter: React.FC<{ course: CourseGlimpseCourse } & CommonDataProps> = ({ course }) => {
+export const CourseGlimpseFooter: React.FC<{ course: CourseGlimpseCourse } & CommonDataProps> = ({
+  course,
+}) => {
   const intl = useIntl();
 
   return (
