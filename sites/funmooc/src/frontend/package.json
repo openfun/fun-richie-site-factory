@@ -36,7 +36,7 @@
   "homepage": "https://github.com/openfun/richie-site-factory#readme",
   "dependencies": {
     "richie-education": "2.23.0",
-    "tarteaucitronjs": "1.13.0"
+    "tarteaucitronjs": "1.14.0"
   },
   "devDependencies": {
     "@formatjs/cli": "6.1.3",
