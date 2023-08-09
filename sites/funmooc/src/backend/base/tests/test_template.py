@@ -21,7 +21,7 @@ class BaseTemplateTestCase(TestCase):
             should_publish=True,
         )
 
-        for (language_code, _) in settings.LANGUAGES:
+        for language_code, _ in settings.LANGUAGES:
             # Get page for the current language code
             with translation.override(language_code):
                 response = self.client.get(page.get_public_url())
