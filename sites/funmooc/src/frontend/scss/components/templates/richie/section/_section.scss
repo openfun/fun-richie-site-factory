@@ -1,10 +1,9 @@
 .section {
-
   // NOTE: Apply vertical space around tile list title so it act a bit like a
   // divider
   .section-tiles__title {
-      margin-top: 2rem;
-      margin-bottom: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
   }
 
   // Quinary template
@@ -14,7 +13,7 @@
     padding-top: 0 !important;
     padding-bottom: calc(5vw + 1.5rem) !important;
 
-    &:before{
+    &:before {
       content: '';
       display: block;
       margin-top: 4.5rem;
@@ -69,13 +68,10 @@
 
   // NOTE: Alternative button-caesura colors on some sections
   &.section--light,
-  &.section--gradient-dark{
+  &.section--gradient-dark {
     .button-caesura {
       a {
-        @include r-button-colors(
-          r-theme-val(button-caesura, alternative),
-          $apply-border: true
-        );
+        @include r-button-colors(r-theme-val(button-caesura, alternative), $apply-border: true);
 
         &:hover {
           @include r-button-colors(

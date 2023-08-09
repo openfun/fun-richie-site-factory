@@ -23,7 +23,7 @@
 
   // TODO: Increase title size on some specific sections
   .section--light,
-  .section--gradient-dark{
+  .section--gradient-dark {
     .section__title {
       @include media-breakpoint-up(lg) {
         @include font-size(#{$h1-font-size * 1.25});

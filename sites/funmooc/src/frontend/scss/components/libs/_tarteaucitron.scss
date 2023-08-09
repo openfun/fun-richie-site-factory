@@ -26,13 +26,13 @@ div#tarteaucitronRoot {
     @include button-small(
       $font-color: r-theme-val(cookie-consent, light-color),
       $font-family: $r-font-family-hind !important,
-      $font-size: 0.8rem !important,
+      $font-size: 0.8rem !important
     );
   }
 
   #tarteaucitron .tarteaucitronTitle > button {
     border-radius: 0;
-  } 
+  }
 
   .tarteaucitronAllow {
     background-color: r-theme-val(cookie-consent, cta-allow) !important;
@@ -48,7 +48,7 @@ div#tarteaucitronRoot {
   #tarteaucitronInfo button {
     background: none;
     text-decoration: underline;
-    margin-bottom: 0; 
+    margin-bottom: 0;
   }
 
   // Banner
@@ -63,7 +63,7 @@ div#tarteaucitronRoot {
       color: transparent;
       top: 50%;
       transform: translateY(-50%);
-      
+
       &:after {
         color: r-theme-val(cookie-consent, light-color);
         content: '×';
@@ -80,18 +80,18 @@ div#tarteaucitronRoot {
   #tarteaucitron {
     div#tarteaucitronServices {
       border-radius: 6px;
-      box-shadow: 0px 20px 30px #3333447F;
+      box-shadow: 0px 20px 30px #3333447f;
       margin-top: 0 !important;
       width: 100%;
     }
 
     // Reset scrollbar style
     #tarteaucitronServices::-webkit-scrollbar {
-        width: inherit;
+      width: inherit;
     }
 
     #tarteaucitronServices::-webkit-scrollbar-track {
-        box-shadow: inherit;
+      box-shadow: inherit;
     }
 
     #tarteaucitronServices::-webkit-scrollbar-thumb {
@@ -115,7 +115,7 @@ div#tarteaucitronRoot {
       width: 0;
       word-break: keep-all;
       z-index: 9999;
-      
+
       &:after {
         @include button-base();
         color: r-theme-val(cookie-consent, light-color);
@@ -132,8 +132,14 @@ div#tarteaucitronRoot {
     .tarteaucitronMainLine {
       background-color: r-theme-val(cookie-consent, base-background) !important;
       border: none !important;
-      
-      #tarteaucitronInfo, #tarteaucitronServices .tarteaucitronDetails, #tarteaucitronServices .tarteaucitronTitle button, #tarteaucitronAlertSmall #tarteaucitronCookiesListContainer #tarteaucitronCookiesList .tarteaucitronTitle {
+
+      #tarteaucitronInfo,
+      #tarteaucitronServices .tarteaucitronDetails,
+      #tarteaucitronServices .tarteaucitronTitle button,
+      #tarteaucitronAlertSmall
+        #tarteaucitronCookiesListContainer
+        #tarteaucitronCookiesList
+        .tarteaucitronTitle  {
         background: none;
         border: none;
       }
