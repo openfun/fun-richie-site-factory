@@ -33,6 +33,3 @@ EDX_BASE_URL=http://localhost:8073
 # Authentication Backend
 AUTHENTICATION_BASE_URL=http://localhost:8073
 AUTHENTICATION_BACKEND=dummy
-
-# Analytics
-WEB_ANALYTICS = {"xiti": {"tracking_id": "602677"}}
