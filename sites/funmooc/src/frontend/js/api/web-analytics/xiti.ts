@@ -25,7 +25,7 @@ export default class XitiApi extends BaseWebAnalyticsApi {
     this.PA = PA;
   }
 
-  sendEvent(category: string, action: string, label: string): void {
+  sendEvent(actionName: string, category: string, action: string, label: string): void {
     this.PA?.tag.sendEvent('click.action', {
       ...this.PA?.data,
       click: category,
