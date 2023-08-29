@@ -1,5 +1,5 @@
 import { Maybe } from 'richie-education/js/types/utils';
-import { WebAnalyticsAPI } from 'richie-education/js/types/web-analytics';
+import { CourseProductEvent, WebAnalyticsAPI } from 'richie-education/js/types/web-analytics';
 import context from 'richie-education/js/utils/context';
 import { handle } from 'richie-education/js/utils/errors/handle';
 // @ts-ignore
@@ -22,6 +22,10 @@ class WebAnalyticsAPIDelegator2Providers implements WebAnalyticsAPI {
 
   sendEnrolledEvent(resourceLink: string): void {
     this.providers.forEach((provider) => provider.sendEnrolledEvent(resourceLink));
+  }
+
+  sendCourseProductEvent(category: CourseProductEvent, productKey: string): void {
+    this.providers.forEach((provider) => provider.sendCourseProductEvent(category, productKey));
   }
 }
 
