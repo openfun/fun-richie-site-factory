@@ -17,6 +17,96 @@ from base.utils import merge_dict
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_DIR = os.path.join("/", "data")
 
+FILTERS_CONFIGURATION = {
+    # Note: the key is a special name that connects the filter to page objects
+    # in Richie as well as the corresponding indexer and API endpoint.
+    "new": {
+        "class": "richie.apps.search.filter_definitions.StaticChoicesFilterDefinition",
+        "params": {
+            "fragment_map": {"new": [{"term": {"is_new": True}}]},
+            "human_name": _("New courses"),
+            "min_doc_count": 0,
+            "sorting": "conf",
+            "values": {"new": _("First session")},
+        },
+    },
+    "course_runs": {
+        "class": "richie.apps.search.filter_definitions.NestingWrapper",
+        "params": {
+            "filters": {
+                "availability": {
+                    "class": "richie.apps.search.filter_definitions.AvailabilityFilterDefinition",
+                    "params": {
+                        "human_name": _("Availability"),
+                        "is_drilldown": True,
+                        "min_doc_count": 0,
+                        "sorting": "conf",
+                    },
+                },
+                "languages": {
+                    "class": "richie.apps.search.filter_definitions.LanguagesFilterDefinition",
+                    "params": {
+                        "human_name": _("Languages"),
+                        # There are too many available languages to show them all, all the time.
+                        # Eg. 200 languages, 190+ of which will have 0 matching courses.
+                        "min_doc_count": 1,
+                    },
+                },
+            }
+        },
+    },
+    "subjects": {
+        "class": "richie.apps.search.filter_definitions.IndexableHierarchicalFilterDefinition",
+        "params": {
+            "human_name": _("Subjects"),
+            "is_autocompletable": True,
+            "is_searchable": True,
+            "min_doc_count": 0,
+            "reverse_id": "subjects",
+            "term": "categories",
+        },
+    },
+    "organizations": {
+        "class": "richie.apps.search.filter_definitions.IndexableHierarchicalFilterDefinition",
+        "params": {
+            "human_name": _("Organizations"),
+            "is_autocompletable": True,
+            "is_searchable": True,
+            "min_doc_count": 0,
+            "reverse_id": "organizations",
+        },
+    },
+    "licences": {
+        "class": "richie.apps.search.filter_definitions.IndexableFilterDefinition",
+        "params": {
+            "human_name": _("Licences"),
+            "is_autocompletable": True,
+            "is_searchable": True,
+            "min_doc_count": 0,
+        },
+    },
+    "pace": {
+        "class": "richie.apps.search.filter_definitions.StaticChoicesFilterDefinition",
+        "params": {
+            "fragment_map": {
+                "self-paced": [{"bool": {"must_not": {"exists": {"field": "pace"}}}}],
+                "lt-1h": [{"range": {"pace": {"lt": 60}}}],
+                "1h-2h": [{"range": {"pace": {"gte": 60, "lte": 120}}}],
+                "gt-2h": [{"range": {"pace": {"gt": 120}}}],
+            },
+            "human_name": _("Weekly pace"),
+            "min_doc_count": 0,
+            "sorting": "conf",
+            "values": {
+                "self-paced": _("Self-paced"),
+                "lt-1h": _("Less than one hour"),
+                "1h-2h": _("One to two hours"),
+                "gt-2h": _("More than two hours"),
+            },
+        },
+    },
+}
+
 
 def get_release():
     """Get the current release of the application.
@@ -436,6 +526,17 @@ class Base(StyleguideMixin, DRFMixin, RichieCoursesConfigurationMixin, Configura
         "django.contrib.messages",
         "django.contrib.humanize",
     )
+
+    RICHIE_FILTERS_CONFIGURATION = FILTERS_CONFIGURATION
+    RICHIE_FILTERS_PRESENTATION = [
+        "new",
+        "availability",
+        "subjects",
+        "organizations",
+        "languages",
+        "licences",
+        "pace",
+    ]
 
     # Languages
     # - Django

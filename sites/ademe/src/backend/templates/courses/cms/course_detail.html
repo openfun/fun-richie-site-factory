@@ -4,3 +4,17 @@
 {% block main_organization %}
 {# Remove the block displaying the main organization as we don't have this concept on ademe #}
 {% endblock main_organization %}
+
+{% block skills %}
+{# Remove the skills block to re-add it (modified) after the description block (see below) #}
+{% endblock skills %}
+
+{% block description %}
+{{block.super}}
+{% if current_page.publisher_is_draft or not current_page|is_empty_placeholder:"course_skills" %}
+<div class="course-detail__row course-detail__skills">
+    <h2 class="course-detail__title">{% blocktrans context "course_detail__title" %}Learning objectives{% endblocktrans %}</h2>
+    {% placeholder "course_skills" %}
+</div>
+{% endif %}
+{% endblock description %}
