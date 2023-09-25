@@ -9,6 +9,8 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.17.0] - 2023-09-25
+
 ### Changed
 
 - Minor Ux and wording customizations (#97)
@@ -160,7 +162,8 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 - First `ademe` image
 
-[unreleased]: https://github.com/openfun/richie-site-factory/compare/ademe-0.16.0...HEAD
+[unreleased]: https://github.com/openfun/richie-site-factory/compare/ademe-0.17.0...HEAD
+[0.17.0]: https://github.com/openfun/richie-site-factory/compare/ademe-0.16.0...ademe-0.17.0
 [0.16.0]: https://github.com/openfun/richie-site-factory/compare/ademe-0.15.1...ademe-0.16.0
 [0.15.1]: https://github.com/openfun/richie-site-factory/compare/ademe-0.15.0...ademe-0.15.1
 [0.15.0]: https://github.com/openfun/richie-site-factory/compare/ademe-0.14.0...ademe-0.15.0
