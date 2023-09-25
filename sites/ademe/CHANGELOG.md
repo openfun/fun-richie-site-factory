@@ -14,6 +14,10 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 - Minor Ux and wording customizations (#97)
 - Upgrade richie to 2.23.0
 
+### Fixed
+
+- Add "noreferrer noopener" to all target="_blank" links
+
 ## [0.16.0] - 2023-04-28
 
 ### Changed

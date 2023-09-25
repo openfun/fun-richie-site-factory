@@ -8,6 +8,10 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Fixed
+
+- Add "noreferrer noopener" to all target="_blank" links
+
 ## [1.27.1] - 2023-08-30
 
 ### Fixed
