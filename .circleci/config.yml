@@ -344,7 +344,7 @@ workflows:
             - check-changelog:
                 filters:
                     branches:
-                        ignore: main
+                        ignore: /.*/
                 name: check-changelog-ademe
                 site: ademe
             - lint-changelog:
@@ -403,17 +403,72 @@ workflows:
                 site: ademe
     demo:
         jobs:
-            - no-change:
+            - check-changelog:
+                filters:
+                    branches:
+                        ignore: /.*/
+                name: check-changelog-demo
+                site: demo
+            - lint-changelog:
+                filters:
+                    branches:
+                        ignore: main
+                    tags:
+                        only: /^demo-.*/
+                name: lint-changelog--demo
+                site: demo
+            - build-front-production:
                 filters:
                     tags:
-                        only: /.*/
-                name: no-change-demo
+                        only: /^demo-.*/
+                name: build-front-production-demo
+                site: demo
+            - lint-front:
+                filters:
+                    tags:
+                        only: /^demo-.*/
+                name: lint-front-demo
+                requires:
+                    - build-front-production-demo
+                site: demo
+            - build-back:
+                filters:
+                    tags:
+                        only: /^demo-.*/
+                name: build-back-demo
+                site: demo
+            - lint-back:
+                filters:
+                    tags:
+                        only: /^demo-.*/
+                name: lint-back-demo
+                requires:
+                    - build-back-demo
+                site: demo
+            - test-back:
+                filters:
+                    tags:
+                        only: /^demo-.*/
+                name: test-back-demo
+                requires:
+                    - build-back-demo
+                site: demo
+            - hub:
+                filters:
+                    tags:
+                        only: /^demo-.*/
+                image_name: richie-demo
+                name: hub-demo
+                requires:
+                    - lint-front-demo
+                    - lint-back-demo
+                site: demo
     funcampus:
         jobs:
             - check-changelog:
                 filters:
                     branches:
-                        ignore: main
+                        ignore: /.*/
                 name: check-changelog-funcampus
                 site: funcampus
             - lint-changelog:
@@ -475,7 +530,7 @@ workflows:
             - check-changelog:
                 filters:
                     branches:
-                        ignore: main
+                        ignore: /.*/
                 name: check-changelog-funcorporate
                 site: funcorporate
             - lint-changelog:
@@ -537,7 +592,7 @@ workflows:
             - check-changelog:
                 filters:
                     branches:
-                        ignore: main
+                        ignore: /.*/
                 name: check-changelog-funmooc
                 site: funmooc
             - lint-changelog:
@@ -601,7 +656,7 @@ workflows:
                     tags:
                         only: /.*/
             - check-configuration:
-                ci_update_options: ""
+                ci_update_options: --ignore-changelog
                 filters:
                     branches:
                         ignore: main
