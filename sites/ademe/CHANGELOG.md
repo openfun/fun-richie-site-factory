@@ -11,6 +11,7 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Added
 
+- Add custom favicon
 - Redirect old OpenEdX course urls to new richie course pages
 
 ## [0.18.0] - 2023-10-05
