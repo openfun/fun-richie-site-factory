@@ -1,6 +1,10 @@
 {% extends "richie/base.html" %}
 {% load cms_tags static i18n %}
 
+{% block meta_favicons %}
+<link rel="shortcut icon" href="{% static 'richie/favicon/favicon.ico' %}">
+{% endblock meta_favicons %}
+
 {% block body_footer_title %}{% endblock body_footer_title %}
 
 {% block topbar_contact %}
