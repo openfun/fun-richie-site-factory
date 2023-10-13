@@ -33,6 +33,7 @@ urlpatterns = [
         include([*courses_urlpatterns, *search_urlpatterns, *plugins_urlpatterns]),
     ),
     re_path(r"^redirects/", include([*courses_redirects_urlpatterns])),
+    path(r"", include("base.urls")),
     path(r"", include("filer.server.urls")),
     path(r"django-check-seo/", include("django_check_seo.urls")),
 ]
