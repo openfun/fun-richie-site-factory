@@ -8,6 +8,10 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Changed
+
+- Override default permissions applied to Organization and Course pages
+
 ## [1.27.2] - 2023-09-25
 
 ### Fixed
