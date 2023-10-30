@@ -15,6 +15,7 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Added
 
+- Setup tarteaucitron.js to manage cookies consentment
 - Add custom favicon
 - Redirect old OpenEdX course urls to new richie course pages
 

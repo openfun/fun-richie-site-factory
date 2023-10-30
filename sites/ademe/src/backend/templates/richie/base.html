@@ -13,6 +13,12 @@
 </li>
 {% endblock topbar_contact %}
 
+{% block body_js %}
+{% with domain=PRIVACY_CONTEXT.tarteaucitron.domain tagId=PRIVACY_CONTEXT.tarteaucitron.id locale=PRIVACY_CONTEXT.tarteaucitron.locale %}
+    <script src="https://tarteaucitron.io/load.js?domain={{domain}}&uuid={{tagId}}&locale={{locale}}"></script>
+{% endwith %}
+{% endblock body_js %}
+
 {% block body_mentions %}
 <div class="body-mentions__poweredby--credits">
     <p>Ademe et Plan Bâtiment Durable © All Rights Reserved.</p>

@@ -54,6 +54,9 @@
 // Page component styles
 @import 'richie-education/scss/components/index';
 
+// Libs
+@import './components/libs/tarteaucitron';
+
 // Page component overrides
 @import './components/footer';
 @import './components/header';
