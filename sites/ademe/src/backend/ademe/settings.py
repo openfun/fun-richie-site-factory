@@ -425,6 +425,7 @@ class Base(StyleguideMixin, DRFMixin, RichieCoursesConfigurationMixin, Configura
                     "django.template.context_processors.static",
                     "cms.context_processors.cms_settings",
                     "richie.apps.core.context_processors.site_metas",
+                    "base.context_processors.site_metas",
                 ],
                 "loaders": [
                     "django.template.loaders.filesystem.Loader",
@@ -909,6 +910,11 @@ class Base(StyleguideMixin, DRFMixin, RichieCoursesConfigurationMixin, Configura
             "nesteditem.view_nesteditem",
         ],
     }
+
+    # - Cookie consent (Tarte au citron)
+    TARTEAUCITRON_TAG_ID = values.Value(
+        None, environ_name="TARTEAUCITRON_TAG_ID", environ_prefix=None
+    )
 
     # pylint: disable=invalid-name
     @property

@@ -499,5 +499,13 @@ $r-theme: map-merge(
       summary-hover-color: r-color('battleship-grey'),
       subtitle-color: r-color('battleship-grey'),
     ),
+    cookie-consent: (
+      base-background: r-color('dark-aquamarine'),
+      cta-allow: r-color('tealish'),
+      cta-deny: r-color('pumpkin-orange'),
+      light-color: r-color('white'),
+      dark-color: r-color('dark'),
+      link-color: r-color('dark-aquamarine'),
+    ),
   )
 );
