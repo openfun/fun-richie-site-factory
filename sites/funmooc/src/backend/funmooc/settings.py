@@ -260,6 +260,9 @@ class Base(StyleguideMixin, DRFMixin, RichieCoursesConfigurationMixin, Configura
         ),
     }
 
+    # Feature flags
+    FEATURES = values.DictValue(environ_name="FEATURES", environ_prefix=None)
+
     # LMS
     RICHIE_LMS_BACKENDS = [
         {

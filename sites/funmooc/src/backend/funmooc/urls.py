@@ -17,6 +17,8 @@ from richie.apps.courses.urls import (
 from richie.apps.courses.urls import urlpatterns as courses_urlpatterns
 from richie.apps.search.urls import urlpatterns as search_urlpatterns
 from richie.plugins.urls import urlpatterns as plugins_urlpatterns
+from richie.apps.core.templatetags.feature_flags import is_feature_enabled
+from richie.apps.core.templatetags.joanie import is_joanie_enabled
 
 # For now, we use URLPathVersioning to be consistent with fonzie. Fonzie uses it
 # because DRF OpenAPI only supports URLPathVersioning for now. See fonzie
@@ -37,6 +39,17 @@ urlpatterns = [
     path(r"", include("filer.server.urls")),
     path(r"django-check-seo/", include("django_check_seo.urls")),
 ]
+
+if is_joanie_enabled() and is_feature_enabled("REACT_DASHBOARD"):
+    urlpatterns += i18n_patterns(
+        re_path(
+            r"^dashboard/.*",
+            TemplateView.as_view(
+                template_name="richie/dashboard.html",
+            ),
+            name="dashboard",
+        )
+    )
 
 urlpatterns += i18n_patterns(
     path(r"admin/", admin.site.urls),
