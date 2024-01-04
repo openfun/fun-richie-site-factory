@@ -33,3 +33,9 @@ EDX_BASE_URL=http://localhost:8073
 # Authentication Backend
 AUTHENTICATION_BASE_URL=http://localhost:8073
 AUTHENTICATION_BACKEND=dummy
+
+# Joanie
+#JOANIE_BASE_URL=http://localhost:8071
+
+# Features
+FEATURES={'WISHLIST': False, 'REACT_DASHBOARD': False}

@@ -201,8 +201,8 @@ $r-theme: map-merge(
     ),
     course-glimpse: (
       card-background: r-color('white'),
-      base-shadow: 0 0 6px r-color('light-grey'),
-      base-hover-shadow: 0 0 6px r-color('battleship-grey'),
+      base-shadow: 0 0 6px r-color('greyscale-400'),
+      base-hover-shadow: 0 0 6px r-color('greyscale-600'),
       cta-background: r-color('lipstick'),
       empty-color: r-color('brownish-grey'),
       icon-shadow: (
@@ -234,6 +234,68 @@ $r-theme: map-merge(
       secondary-item: $ocean-blue-scheme,
       tertiary-item: $mediumturquoise-scheme,
     ),
+    dashboard: (
+      background-color: r-color('pale-grey'),
+      base-shadow: 0 0 6px r-color('silver'),
+    ),
+    dashboard-avatar: (
+      background-color: r-color('darkish-blue'),
+      base-color: r-color('white'),
+    ),
+    credit-card-brand-logo: (
+      background-color: r-color(denim),
+    ),
+    dashboard-addresses: (
+      empty-color: r-color(slate-grey),
+    ),
+    dashboard-address-box: (
+      base-color: r-color(charcoal),
+      title-color: r-color(slate-grey),
+    ),
+    dashboard-breadcrumbs: (
+      base-color: r-color(charcoal),
+    ),
+    dashboard-card: (
+      base-color: r-color(charcoal),
+      base-shadow: 0 0 6px r-color('light-grey'),
+      text-hover-color: r-color('grey59'),
+      base-border: r-color('azure2'),
+    ),
+    dashboard-credit-cards: (
+      empty-color: r-color(slate-grey),
+    ),
+    dashboard-credit-card-box: (
+      base-color: r-color(charcoal),
+      title-color: r-color(slate-grey),
+      expire-soon-color: r-color('indianred3'),
+      expired-color: r-color('firebrick6'),
+    ),
+    dashboard-box: (
+      background: r-color(smoke),
+      base-color: r-color(charcoal),
+      header-color: r-color(slate-grey),
+      base-shadow: 0 0 6px r-color('light-grey'),
+      text-hover-color: r-color('grey59'),
+      base-border: r-color('light-grey'),
+    ),
+    dashboard-item-course-enrolling-run: (
+      enrolled-color: r-color('mantis'),
+    ),
+    dashboard-sidebar: (
+      background-color: r-color('white'),
+      base-shadow: 0 0 6px r-color('silver'),
+      base-color: r-color(charcoal),
+      sub-title-color: r-color('slate-grey'),
+      active-color: r-color('ocean-blue'),
+      base-border: r-color('navy-blue'),
+      menu-link-inline-padding: 16px,
+    ),
+    dashboard-list: (
+      background-color-loading: r-color('smoke'),
+    ),
+    dashboard-sidebar-organization-link-title: (
+      base-color: r-color('battleship-grey'),
+    ),
     form: (
       input-placeholder: r-color('grey32'),
       input-color: r-color('dark'),
@@ -248,7 +310,10 @@ $r-theme: map-merge(
       input-checked-border: transparent,
       input-checked-color: r-color('white'),
       input-unchecked-color: transparent,
+      input-disabled-background: r-color('grey87'),
+      input-hover-color: r-color('grey59'),
       message-color: r-color('grey32'),
+      required-note-color: r-color('indianred3'),
     ),
     organization-glimpse-list: (
       empty-color: r-color('brownish-grey'),
@@ -405,8 +470,6 @@ $r-theme: map-merge(
       base-background: r-color('white'),
       base-border: r-color('brownish-grey'),
       base-color: r-color('brownish-grey'),
-      close-background: transparent,
-      close-color: r-color('brownish-grey'),
       overlay-background: rgba(r-color('black'), 0.75),
     ),
     product-item: (
@@ -465,14 +528,7 @@ $r-theme: map-merge(
     spinner: (
       base-color: r-color('ocean-blue'),
       base-color-light: r-color('white'),
-    ),
-    sale-tunnel: (
-      primary-button-scheme: $lipstick-scheme,
-      primary-button-is-outlined: false,
-      secondary-button-scheme: $ocean-blue-scheme,
-      secondary-button-is-outlined: true,
-      tertiary-button-scheme: $clear-blue-scheme,
-      tertiary-button-is-outlined: false,
+      base-color-primary: r-color('firebrick6'),
     ),
     steps-breadcrumb: (
       icon-background-active: r-color(darkish-blue),
@@ -498,6 +554,17 @@ $r-theme: map-merge(
       title-color: r-color('black-two'),
       summary-hover-color: r-color('battleship-grey'),
       subtitle-color: r-color('battleship-grey'),
+    ),
+    dashboard-item: (
+      base-color: r-color(charcoal),
+      base-shadow: 0 0 6px r-color('light-grey'),
+      base-border: r-color('light-grey'),
+      background-color: r-color('white'),
+      overlay-background-color: r-color('smoke'),
+    ),
+    contract-frame: (
+      content-color: r-color(purplish-grey),
+      title-color: r-color('charcoal'),
     ),
   )
 );
