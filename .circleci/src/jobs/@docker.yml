@@ -7,7 +7,7 @@ hub:
     image_name:
       type: string
   docker:
-    - image: cimg/base:2022.06
+    - image: cimg/base:2024.01
       environment:
         RICHIE_SITE: << parameters.site >>
   working_directory: ~/fun
@@ -17,8 +17,7 @@ hub:
     - generate-version-file:
         site: << parameters.site >>
     # Activate docker-in-docker (with layers caching enabled)
-    - setup_remote_docker:
-        version: 19.03.13
+    - setup_remote_docker
     - run:
         name: Build docker images
         command: make env.d/aws && make build
