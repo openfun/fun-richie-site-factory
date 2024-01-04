@@ -43,7 +43,7 @@ jobs:
         working_directory: ~/fun/sites/<< parameters.site >>
     build-front-production:
         docker:
-            - image: cimg/node:16.15
+            - image: cimg/node:18.19
         parameters:
             site:
                 type: string
@@ -70,7 +70,7 @@ jobs:
         working_directory: ~/fun/sites/<< parameters.site >>/src/frontend/
     check-changelog:
         docker:
-            - image: cimg/base:2022.06
+            - image: cimg/base:2024.01
         parameters:
             site:
                 type: string
@@ -98,7 +98,7 @@ jobs:
         docker:
             - environment:
                 RICHIE_SITE: << parameters.site >>
-              image: cimg/base:2022.06
+              image: cimg/base:2024.01
         parameters:
             image_name:
                 type: string
@@ -108,8 +108,7 @@ jobs:
             - checkout
             - generate-version-file:
                 site: << parameters.site >>
-            - setup_remote_docker:
-                version: 19.03.13
+            - setup_remote_docker
             - run:
                 command: make env.d/aws && make build
                 name: Build docker images
@@ -242,7 +241,7 @@ jobs:
         working_directory: ~/fun
     lint-front:
         docker:
-            - image: cimg/node:16.15
+            - image: cimg/node:18.19
         parameters:
             site:
                 type: string
@@ -281,7 +280,7 @@ jobs:
         working_directory: ~/fun
     no-change:
         docker:
-            - image: cimg/base:2022.06
+            - image: cimg/base:2024.01
         steps:
             - run: echo "Everything is up-to-date ✅"
         working_directory: ~/fun
@@ -592,7 +591,7 @@ workflows:
             - check-changelog:
                 filters:
                     branches:
-                        ignore: /.*/
+                        ignore: main
                 name: check-changelog-funmooc
                 site: funmooc
             - lint-changelog:
