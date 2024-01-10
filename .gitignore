@@ -57,3 +57,12 @@ yarn-error.log
 
 # CircleCI
 .circleci/src/workflows/@*.yml
+
+# Jet brains IDE
+.idea/
+
+# VS Code
+.vscode
+
+# Mac Os
+.DS_Store
