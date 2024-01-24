@@ -49,6 +49,32 @@ services:
       - "redis-sentinel"
     user: ${DOCKER_USER:-1000}
 
+  app-canary:
+    build:
+      context: .
+      target: canary
+      args:
+        DOCKER_USER: ${DOCKER_USER:-1000}
+        SITE: ${RICHIE_SITE:-funmooc}
+        BUILD_NEXT_FRONT: 1
+    image: "${RICHIE_SITE:-funmooc}:canary"
+    environment:
+      - DB_NAME=richie_${RICHIE_SITE:-funmooc}
+      - DJANGO_SETTINGS_MODULE=${RICHIE_SITE:-funmooc}.settings
+      - DJANGO_CONFIGURATION=ContinuousIntegration
+      - RICHIE_ES_INDICES_PREFIX=richie_${RICHIE_SITE:-funmooc}
+    env_file: env.d/development
+    networks:
+      - default
+      - lms_outside
+    volumes:
+      - ./data/media/${RICHIE_SITE:-funmooc}:/data/media
+    depends_on:
+      - "db"
+      - "elasticsearch"
+      - "redis-sentinel"
+    user: ${DOCKER_USER:-1000}
+
   app:
     build:
       context: .
@@ -93,6 +119,25 @@ services:
       - ./data/media/${RICHIE_SITE:-funmooc}:/data/media:ro
     depends_on:
       - app
+
+  nginx-canary:
+    build:
+      context: .
+      target: nginx
+      args:
+        DOCKER_USER: ${DOCKER_USER:-1000}
+        NGINX_IMAGE_NAME: ${NGINX_IMAGE_NAME:-fundocker/openshift-nginx}
+        NGINX_IMAGE_TAG: ${NGINX_IMAGE_TAG:-1.13}
+        SITE: ${RICHIE_SITE:-funmooc}
+        BUILD_NEXT_FRONT: 1
+    image: "${RICHIE_SITE:-funmooc}-nginx:canary"
+    ports:
+      - "8082:8081"
+    volumes:
+      - ./docker/files/etc/nginx/conf.d:/etc/nginx/conf.d:ro
+      - ./data/media/${RICHIE_SITE:-funmooc}:/data/media:ro
+    depends_on:
+      - app-canary
 
   dockerize:
     image: jwilder/dockerize

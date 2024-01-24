@@ -34,6 +34,30 @@ function check_changes() {
     git whatchanged --name-only --pretty="" origin/main.."${to}" | grep "${1}" &> /dev/null
 }
 
+function update_canary() {
+    template=".circleci/src/workflows/canary.yml.tpl"
+    destination=".circleci/src/workflows/@canary.yml"
+    cat > $destination <<- EOL
+canary:
+  # This workflow is triggered each working days at 5:00am UTC.
+  when:
+    equal: [ "canary", << pipeline.schedule.name >> ]
+  jobs:
+EOL
+
+    while IFS= read -r -d '' site_path
+    do
+        # Extract site name from path
+        site="${site_path//${SITES_DIRECTORY}\//}"
+        image=$(grep "^name = " "${site_path}/src/backend/setup.cfg" | cut -c 8- || \
+            echo "${site}")
+
+        sed "s|\${SITE}|$site|g;s|\${IMAGE}|$image|g;" \
+        < $template >> $destination
+
+    done <  <(find "sites" -maxdepth 1 -mindepth 1 -type d -print0 | sort -z)
+}
+
 # Utility function that updates circle configuration site-factory file according to
 # --ignore-changelog flag
 # Usage: update_factory ignore-changelog<boolean>
@@ -128,6 +152,7 @@ for each site and running only the necessary jobs"
 
     update_factory "${ignore_changelog}"
     update_sources "${ignore_changelog}"
+    update_canary
 
     # Generate the `.circleci/config.yml` file from the yaml source tree
     docker run --rm -v "${PROJECT_DIRECTORY}:/data" circleci/circleci-cli:alpine \

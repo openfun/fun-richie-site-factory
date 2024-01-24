@@ -2,6 +2,7 @@ ARG NGINX_IMAGE_NAME=fundocker/openshift-nginx
 ARG NGINX_IMAGE_TAG=1.13
 ARG STATIC_ROOT=/data/static
 ARG SITE=funmooc
+ARG BUILD_NEXT_FRONT=0
 
 # The ID of the user running in the container
 ARG DOCKER_USER=10000
@@ -13,14 +14,21 @@ FROM python:3.10-buster as base
 FROM node:18.19 as front-builder
 
 ARG SITE
+ARG BUILD_NEXT_FRONT
 
 # Copy frontend app sources
 COPY ./sites/${SITE}/src/frontend /builder/src/frontend
 
 WORKDIR /builder/src/frontend
 
-RUN yarn install --frozen-lockfile && \
-    yarn compile-translations && \
+RUN yarn install --frozen-lockfile
+
+RUN set -eux; \
+    if [ "$BUILD_NEXT_FRONT" = "1" ]; then \
+        yarn upgrade richie-education@next; \
+    fi;
+
+RUN yarn compile-translations && \
     yarn build-ts-production && \
     yarn build-sass-production
 
@@ -145,3 +153,17 @@ ARG STATIC_ROOT
 RUN mkdir -p ${STATIC_ROOT}
 
 COPY --from=collector ${STATIC_ROOT} ${STATIC_ROOT}
+
+# ---- Canary image ----
+FROM production as canary
+
+ARG DOCKER_USER
+
+USER root
+
+RUN pip uninstall -y richie && \
+    pip install --pre richie
+
+# Un-privileged user running the application
+USER ${DOCKER_USER}
+
