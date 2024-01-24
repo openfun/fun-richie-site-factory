@@ -62,6 +62,11 @@ build: ## build all containers
 	$(COMPOSE) build app-dev
 .PHONY: build
 
+build-canary:
+	$(COMPOSE) build app-canary
+	$(COMPOSE) build nginx-canary
+.PHONY: build-canary
+
 reset:  ## Remove database and local files
 	$(COMPOSE) stop
 	rm -Ir data/* || exit 0

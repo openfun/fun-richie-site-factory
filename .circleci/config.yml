@@ -185,6 +185,62 @@ jobs:
                             fi
                         name: Publish nginx image
         working_directory: ~/fun
+    hub-canary:
+        docker:
+            - environment:
+                RICHIE_SITE: << parameters.site >>
+              image: cimg/base:2024.01
+        parameters:
+            image_name:
+                type: string
+            site:
+                type: string
+        steps:
+            - checkout
+            - generate-version-file:
+                site: << parameters.site >>
+            - setup_remote_docker
+            - run:
+                command: make env.d/aws && make build-canary
+                name: Build docker images
+            - run:
+                command: |
+                    docker images "<< parameters.image_name >>:canary"
+                    docker images "<< parameters.image_name >>-nginx:production"
+                name: Check built image availability
+            - run:
+                command: make ci-version
+                name: Check version.json file
+            - run:
+                command: make ci-migrate
+                name: Run Django migrations
+            - run:
+                command: make ci-check
+                name: Run Django checks with production image
+            - run:
+                command: echo "$DOCKER_PASS" | docker login -u "$DOCKER_USER" --password-stdin
+                name: Login to DockerHub
+            - run:
+                command: |
+                    docker images fundocker/<< parameters.image_name >>
+                    docker tag << parameters.site >>:canary fundocker/<< parameters.image_name >>:canary
+                    docker images | grep -E "^fundocker/<< parameters.image_name >>\s*canary"
+                name: Tag app image
+            - run:
+                command: |
+                    docker images fundocker/<< parameters.image_name >>-nginx
+                    docker tag << parameters.site >>-nginx:canary fundocker/<< parameters.image_name >>-nginx:canary
+                    docker images | grep -E "^fundocker/<< parameters.image_name >>-nginx\s*canary"
+                name: Tag nginx image
+            - run:
+                command: |
+                    docker push fundocker/<< parameters.image_name >>:canary
+                name: Publish app image
+            - run:
+                command: |
+                    docker push fundocker/<< parameters.image_name >>-nginx:canary
+                name: Publish nginx image
+        working_directory: ~/fun
     lint-back:
         docker:
             - image: cimg/python:3.10
@@ -400,6 +456,32 @@ workflows:
                     - lint-front-ademe
                     - lint-back-ademe
                 site: ademe
+    canary:
+        jobs:
+            - hub-canary:
+                image_name: ademe
+                name: hub-canary-ademe
+                site: ademe
+            - hub-canary:
+                image_name: richie-demo
+                name: hub-canary-demo
+                site: demo
+            - hub-canary:
+                image_name: funcampus
+                name: hub-canary-funcampus
+                site: funcampus
+            - hub-canary:
+                image_name: funcorporate
+                name: hub-canary-funcorporate
+                site: funcorporate
+            - hub-canary:
+                image_name: funmooc
+                name: hub-canary-funmooc
+                site: funmooc
+        when:
+            equal:
+                - canary
+                - << pipeline.schedule.name >>
     demo:
         jobs:
             - check-changelog:
@@ -591,7 +673,7 @@ workflows:
             - check-changelog:
                 filters:
                     branches:
-                        ignore: main
+                        ignore: /.*/
                 name: check-changelog-funmooc
                 site: funmooc
             - lint-changelog:
