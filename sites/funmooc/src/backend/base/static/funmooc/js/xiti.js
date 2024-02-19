@@ -119,6 +119,7 @@
       if (pa) {
         this.tag = pa;
         this.tag.setConfigurations({
+          campaignPrefix: ['at_', 'utm_'],
           collectDomain: 'https://logs1409.xiti.com',
           secure: true,
           site: this.siteId,

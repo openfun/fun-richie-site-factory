@@ -8,6 +8,10 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Changed
+
+- Configure Piano Analytics to collect UTM parameters as a backup option
+
 ## [1.29.0-beta.0] - 2024-01-11
 
 ### Changed
