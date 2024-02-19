@@ -181,7 +181,7 @@
     needConsent: false,
     cookies: ['pa_vid', 'pa_privacy'],
     js: function () {
-      var pa_url = 'https://tag.aticdn.net/piano-analytics.js';
+      var pa_url = 'https://tag.aticdn.net/js-sdk/piano-analytics-6.13.1.js';
       function onLoad() {
         const PA = new PATag(context);
         PA.init()
