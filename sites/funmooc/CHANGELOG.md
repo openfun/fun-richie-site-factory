@@ -10,7 +10,8 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Changed
 
-- Configure Piano Analytics to collect UTM parameters as a backup option
+- Change deprecated `xiti` web analytics service to `pianoanalytics`  
+- Configure Piano Analytics to also collect UTM parameters
 - Pin Piano Analytics JS SDK to 6.13.1
 
 ## [1.29.0-beta.0] - 2024-01-11
