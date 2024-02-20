@@ -24,8 +24,8 @@
    *
    * @param metadata - analytics context
    *
-   *  - id: AT Internet site id to identify the site on Analytics Suite
-   *  - provider: 'xiti',
+   *  - id: Piano Analytics site id to identify the site on Analytics Suite
+   *  - provider: 'pianoanalytics',
    *  - dimensions: some serialized data related to the current page
    *    + course_code
    *    + course_runs_resource_links
@@ -43,7 +43,7 @@
     this.tag = null;
 
     /**
-     * Populate the data object sent to Xiti on dispatch.
+     * Populate the data object sent to Piano Analytics on dispatch.
      * It includes level2, name and chapters
      *
      * To get name and chapters we split the url pathname "/"
@@ -120,7 +120,7 @@
         this.tag = pa;
         this.tag.setConfigurations({
           campaignPrefix: ['at_', 'utm_'],
-          collectDomain: 'https://logs1409.xiti.com',
+          collectDomain: 'https://zqqzqjw.pa-cd.com',
           secure: true,
           site: this.siteId,
         });
@@ -166,18 +166,18 @@
     };
   }
 
-  // Find the xiti provider through all analytic providers then bind dimensions to the context
+  // Find the Piano Analytics provider through all analytic providers then bind dimensions to the context
   var context = window.__funmooc_context__.analytics.find(function (context) {
-    return context.provider === 'xiti';
+    return context.provider === 'pianoanalytics';
   });
   if (context === undefined) return;
   context.dimensions = window.__funmooc_context__.dimensions;
 
   tarteaucitron.services.paFun = {
-    key: 'xiti',
+    key: 'pianoanalytics',
     type: 'analytic',
     name: 'Piano Analytics',
-    uri: 'https://www.atinternet.com/societe/rgpd-et-vie-privee/',
+    uri: 'https://piano.io/privacy-policy/',
     needConsent: false,
     cookies: ['pa_vid', 'pa_privacy'],
     js: function () {

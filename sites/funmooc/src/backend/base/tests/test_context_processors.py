@@ -15,8 +15,8 @@ class ContextProcessorsTestCase(TestCase):
     Test suite for the context processors
     """
 
-    @override_settings(WEB_ANALYTICS={"xiti": {"tracking_id": "123456"}})
-    def test_context_processors_add_xiti_settings_if_exists(self):
+    @override_settings(WEB_ANALYTICS={"pianoanalytics": {"tracking_id": "123456"}})
+    def test_context_processors_add_piano_settings_if_exists(self):
         """
         Create a page and make sure it includes web analytics context as included
         in `base.html`.
@@ -28,12 +28,12 @@ class ContextProcessorsTestCase(TestCase):
 
         response = self.client.get(page.get_public_url(), follow=True)
         self.assertEqual(response.status_code, 200)
-        self.assertContains(response, '"provider": "xiti"')
+        self.assertContains(response, '"provider": "pianoanalytics"')
         self.assertContains(response, '"id": "123456"')
         self.assertContains(response, f'"root_page_id": "{page.node.get_root().pk}"')
 
     @override_settings(WEB_ANALYTICS=None)
-    def test_context_processors_do_not_add_xiti_settings_if_marketing_site_id_is_not_defined(
+    def test_context_processors_do_not_add_piano_settings_if_marketing_site_id_is_not_defined(
         self,
     ):
         """
@@ -51,13 +51,13 @@ class ContextProcessorsTestCase(TestCase):
         self.assertNotContains(response, '"id": "')
         self.assertNotContains(response, f'"root_page_id": "{page.node.get_root().pk}"')
 
-    @override_settings(WEB_ANALYTICS={"xiti": {"tracking_id": "123456"}})
-    def test_context_processors_do_not_add_xiti_settings_if_page_is_draft(
+    @override_settings(WEB_ANALYTICS={"pianoanalytics": {"tracking_id": "123456"}})
+    def test_context_processors_do_not_add_piano_settings_if_page_is_draft(
         self,
     ):
         """
         If the current page is a draft,
-        frontend context should not contain xiti provider information
+        frontend context should not contain pianoanalytics provider information
         """
         user = UserFactory(is_staff=True, is_superuser=True)
         self.client.login(username=user.username, password="password")  # nosec
@@ -69,10 +69,10 @@ class ContextProcessorsTestCase(TestCase):
 
         response = self.client.get(page.get_absolute_url(), follow=True)
         self.assertEqual(response.status_code, 200)
-        self.assertNotContains(response, '"provider": "xiti"')
+        self.assertNotContains(response, '"provider": "pianoanalytics"')
         self.assertNotContains(response, '"id": "123456"')
 
-    @override_settings(WEB_ANALYTICS={"xiti": {"tracking_id": "123456"}})
+    @override_settings(WEB_ANALYTICS={"pianoanalytics": {"tracking_id": "123456"}})
     def test_context_processors_get_organizations_code(self):
         """
         If an organization is linked to the page or there are organization plugins on the page,
@@ -90,7 +90,7 @@ class ContextProcessorsTestCase(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertIsNotNone(re.search(pattern, str(response.content)))
 
-    @override_settings(WEB_ANALYTICS={"xiti": {"tracking_id": "123456"}})
+    @override_settings(WEB_ANALYTICS={"pianoanalytics": {"tracking_id": "123456"}})
     def test_context_processors_retrieve_privacy_page_url_if_exists(self):
         """
         If a privacy policy page exists,
@@ -122,7 +122,7 @@ class ContextProcessorsTestCase(TestCase):
             response, f'"privacyUrl": "{privacy_page.get_public_url()}"'
         )
 
-    @override_settings(WEB_ANALYTICS={"xiti": {"tracking_id": "123456"}})
+    @override_settings(WEB_ANALYTICS={"pianoanalytics": {"tracking_id": "123456"}})
     def test_context_processors_queries_are_cached(self):
         """
         Once the page is cached, no db queries should be made again

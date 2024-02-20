@@ -3,10 +3,10 @@ import { CourseProductEvent, WebAnalyticsAPI } from 'richie-education/js/types/w
 import context from 'richie-education/js/utils/context';
 import { handle } from 'richie-education/js/utils/errors/handle';
 // @ts-ignore
-import XitiApi from '../../../../../js/api/web-analytics/xiti';
+import PianoAnalyticsApi from '../../../../../js/api/web-analytics/pianoanalytics';
 
 enum FunMoocWebAnalyticsBackend {
-  XITI = 'xiti',
+  PIANOANALYTICS = 'pianoanalytics',
 }
 
 const WEB_ANALYTICS_PROVIDERS = context?.web_analytics_providers;
@@ -32,8 +32,8 @@ class WebAnalyticsAPIDelegator2Providers implements WebAnalyticsAPI {
 const WebAnalyticsAPIHandler = (): Maybe<WebAnalyticsAPIDelegator2Providers> => {
   const providers: WebAnalyticsAPI[] = [];
   try {
-    if (WEB_ANALYTICS_PROVIDERS?.includes(FunMoocWebAnalyticsBackend.XITI)) {
-      providers.push(new XitiApi());
+    if (WEB_ANALYTICS_PROVIDERS?.includes(FunMoocWebAnalyticsBackend.PIANOANALYTICS)) {
+      providers.push(new PianoAnalyticsApi());
     }
   } catch (error) {
     handle(error);

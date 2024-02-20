@@ -3,13 +3,13 @@ import { BaseWebAnalyticsApi } from 'richie-education/js/api/web-analytics/base'
 
 /**
  *
- * Xiti Richie Web Analytics API Implementation
+ * Piano Analytics Richie Web Analytics API Implementation
  *
- * This implementation is used when web analytics is configured as `xiti`.
- * It will send events to the xiti.
+ * This implementation is used when web analytics is configured as `pianoanalytics`.
+ * It will send events to the piano analytics.
  *
  */
-export default class XitiApi extends BaseWebAnalyticsApi {
+export default class PianoAnalyticsApi extends BaseWebAnalyticsApi {
   PA: any;
 
   constructor() {
