@@ -7,7 +7,7 @@ hub:
     image_name:
       type: string
   docker:
-    - image: cimg/base:2024.01
+    - image: cimg/base:current
       environment:
         RICHIE_SITE: << parameters.site >>
   working_directory: ~/fun
@@ -118,7 +118,7 @@ hub-canary:
     image_name:
       type: string
   docker:
-    - image: cimg/base:2024.01
+    - image: cimg/base:current
       environment:
         RICHIE_SITE: << parameters.site >>
   working_directory: ~/fun

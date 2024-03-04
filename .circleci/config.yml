@@ -70,7 +70,7 @@ jobs:
         working_directory: ~/fun/sites/<< parameters.site >>/src/frontend/
     check-changelog:
         docker:
-            - image: cimg/base:2024.01
+            - image: cimg/base:current
         parameters:
             site:
                 type: string
@@ -98,7 +98,7 @@ jobs:
         docker:
             - environment:
                 RICHIE_SITE: << parameters.site >>
-              image: cimg/base:2024.01
+              image: cimg/base:current
         parameters:
             image_name:
                 type: string
@@ -189,7 +189,7 @@ jobs:
         docker:
             - environment:
                 RICHIE_SITE: << parameters.site >>
-              image: cimg/base:2024.01
+              image: cimg/base:current
         parameters:
             image_name:
                 type: string
@@ -336,7 +336,7 @@ jobs:
         working_directory: ~/fun
     no-change:
         docker:
-            - image: cimg/base:2024.01
+            - image: cimg/base:current
         steps:
             - run: echo "Everything is up-to-date ✅"
         working_directory: ~/fun
