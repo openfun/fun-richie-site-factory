@@ -35,7 +35,7 @@ check-configuration:
   # Use machine because the check_configuration script runs some docker images with
   # volume mounts which is not possible with dind
   machine:
-    image: ubuntu-2004:202107-02
+    image: default
   working_directory: ~/fun
   steps:
     - checkout
