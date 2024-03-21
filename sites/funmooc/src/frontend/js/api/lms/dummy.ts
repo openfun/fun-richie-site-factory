@@ -2,7 +2,7 @@ import { AuthenticationBackend, LMSBackend } from 'types/commonDataProps';
 import { Maybe, Nullable } from 'types/utils';
 import { User } from 'types/User';
 import { APILms } from 'types/api';
-import { Enrollment, OpenEdXEnrollment } from 'types';
+import { OpenEdXEnrollment } from 'types';
 import { location } from 'utils/indirection/window';
 import { RICHIE_USER_TOKEN } from 'settings';
 import { base64Decode } from 'utils/base64Parser';
@@ -127,7 +127,8 @@ const API = (APIConf: LMSBackend | AuthenticationBackend): APILms => {
           }
           resolve(null);
         }),
-      isEnrolled: async (enrollment: Maybe<Nullable<Enrollment>>) =>
+      // TODO: Use UnknownEnrollment type instead unknown when next version of Richie will released
+      isEnrolled: async (enrollment: Maybe<Nullable<unknown>>) =>
         new Promise((resolve) => resolve(!!(enrollment as OpenEdXEnrollment)?.is_active)),
       set: (url: string, user: User): Promise<boolean> =>
         new Promise((resolve) => {
