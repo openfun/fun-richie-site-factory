@@ -28,6 +28,11 @@
       }
     }
   }
+  &__brand {
+    @include media-breakpoint-up(xl) {
+      margin-right: 1rem;
+    }
+  }
 
   .user-login__btn {
     // NOTE: Adjust size according to the font family

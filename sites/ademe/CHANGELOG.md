@@ -9,6 +9,10 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Changed
+
+- Use new MBD logo
+
 ## [0.19.0] - 2023-10-31
 
 ### Changed
