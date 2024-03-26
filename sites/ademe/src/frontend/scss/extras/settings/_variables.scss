@@ -22,12 +22,12 @@ $input-btn-font-size: 0.8125rem;
 $r-topbar-height: rem-calc(143px);
 
 // Header logo width is required for SVG logos
-$r-topbar-logo-width-sm: rem-calc(190px); //7.1875rem;
-$r-topbar-logo-width-lg: $r-topbar-logo-width-sm;
+$r-topbar-logo-width-sm: rem-calc(300px);
+$r-topbar-logo-width-lg: rem-calc(350px);
 
 // Header logo width is required for SVG logos
 $r-footer-logo-width-sm: $r-topbar-logo-width-sm;
-$r-footer-logo-width-lg: $r-footer-logo-width-sm;
+$r-footer-logo-width-lg: $r-topbar-logo-width-lg;
 
 // Aside column width in course detail, if 'null' content and aside columns take
 // full width like common blocks. Usefull if you plan to remove course run from
