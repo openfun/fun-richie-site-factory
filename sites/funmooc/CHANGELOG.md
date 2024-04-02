@@ -8,6 +8,10 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Added
+
+- Add FUN Mooc logo in footer
+
 ### Changed
 
 - Change deprecated `xiti` web analytics service to `pianoanalytics`  
