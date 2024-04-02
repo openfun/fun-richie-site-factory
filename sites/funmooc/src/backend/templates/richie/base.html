@@ -34,3 +34,15 @@
     <img src="{% static "richie/images/logo-alt.png" %}" alt="">
 </a>
 {% endblock body_footer_brand %}
+
+{% block body_mentions %}
+<div class="body-mentions__poweredby">
+    <a href="/">
+        <img src="{% static "richie/images/logo-funmooc-white.svg" %}" alt="Logo FUN Mooc" height="30" />
+        <small>{% trans "powered by" %}</small>
+    </a>
+    <a href="https://richie.education">
+        <strong>Richie</strong>
+    </a>
+</div>
+{% endblock body_mentions %}
