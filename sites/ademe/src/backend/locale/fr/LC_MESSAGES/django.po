@@ -143,7 +143,7 @@ msgstr "Nous contacter"
 
 #: templates/richie/large_banner/hero-intro.html:17
 msgid "Search in our courses"
-msgstr "Rechercher parmis nos cours"
+msgstr "Rechercher parmi nos cours"
 
 #: templates/richie/large_banner/hero-intro.html:24
 msgid "Explore our catalog"
