@@ -11,10 +11,10 @@ Compose](https://docs.docker.com/compose/install) installed on your laptop:
 
 ```
 $ docker -v
-  Docker version 19.03.10, build 9424aeaee9
+  Docker version 26.0.0, build 2ae903e
 
-$ docker-compose --version
-  docker-compose version 1.25.5, build 8a1c60f6
+$ docker compose version
+  Docker Compose version v2.26.1-desktop.1
 ```
 
 ## Getting started
