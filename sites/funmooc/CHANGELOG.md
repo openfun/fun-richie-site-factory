@@ -11,6 +11,7 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 ### Added
 
 - Add FUN Mooc logo in footer
+- Add settings API_TOKEN for JOANIE_BACKEND
 
 ### Changed
 
