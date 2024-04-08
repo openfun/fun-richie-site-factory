@@ -238,6 +238,9 @@ class Base(StyleguideMixin, DRFMixin, RichieCoursesConfigurationMixin, Configura
     """
     JOANIE_BACKEND = {
         "BASE_URL": values.Value(environ_name="JOANIE_BASE_URL", environ_prefix=None),
+        "API_TOKEN": values.Value(
+            None, environ_name="JOANIE_API_TOKEN", environ_prefix=None
+        ),
         "BACKEND": values.Value(
             "richie.apps.courses.lms.joanie.JoanieBackend",
             environ_name="JOANIE_BACKEND",
