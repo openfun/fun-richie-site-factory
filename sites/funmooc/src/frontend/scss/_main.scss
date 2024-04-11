@@ -1,71 +1,71 @@
 // Basic functions must be loaded before settings to be able to use them from
 // settings and objects
-@import 'richie-education/scss/tools/rem';
-@import 'richie-education/scss/tools/colors';
+@import "richie-education/scss/tools/rem";
+@import "richie-education/scss/tools/colors";
 
 // Our variables must be imported before Bootstrap code so they can override it
-@import 'richie-education/scss/settings/fonts';
+@import "richie-education/scss/settings/fonts";
 
-@import 'bootstrap/scss/functions';
-@import 'bootstrap/scss/variables';
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
 
 // Import Cunningham tokens and icons
-@import '@openfun/cunningham-react/dist/icons';
-@import '@openfun/cunningham-react/dist/style';
+@import "@openfun/cunningham-react/dist/icons";
+@import "@openfun/cunningham-react/dist/style";
 
 // Override default Richie settings variables
-@import 'richie-education/scss/vendors/cunningham-tokens';
-@import 'richie-education/scss/vendors/css/cunningham-tokens';
-@import 'richie-education/scss/colors/palette';
-@import './vendors/cunningham-tokens';
-@import './vendors/css/cunningham-tokens';
-@import './extras/colors/palette';
+@import "richie-education/scss/vendors/cunningham-tokens";
+@import "richie-education/scss/vendors/css/cunningham-tokens";
+@import "richie-education/scss/colors/palette";
+@import "./vendors/cunningham-tokens";
+@import "./vendors/css/cunningham-tokens";
+@import "./extras/colors/palette";
 
-@import 'richie-education/scss/colors/gradients';
-@import './extras/colors/gradients';
-@import 'richie-education/scss/colors/schemes';
-@import './extras/colors/schemes';
+@import "richie-education/scss/colors/gradients";
+@import "./extras/colors/gradients";
+@import "richie-education/scss/colors/schemes";
+@import "./extras/colors/schemes";
 
-@import 'richie-education/scss/colors/theme';
-@import './extras/colors/theme';
+@import "richie-education/scss/colors/theme";
+@import "./extras/colors/theme";
 
-@import 'richie-education/scss/settings/variables';
-@import './extras/settings/variables';
+@import "richie-education/scss/settings/variables";
+@import "./extras/settings/variables";
 
 // TWITTER BOOTSTRAP V4
 // Required
-@import 'bootstrap/scss/bootstrap-reboot.scss';
+@import "bootstrap/scss/bootstrap-reboot.scss";
 
 // Only what we use
-@import 'richie-education/scss/settings/bootstrap';
+@import "richie-education/scss/settings/bootstrap";
 
 // Internal addons (import order does matter due to some mixin usage from
 // deeper mixins)
-@import 'richie-education/scss/tools/index';
+@import "richie-education/scss/tools/index";
 
 // Generic stuff
-@import 'richie-education/scss/generic/index';
+@import "richie-education/scss/generic/index";
 
 // Shared object styles
-@import 'richie-education/scss/objects/index';
+@import "richie-education/scss/objects/index";
 
 // Page component styles
-@import 'richie-education/scss/components/index';
+@import "richie-education/scss/components/index";
 
 // Page component overrides
-@import './components/subheader';
-@import './components/templates/courses/cms/homepage';
-@import './components/templates/richie/large_banner/large_banner';
-@import './components/templates/richie/section/section';
+@import "./components/subheader";
+@import "./components/templates/courses/cms/homepage";
+@import "./components/templates/richie/large_banner/large_banner";
+@import "./components/templates/richie/section/section";
 
 // Libs
-@import './components/libs/tarteaucitron';
+@import "./components/libs/tarteaucitron";
 
 // Cunningham patchs
-@import './trumps/cunningham';
+@import "./trumps/cunningham";
 // CMS patchs
-@import 'richie-education/scss/trumps/cms';
+@import "richie-education/scss/trumps/cms";
 // IE11 patchs
-@import 'richie-education/scss/trumps/ie11-fixes';
+@import "richie-education/scss/trumps/ie11-fixes";
 // Bootstrap patchs
-@import 'richie-education/scss/trumps/bootstrap';
+@import "richie-education/scss/trumps/bootstrap";

@@ -15,6 +15,7 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Changed
 
+- Upgrade richie to 2.25.0
 - Change deprecated `xiti` web analytics service to `pianoanalytics`  
 - Configure Piano Analytics to also collect UTM parameters
 - Pin Piano Analytics JS SDK to 6.13.1

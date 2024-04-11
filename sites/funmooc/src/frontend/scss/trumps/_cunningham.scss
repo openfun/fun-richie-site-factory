@@ -1,6 +1,6 @@
 * {
-    // By default Cunningham enforce all elements to use the font base family. So in Richie
-    // some elements that should inherit font family from their parent will not do it so
+  // By default Cunningham enforce all elements to use the font base family. So in Richie
+  // some elements that should inherit font family from their parent will not do it so
   // we need to reset this behavior until this is fixed in Cunningham.
   font-family: inherit;
 }
