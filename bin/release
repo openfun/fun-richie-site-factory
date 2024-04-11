@@ -71,8 +71,8 @@ function release() {
     # - Add tag and date for the new releave in the form: ## [2.10.2]  2020-10-07
     sed -i -E "/Unreleased/a \\\n## [${new_version}] - $(date +'%Y-%m-%d')" "${SITES_DIRECTORY}/${site}/CHANGELOG.md"
     # - Add release link in footer
-    sed -i "s/^\[unreleased\].*$/[unreleased]: https:\/\/github.com\/openfun\/richie-site-factory\/compare\/${site}-${new_version}...HEAD/gi" "${SITES_DIRECTORY}/${site}/CHANGELOG.md"
-    sed -i -E "/^\[${current_version}\]/i [${new_version}]: https://github.com/openfun/richie-site-factory/compare/${site}-${current_version}...${site}-${new_version}" "${SITES_DIRECTORY}/${site}/CHANGELOG.md"
+    sed -i "s/^\[unreleased\].*$/[unreleased]: https:\/\/github.com\/openfun\/fun-richie-site-factory\/compare\/${site}-${new_version}...HEAD/gi" "${SITES_DIRECTORY}/${site}/CHANGELOG.md"
+    sed -i -E "/^\[${current_version}\]/i [${new_version}]: https://github.com/openfun/fun-richie-site-factory/compare/${site}-${current_version}...${site}-${new_version}" "${SITES_DIRECTORY}/${site}/CHANGELOG.md"
 
     # Update richie backend and frontend versions
     sed -i -E "s/(__version__ = \")(.*)\"/\1${new_version}\"/" "${SITES_DIRECTORY}/${site}/src/backend/${site}/__init__.py"
