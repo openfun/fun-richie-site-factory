@@ -1,6 +1,7 @@
 """
 Django settings for FUN-MOOC project.
 """
+
 import json
 import os
 
@@ -268,7 +269,7 @@ class Base(StyleguideMixin, DRFMixin, RichieCoursesConfigurationMixin, Configura
     profile_dashboard_urls = {
         "dashboard": {
             "label": _("Dashboard"),
-            "href": _("{base_url:s}/dashboard/"),
+            "href": _("{base_url:s}/dashboard"),
         },
     }
     if (
