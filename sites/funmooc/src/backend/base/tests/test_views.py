@@ -1,9 +1,11 @@
 """Test fun-mooc views."""
+
 from django.test import TestCase
 
 from lxml import etree  # nosec
 from richie.apps.core.factories import PageFactory, TitleFactory, UserFactory
 from richie.apps.courses.factories import CourseFactory, OrganizationFactory
+from richie.apps.courses.models import Course
 
 
 class ResourcesEdxRedirectViewsTestCase(TestCase):
@@ -36,6 +38,44 @@ class ResourcesEdxRedirectViewsTestCase(TestCase):
         course.extended_object.publish("en")
 
         response = self.client.get("/courses/sorbonne/abc/001/about/")
+
+        self.assertRedirects(
+            response,
+            "/fr/physique-101/",
+            status_code=301,
+            target_status_code=200,
+            fetch_redirect_response=True,
+        )
+
+    def test_views_redirect_edx_courses_success_with_snapshots(self):
+        """
+        OpenEdX course urls are redirected to the corresponding page in richie without
+        conflicts when snapshots exist.
+        """
+        course = CourseFactory(
+            code="abc", page_title="Physique 101", should_publish=True
+        )
+        TitleFactory(page=course.extended_object, language="en", title="Physics 101")
+        course.extended_object.publish("en")
+
+        # Create a snapshot
+        snapshot = CourseFactory(
+            code="abc", page_parent=course.extended_object, should_publish=True
+        )
+        TitleFactory(
+            page=snapshot.extended_object, language="en", title="Physics 101 (snapshot)"
+        )
+        snapshot.extended_object.publish("en")
+
+        self.assertEqual(snapshot.is_snapshot, True)
+
+        # Two courses with the same code should be created
+        courses = Course.objects.filter(
+            code="ABC", extended_object__publisher_is_draft=False
+        )
+        self.assertEqual(courses.count(), 2)
+
+        response = self.client.get("/courses/course-v1:sorbonne+abc+001/about/")
 
         self.assertRedirects(
             response,

@@ -1,6 +1,7 @@
 """
 Django settings for ADEME project.
 """
+
 import json
 import os
 

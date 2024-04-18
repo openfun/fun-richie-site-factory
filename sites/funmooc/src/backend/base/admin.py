@@ -1,4 +1,5 @@
 """Admin overrides for the fun-mooc site."""
+
 from django.contrib import admin, auth
 from django.contrib.auth.admin import UserAdmin
 from django.http import JsonResponse

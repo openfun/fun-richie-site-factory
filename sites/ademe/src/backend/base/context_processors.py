@@ -1,6 +1,7 @@
 """
 Template context_processors
 """
+
 from django.conf import settings
 
 from cms.utils import get_current_site
