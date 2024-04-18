@@ -10,6 +10,7 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Fixed
 
+- Upgrade richie to 2.25.1
 - Fix malformed dashboard url 
 
 ## [1.29.0] - 2024-04-11
