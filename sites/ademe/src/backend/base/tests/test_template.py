@@ -1,4 +1,5 @@
 """Test ademe templates."""
+
 from django.contrib.sites.models import Site
 from django.test import TestCase, override_settings
 

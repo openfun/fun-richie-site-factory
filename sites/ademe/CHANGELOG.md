@@ -9,6 +9,10 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Fixed
+
+- Fix multiple page returned issue on edx redirect view
+
 ## [0.20.0] - 2024-04-03
 
 ### Changed

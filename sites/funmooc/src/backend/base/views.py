@@ -1,4 +1,5 @@
 """Views for the fun-mooc site."""
+
 from django.db.models import Q
 from django.http import HttpResponsePermanentRedirect
 
@@ -17,11 +18,13 @@ def redirect_edx_resources(request, organization, course=None, session=None):
     def get_redirect_url(**kwargs):
         """Look for a published page matching the kwargs query filters."""
         try:
-            page = Page.objects.get(
+            page = Page.objects.distinct().get(
                 ~Q(title_set__publisher_state=PUBLISHER_STATE_PENDING),
                 publisher_is_draft=False,
                 title_set__language=request.LANGUAGE_CODE,
                 title_set__published=True,
+                # Exclude snapshots
+                node__parent__cms_pages__course__isnull=True,
                 **kwargs
             )
         except Page.DoesNotExist:

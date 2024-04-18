@@ -1,6 +1,7 @@
 """
 Template context_processors
 """
+
 import json
 
 from django.utils.translation import get_language_from_request

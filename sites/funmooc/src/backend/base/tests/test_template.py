@@ -1,4 +1,5 @@
 """Test fun-mooc templates."""
+
 from django.conf import settings
 from django.contrib.staticfiles import finders
 from django.test import TestCase

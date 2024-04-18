@@ -10,6 +10,7 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Fixed
 
+- Fix multiple page returned issue on edx redirect view
 - Upgrade richie to 2.25.1
 - Fix malformed dashboard url 
 

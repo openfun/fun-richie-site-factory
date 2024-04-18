@@ -1,6 +1,7 @@
 """
 API routes exposed by our base app.
 """
+
 from django.urls import re_path
 
 from .views import redirect_edx_resources
