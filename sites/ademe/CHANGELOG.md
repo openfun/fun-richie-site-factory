@@ -9,6 +9,8 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.20.1] - 2024-04-18
+
 ### Fixed
 
 - Fix multiple page returned issue on edx redirect view
@@ -195,7 +197,8 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 - First `ademe` image
 
-[unreleased]: https://github.com/openfun/fun-richie-site-factory/compare/ademe-0.20.0...HEAD
+[unreleased]: https://github.com/openfun/fun-richie-site-factory/compare/ademe-0.20.1...HEAD
+[0.20.1]: https://github.com/openfun/fun-richie-site-factory/compare/ademe-0.20.0...ademe-0.20.1
 [0.20.0]: https://github.com/openfun/fun-richie-site-factory/compare/ademe-0.19.0...ademe-0.20.0
 [0.19.0]: https://github.com/openfun/fun-richie-site-factory/compare/ademe-0.18.0...ademe-0.19.0
 [0.18.0]: https://github.com/openfun/fun-richie-site-factory/compare/ademe-0.17.0...ademe-0.18.0

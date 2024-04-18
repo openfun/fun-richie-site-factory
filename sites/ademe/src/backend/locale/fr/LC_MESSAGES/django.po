@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-21 16:59+0200\n"
+"POT-Creation-Date: 2024-04-18 18:19+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,87 +16,87 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ademe/settings.py:225
-msgid "Dashboard"
-msgstr "Tableau de bord"
-
-#: ademe/settings.py:226
-msgid "{base_url:s}/dashboard"
-msgstr ""
-
-#: ademe/settings.py:229
-msgid "Profile"
-msgstr "Profil"
-
-#: ademe/settings.py:230
-msgid "{base_url:s}/u/(username)"
-msgstr ""
-
-#: ademe/settings.py:233
-msgid "Account"
-msgstr "Compte"
-
-#: ademe/settings.py:234
-msgid "{base_url:s}/account/settings"
-msgstr ""
-
-#: ademe/settings.py:350
-msgid "Teaser"
-msgstr "Accroche"
-
-#: ademe/settings.py:447
+#: ademe/settings.py:28
 msgid "New courses"
 msgstr "Nouveaux cours"
 
-#: ademe/settings.py:450
+#: ademe/settings.py:31
 msgid "First session"
 msgstr "Première session"
 
-#: ademe/settings.py:460
+#: ademe/settings.py:41
 msgid "Availability"
 msgstr "Disponibilité"
 
-#: ademe/settings.py:469
+#: ademe/settings.py:50
 msgid "Languages"
 msgstr "Langues"
 
-#: ademe/settings.py:481
+#: ademe/settings.py:62
 msgid "Subjects"
 msgstr "Thématiques"
 
-#: ademe/settings.py:492
+#: ademe/settings.py:73
 msgid "Organizations"
 msgstr "Partenaires"
 
-#: ademe/settings.py:502
+#: ademe/settings.py:83
 msgid "Licences"
 msgstr "Licences"
 
-#: ademe/settings.py:517
+#: ademe/settings.py:98
 msgid "Weekly pace"
 msgstr "Rythme hebdomadaire"
 
-#: ademe/settings.py:521
+#: ademe/settings.py:102
 msgid "Self-paced"
 msgstr "À son rythme"
 
-#: ademe/settings.py:522
+#: ademe/settings.py:103
 msgid "Less than one hour"
 msgstr "Moins d'une heure"
 
-#: ademe/settings.py:523
+#: ademe/settings.py:104
 msgid "One to two hours"
 msgstr "Entre une et deux heures"
 
-#: ademe/settings.py:524
+#: ademe/settings.py:105
 msgid "More than two hours"
 msgstr "Plus de deux heures"
 
-#: ademe/settings.py:548 ademe/settings.py:571
+#: ademe/settings.py:316
+msgid "Dashboard"
+msgstr "Tableau de bord"
+
+#: ademe/settings.py:317
+msgid "{base_url:s}/dashboard"
+msgstr ""
+
+#: ademe/settings.py:320
+msgid "Profile"
+msgstr "Profil"
+
+#: ademe/settings.py:321
+msgid "{base_url:s}/u/(username)"
+msgstr ""
+
+#: ademe/settings.py:324
+msgid "Account"
+msgstr "Compte"
+
+#: ademe/settings.py:325
+msgid "{base_url:s}/account/settings"
+msgstr ""
+
+#: ademe/settings.py:442
+msgid "Teaser"
+msgstr "Accroche"
+
+#: ademe/settings.py:551 ademe/settings.py:574
 msgid "French"
 msgstr "Français"
 
-#: ademe/settings.py:548 ademe/settings.py:563
+#: ademe/settings.py:551 ademe/settings.py:566
 msgid "English"
 msgstr "Anglais"
 
@@ -137,7 +137,7 @@ msgstr "Code du cours"
 msgid "Course date"
 msgstr "Date du cours"
 
-#: templates/richie/base.html:8
+#: templates/richie/base.html:19
 msgid "Contact us"
 msgstr "Nous contacter"
 
@@ -159,23 +159,23 @@ msgstr "Actualité MBD : %(title)s"
 msgid "MBD news: %(title)s %(url)s"
 msgstr "Actualité MBD : %(title)s %(url)s"
 
-#: templates/social-networks/blogpost-badges.html:10
-#: templates/social-networks/course-badges.html:10
+#: templates/social-networks/blogpost-badges.html:11
+#: templates/social-networks/course-badges.html:11
 msgid "Share on Facebook"
 msgstr "Partager sur Facebook"
 
-#: templates/social-networks/blogpost-badges.html:20
-#: templates/social-networks/course-badges.html:20
+#: templates/social-networks/blogpost-badges.html:22
+#: templates/social-networks/course-badges.html:22
 msgid "Share on Twitter"
 msgstr "Partager sur Twitter"
 
-#: templates/social-networks/blogpost-badges.html:30
-#: templates/social-networks/course-badges.html:30
+#: templates/social-networks/blogpost-badges.html:33
+#: templates/social-networks/course-badges.html:33
 msgid "Share on Linkedin"
 msgstr "Partager sur Linkedin"
 
-#: templates/social-networks/blogpost-badges.html:40
-#: templates/social-networks/course-badges.html:40
+#: templates/social-networks/blogpost-badges.html:44
+#: templates/social-networks/course-badges.html:44
 msgid "Share by Email"
 msgstr "Partager par Email"
 
@@ -188,20 +188,20 @@ msgstr "Suivre un cours en ligne avec MBD"
 msgid "I just enrolled to the course \"%(title)s\" on MBD: %(url)s"
 msgstr "Je viens de m'inscrire au cours \"%(title)s\" sur MBD : %(url)s"
 
-#: templates/social-networks/footer-badges.html:8
+#: templates/social-networks/footer-badges.html:9
 msgid "Facebook"
 msgstr "Facebook"
 
-#: templates/social-networks/footer-badges.html:16
+#: templates/social-networks/footer-badges.html:18
 msgid "Twitter page"
 msgstr "Page Twitter"
 
-#: templates/social-networks/footer-badges.html:19
+#: templates/social-networks/footer-badges.html:21
 msgid "Twitter"
 msgstr "Twitter"
 
-#: templates/social-networks/footer-badges.html:27
 #: templates/social-networks/footer-badges.html:30
+#: templates/social-networks/footer-badges.html:33
 msgid "Linkedin"
 msgstr "Linkedin"
 
