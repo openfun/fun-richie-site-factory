@@ -8,6 +8,8 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [1.30.0] - 2024-05-06
+
 ### Changed
 
 - Add `REACT_DASHBOARD_MENU_LINKS` to display new dashboard links into user menu
@@ -680,7 +682,8 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 - Static and media files are stored in AWS S3 buckets and distributed _via_
   Amazon CloudFront
 
-[unreleased]: https://github.com/openfun/fun-richie-site-factory/compare/funmooc-1.29.1...HEAD
+[unreleased]: https://github.com/openfun/fun-richie-site-factory/compare/funmooc-1.30.0...HEAD
+[1.30.0]: https://github.com/openfun/fun-richie-site-factory/compare/funmooc-1.29.1...funmooc-1.30.0
 [1.29.1]: https://github.com/openfun/fun-richie-site-factory/compare/funmooc-1.29.0...funmooc-1.29.1
 [1.29.0]: https://github.com/openfun/fun-richie-site-factory/compare/funmooc-1.29.0-beta.0...funmooc-1.29.0
 [1.29.0-beta.0]: https://github.com/openfun/fun-richie-site-factory/compare/funmooc-1.28.0...funmooc-1.29.0-beta.0
