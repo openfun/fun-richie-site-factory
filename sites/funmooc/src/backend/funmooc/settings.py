@@ -282,7 +282,7 @@ class Base(StyleguideMixin, DRFMixin, RichieCoursesConfigurationMixin, Configura
                 "href": _("/dashboard"),
             },
             "dashboard_teacher": {
-                "label": _("Teacher dashboard"),
+                "label": _("Administration dashboard"),
                 "href": _("/dashboard/teacher"),
             },
         }
