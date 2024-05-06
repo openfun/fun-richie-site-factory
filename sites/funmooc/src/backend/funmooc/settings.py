@@ -273,13 +273,13 @@ class Base(StyleguideMixin, DRFMixin, RichieCoursesConfigurationMixin, Configura
         },
     }
     if (
-        FEATURES.get("REACT_DASHBOARD", False)  # pylint: disable=no-member
+        FEATURES.get("REACT_DASHBOARD_MENU_LINKS", False)  # pylint: disable=no-member
         and JOANIE_BACKEND.get("BASE_URL") is not None
     ):
         profile_dashboard_urls = {
             "dashboard": {
                 "label": _("Dashboard"),
-                "href": _("/dashboard/"),
+                "href": _("/dashboard"),
             },
             "dashboard_teacher": {
                 "label": _("Teacher dashboard"),
