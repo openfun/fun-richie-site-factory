@@ -8,6 +8,10 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Changed
+
+- Add `REACT_DASHBOARD_MENU_LINKS` to display new dashboard links into user menu
+
 ## [1.29.1] - 2024-04-18
 
 ### Fixed
