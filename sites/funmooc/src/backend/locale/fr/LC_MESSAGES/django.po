@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-18 18:19+0200\n"
+"POT-Creation-Date: 2024-05-06 14:42+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,18 +34,16 @@ msgid "Dashboard"
 msgstr "Tableau de bord"
 
 #: funmooc/settings.py:272
-#, fuzzy
-#| msgid "Teacher dashboard"
 msgid "{base_url:s}/dashboard"
-msgstr "Tableau de bord enseignant"
+msgstr ""
 
 #: funmooc/settings.py:282
-msgid "/dashboard/"
+msgid "/dashboard"
 msgstr ""
 
 #: funmooc/settings.py:285
-msgid "Teacher dashboard"
-msgstr "Tableau de bord enseignant"
+msgid "Administration dashboard"
+msgstr "Tableau de bord d'administration"
 
 #: funmooc/settings.py:286
 msgid "/dashboard/teacher"
