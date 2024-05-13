@@ -8,6 +8,10 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Changed
+
+- Replace the white fun mooc logo by the color one
+
 ## [1.30.0] - 2024-05-06
 
 ### Changed
