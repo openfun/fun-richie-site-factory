@@ -1,0 +1,28 @@
+{% extends "courses/cms/course_detail.html" %}
+{% load cms_tags i18n extra_tags %}
+{% block skills %}
+{% if current_page.publisher_is_draft or not current_page|is_empty_placeholder:"course_skills" %}
+<div class="course-detail__row course-detail__skills" property="about" typeof="Thing">
+  <h2 class="course-detail__title" property="name">{% blocktrans context "course_detail__title" %}Goals{% endblocktrans %}</h2>
+  <div property="description">
+    <p>{% trans "At the end of this training, you will be able to:" %}</p>
+    {% placeholder "course_skills" %}
+  </div>
+</div>
+{% endif %}
+{% endblock skills %}
+
+{% block plan %}
+<div class="course-detail__block course-detail__secondary-group">
+  {% if current_page.publisher_is_draft or not current_page|is_empty_placeholder:"course_plan" %}
+  {% with is_syllabus_property=True %}
+  <section class="course-detail__row course-detail__plan">
+    <h2 class="course-detail__title">{% blocktrans context "course_detail__title" %}Program{% endblocktrans %}</h2>
+    {% placeholder "course_plan" or %}
+    <p class="course-detail__empty">{% trans 'Enter here the detailed program.' %}</p>
+    {% endplaceholder %}
+  </section>
+  {% endwith %}
+  {% endif %}
+</div>
+{% endblock plan %}
