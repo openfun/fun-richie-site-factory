@@ -401,6 +401,11 @@ class Base(StyleguideMixin, DRFMixin, RichieCoursesConfigurationMixin, Configura
         },
     }
 
+    # Django CMS Page Templates
+    CMS_TEMPLATES_OVERRIDES = (
+        ("cms/professional_training_detail.html", _("Professional training page")),
+    )
+
     MIDDLEWARE = (
         "richie.apps.core.cache.LimitBrowserCacheTTLHeaders",
         "cms.middleware.utils.ApphookReloadMiddleware",
@@ -987,6 +992,12 @@ class Base(StyleguideMixin, DRFMixin, RichieCoursesConfigurationMixin, Configura
         return [(language, _(name)) for language, name in global_settings.LANGUAGES] + [
             ("ps", _("Pashto"))
         ]
+
+    @classmethod
+    def pre_setup(cls):
+        """Pre setup configuration."""
+
+        cls.CMS_TEMPLATES = cls.CMS_TEMPLATES_OVERRIDES + cls.CMS_TEMPLATES
 
     @classmethod
     def post_setup(cls):

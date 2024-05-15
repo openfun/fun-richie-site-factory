@@ -8,6 +8,10 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Added
+
+- Add custom course template for professional training
+
 ## [1.31.0] - 2024-05-14
 
 ### Changed
