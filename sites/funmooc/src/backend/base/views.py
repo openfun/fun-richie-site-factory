@@ -8,6 +8,7 @@ from cms.constants import PUBLISHER_STATE_PENDING
 from richie.apps.core.views.error import error_view_handler
 
 
+# pylint: disable=unused-argument
 def redirect_edx_resources(request, organization, course=None, session=None):
     """
     The richie site is hosted on the same domain as OpenEdX before.
@@ -28,7 +29,7 @@ def redirect_edx_resources(request, organization, course=None, session=None):
                 **kwargs
             )
         except Page.DoesNotExist:
-            return
+            return None
 
         return page.get_absolute_url(request.LANGUAGE_CODE)
 

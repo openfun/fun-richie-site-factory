@@ -2,7 +2,7 @@
 
 from django.test import TestCase
 
-from lxml import etree  # nosec
+import lxml.html  # nosec
 from richie.apps.core.factories import PageFactory, TitleFactory, UserFactory
 from richie.apps.courses.factories import CourseFactory, OrganizationFactory
 from richie.apps.courses.models import Course
@@ -171,6 +171,8 @@ class ResourcesEdxRedirectViewsTestCase(TestCase):
 
 
 class DjangoCheckSeoTestCase(TestCase):
+    """Django Check SEO view test case."""
+
     def test_views_django_check_seo_is_accessible(self):
         """
         Check that Django Check SEO is accessible by an admin user
@@ -187,7 +189,7 @@ class DjangoCheckSeoTestCase(TestCase):
         self.client.login(username=user.username, password="password")  # nosec
 
         response = self.client.get(url)
-        html = etree.fromstring(response.content)  # nosec
+        html = lxml.html.fromstring(response.content)
         page_title = html.cssselect("title")[0].text
 
         self.assertEqual(response.status_code, 200)

@@ -31,8 +31,8 @@ def site_metas(request):
                 raise ValueError
         except (Page.DoesNotExist, ValueError):
             return None
-        else:
-            return page.get_public_url(language=language)
+
+        return page.get_public_url(language=language)
 
     context = {
         "PRIVACY_CONTEXT": json.dumps(

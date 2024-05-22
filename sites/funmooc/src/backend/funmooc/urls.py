@@ -32,7 +32,7 @@ admin.site.enable_nav_sidebar = False
 urlpatterns = [
     path(r"sitemap.xml", sitemap, {"sitemaps": {"cmspages": CMSSitemap}}),
     re_path(
-        r"api/{}/".format(API_PREFIX),
+        rf"api/{API_PREFIX}/",
         include([*courses_urlpatterns, *search_urlpatterns, *plugins_urlpatterns]),
     ),
     re_path(r"^redirects/", include([*courses_redirects_urlpatterns])),
@@ -80,7 +80,7 @@ if settings.DEBUG:
         + urlpatterns
     )
 
-handler400 = "richie.apps.core.views.error.error_400_view_handler"
-handler403 = "richie.apps.core.views.error.error_403_view_handler"
-handler404 = "richie.apps.core.views.error.error_404_view_handler"
-handler500 = "richie.apps.core.views.error.error_500_view_handler"
+handler400 = "richie.apps.core.views.error.error_400_view_handler"  # pylint: disable=invalid-name
+handler403 = "richie.apps.core.views.error.error_403_view_handler"  # pylint: disable=invalid-name
+handler404 = "richie.apps.core.views.error.error_404_view_handler"  # pylint: disable=invalid-name
+handler500 = "richie.apps.core.views.error.error_500_view_handler"  # pylint: disable=invalid-name

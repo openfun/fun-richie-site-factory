@@ -1,4 +1,5 @@
 # Python
+PYTHONPATH=.
 PYTHONUNBUFFERED=1
 
 # Django

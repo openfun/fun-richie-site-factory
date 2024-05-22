@@ -48,13 +48,13 @@ class RedisCacheWithFallback(BaseCache):
         """
         try:
             next_cache_state = self._call_redis_cache(method, args, kwargs)
-        except Exception as e:
+        except Exception as e:  # pylint: disable=broad-exception-caught
             logger.warning("[DEGRADED CACHE MODE] - Switch to fallback cache")
             logger.exception(e)
             return self._call_fallback_cache(method, args, kwargs)
-        else:
-            self._invalidate_fallback_cache()
-            return next_cache_state
+
+        self._invalidate_fallback_cache()
+        return next_cache_state
 
     def _call_redis_cache(self, method, args, kwargs):
         """
