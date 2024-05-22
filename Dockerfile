@@ -11,7 +11,7 @@ ARG DOCKER_USER=10000
 FROM python:3.10-buster as base
 
 # ---- front-end builder image ----
-FROM node:18.19 as front-builder
+FROM node:20.13 as front-builder
 
 ARG SITE
 ARG BUILD_NEXT_FRONT
@@ -166,4 +166,3 @@ RUN pip uninstall -y richie && \
 
 # Un-privileged user running the application
 USER ${DOCKER_USER}
-
