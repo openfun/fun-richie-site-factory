@@ -12,6 +12,10 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 - Add custom course template for professional training
 
+### Changed
+
+- Upgrade to richie 2.26.0
+
 ## [1.31.0] - 2024-05-14
 
 ### Changed

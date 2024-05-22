@@ -1,4 +1,4 @@
 {
   "extends": "./node_modules/richie-education/tsconfig.json",
-  "include": ["./**/*", "./node_modules/richie-education/js/types/globals.d.ts"]
+  "include": ["./**/*", "./node_modules/richie-education/js/types/**/*.d.ts"]
 }

@@ -2,10 +2,17 @@ import { AuthenticationBackend, LMSBackend } from 'types/commonDataProps';
 import { Maybe, Nullable } from 'types/utils';
 import { User } from 'types/User';
 import { APILms } from 'types/api';
-import { OpenEdXEnrollment } from 'types';
+import { UnknownEnrollment, OpenEdXEnrollment } from 'types';
 import { location } from 'utils/indirection/window';
 import { RICHIE_USER_TOKEN } from 'settings';
 import { base64Decode } from 'utils/base64Parser';
+import {
+  OpenEdxGender,
+  OpenEdxLanguageIsoCode,
+  OpenEdxLevelOfEducation,
+  OpenEdxApiProfile,
+} from 'types/openEdx';
+import { OpenEdxFullNameFormValues } from 'components/OpenEdxFullNameForm';
 
 type JWTPayload = {
   email: string;
@@ -38,7 +45,13 @@ const JOANIE_DEV_DEMO_USER_JWT_TOKENS = {
     'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMzOTI4MjE0LCJpYXQiOjE3MDIzOTIyMTQsImp0aSI6ImNkZjAyMGM4ODdjOTQxYzU5ZmExN2FkZGExNjNjMDIzIiwiZW1haWwiOiJqZWFuLWJhcHRpc3RlLnBlbnJhdGgrc3R1ZGVudF91c2VyQGZ1bi1tb29jLmZyIiwibGFuZ3VhZ2UiOiJmci1mciIsInVzZXJuYW1lIjoic3R1ZGVudF91c2VyIiwiZnVsbF9uYW1lIjoiXHUwMGM5dHVkaWFudCJ9.JMdnC2VXwq2VbNPrIYxj8PEq0oJJ4LZZT_ywWyE1lBM',
 };
 
-function getUserInfo(username: keyof typeof JOANIE_DEV_DEMO_USER_JWT_TOKENS): Maybe<User> {
+export type DevDemoUser = keyof typeof JOANIE_DEV_DEMO_USER_JWT_TOKENS;
+
+export const RICHIE_DUMMY_IS_LOGGED_IN = 'RICHIE_DUMMY_IS_LOGGED_IN';
+
+const CURRENT_JOANIE_DEV_DEMO_USER: DevDemoUser = 'student_user';
+
+function getUserInfo(username: DevDemoUser): User {
   const accessToken = JOANIE_DEV_DEMO_USER_JWT_TOKENS[username];
   const JWTPayload: JWTPayload = JSON.parse(base64Decode(accessToken.split('.')[1]));
 
@@ -53,6 +66,19 @@ const API = (APIConf: LMSBackend | AuthenticationBackend): APILms => {
   const extractCourseIdFromUrl = (url: string): Maybe<Nullable<string>> => {
     const matches = url.match((APIConf as LMSBackend).course_regexp);
     return matches && matches[1] ? matches[1] : null;
+  };
+
+  const dummyOpenEdxApiProfile: OpenEdxApiProfile = {
+    username: 'j_do',
+    name: 'John Do',
+    email: 'j.do@whois.net',
+    country: 'fr',
+    level_of_education: OpenEdxLevelOfEducation.MASTER_OR_PROFESSIONNAL_DEGREE,
+    gender: OpenEdxGender.MALE,
+    year_of_birth: '1971',
+    'pref-lang': OpenEdxLanguageIsoCode.ENGLISH,
+    language_proficiencies: [{ code: OpenEdxLanguageIsoCode.ENGLISH }],
+    date_joined: Date.toString(),
   };
 
   return {
@@ -71,12 +97,41 @@ const API = (APIConf: LMSBackend | AuthenticationBackend): APILms => {
               "username": "admin",
             }
         */
-        return getUserInfo('student_user') || null;
+        if (!localStorage.getItem(RICHIE_DUMMY_IS_LOGGED_IN)) {
+          return null;
+        }
+        return CURRENT_JOANIE_DEV_DEMO_USER ? getUserInfo(CURRENT_JOANIE_DEV_DEMO_USER) : null;
       },
-      login: () => location.reload(),
+      login: () => {
+        localStorage.setItem(RICHIE_DUMMY_IS_LOGGED_IN, 'true');
+        location.reload();
+      },
       register: () => location.reload(),
-      logout: async () => undefined,
+      logout: async () => {
+        localStorage.removeItem(RICHIE_DUMMY_IS_LOGGED_IN);
+      },
       accessToken: () => sessionStorage.getItem(RICHIE_USER_TOKEN),
+      account: {
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        get: (username: string): Promise<OpenEdxApiProfile> => {
+          return Promise.resolve({
+            username: 'j_do',
+            name: 'John Do',
+            email: 'j.do@whois.net',
+            country: 'fr',
+            level_of_education: OpenEdxLevelOfEducation.MASTER_OR_PROFESSIONNAL_DEGREE,
+            gender: OpenEdxGender.MALE,
+            year_of_birth: '1971',
+            'pref-lang': OpenEdxLanguageIsoCode.ENGLISH,
+            language_proficiencies: [{ code: OpenEdxLanguageIsoCode.ENGLISH }],
+          } as OpenEdxApiProfile);
+          return Promise.resolve(dummyOpenEdxApiProfile);
+        },
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        update: (username: string, data: OpenEdxFullNameFormValues) => {
+          return Promise.resolve({ ...dummyOpenEdxApiProfile, ...data });
+        },
+      },
     },
     enrollment: {
       get: async (url: string, user: Nullable<User>) =>
@@ -127,8 +182,7 @@ const API = (APIConf: LMSBackend | AuthenticationBackend): APILms => {
           }
           resolve(null);
         }),
-      // TODO: Use UnknownEnrollment type instead unknown when next version of Richie will released
-      isEnrolled: async (enrollment: Maybe<Nullable<unknown>>) =>
+      isEnrolled: async (enrollment: Maybe<Nullable<UnknownEnrollment>>) =>
         new Promise((resolve) => resolve(!!(enrollment as OpenEdXEnrollment)?.is_active)),
       set: (url: string, user: User): Promise<boolean> =>
         new Promise((resolve) => {

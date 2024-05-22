@@ -8,7 +8,7 @@ ARG BUILD_NEXT_FRONT=0
 ARG DOCKER_USER=10000
 
 # ---- base image to inherit from ----
-FROM python:3.10-buster as base
+FROM python:3.11-bookworm as base
 
 # ---- front-end builder image ----
 FROM node:20.13 as front-builder
@@ -50,7 +50,7 @@ RUN mkdir /install && \
     # The django-cms fork includes drillable search feature,
     # it should be removed when this feature will be officially released.
     pip install --prefix=/install \
-    git+https://github.com/jbpenrath/django-cms@fun-3.11.0#egg=django-cms
+    git+https://github.com/jbpenrath/django-cms@fun-3.11.6#egg=django-cms
 
 # ---- Core application image ----
 FROM base as core
