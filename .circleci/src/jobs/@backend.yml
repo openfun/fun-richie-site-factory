@@ -32,6 +32,8 @@ lint-back:
   docker:
     - image: cimg/python:3.11
   working_directory: ~/fun/sites/<< parameters.site >>/src/backend/
+  environment:
+    PYTHONPATH: /home/circleci/fun/sites/<< parameters.site >>/src/backend
   steps:
     - checkout:
         path: ~/fun

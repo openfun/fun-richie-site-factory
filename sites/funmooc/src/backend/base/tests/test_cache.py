@@ -37,8 +37,12 @@ class RedisCacheWithFallbackTestCase(TestCase):
         """Test class instance of caches"""
         client = RedisCacheWithFallback(None, {})
         self.assertIs(type(client), RedisCacheWithFallback)
-        self.assertIs(type(client._redis_cache), RedisCache)
-        self.assertIs(type(client._fallback_cache), DummyCache)
+        self.assertIs(
+            type(client._redis_cache), RedisCache  # pylint: disable=protected-access
+        )
+        self.assertIs(
+            type(client._fallback_cache), DummyCache  # pylint: disable=protected-access
+        )
 
     @mock.patch.object(RedisCacheWithFallback, "_call_fallback_cache")
     @mock.patch.object(RedisCacheWithFallback, "_call_redis_cache")
