@@ -8,6 +8,10 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Fixed
+
+- Add missing `CSRF_TRUSTED_ORIGINS` setting in Production configuration
+
 ## [1.32.0] - 2024-05-22
 
 ### Added
