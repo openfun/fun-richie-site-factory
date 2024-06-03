@@ -5,9 +5,6 @@
 // Named colors
 // ---------
 
-@use "../../vendors/cunningham-tokens" as tokens;
+@use '../../vendors/cunningham-tokens' as tokens;
 
-$palette: recursive-map-merge(
-  $palette,
-  map-get(tokens.$themes, "default", "theme", "colors")
-);
+$palette: recursive-map-merge($palette, map-get(tokens.$themes, 'default', 'theme', 'colors'));

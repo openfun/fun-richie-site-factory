@@ -44,8 +44,7 @@ div#tarteaucitronRoot {
     border-radius: 100vw !important;
   }
 
-  #tarteaucitronAlertBig
-    button:not(.tarteaucitronAllow):not(.tarteaucitronDeny),
+  #tarteaucitronAlertBig button:not(.tarteaucitronAllow):not(.tarteaucitronDeny),
   #tarteaucitronInfo button {
     background: none;
     text-decoration: underline;
@@ -67,7 +66,7 @@ div#tarteaucitronRoot {
 
       &:after {
         color: r-theme-val(cookie-consent, light-color);
-        content: "×";
+        content: '×';
         font-size: 2rem;
       }
 
@@ -120,7 +119,7 @@ div#tarteaucitronRoot {
       &:after {
         @include button-base();
         color: r-theme-val(cookie-consent, light-color);
-        content: "×";
+        content: '×';
         font-size: 1.5rem;
         line-height: 1em;
         padding: 1rem;
