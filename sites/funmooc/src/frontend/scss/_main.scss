@@ -49,10 +49,14 @@
 // Shared object styles
 @import 'richie-education/scss/objects/index';
 
+// Shared object overrides
+@import './objects/breadcrumbs';
+
 // Page component styles
 @import 'richie-education/scss/components/index';
 
 // Page component overrides
+@import './components/header';
 @import './components/subheader';
 @import './components/templates/courses/cms/homepage';
 @import './components/templates/richie/large_banner/large_banner';

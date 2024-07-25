@@ -1,5 +1,5 @@
 {% extends "richie/base.html" %}
-{% load cms_tags static i18n %}
+{% load cms_tags menu_tags static i18n %}
 
 {% block meta_favicons %}
 <link rel="apple-touch-icon" sizes="180x180" href="{% static 'richie/favicon/apple-touch-icon.png' %}">
@@ -13,16 +13,59 @@
 <meta name="theme-color" content="#ffffff">
 {% endblock meta_favicons %}
 
-{% block topbar_contact %}
-<li class="topbar__item topbar__item--cta">
-    <a href="{% page_url 'help' %}">{% trans "FAQ" %}</a>
-</li>
-{% endblock topbar_contact %}
+{% block body_header %}
+<div id="site-header">
+    <div class="topbar {% block topbar_classes %}{% endblock topbar_classes %}" id="main-menu">
+        <div class="topbar__container">
+            <header class="topbar__header">
+                <div class="topbar__brand">
+                    <a href="/" title="{% trans "Go to homepage" %}" rel="home" accesskey="h">
+                    {% block branding_topbar %}
+                        {% get_current_language as LANGUAGE_CODE %}
+                        <img src="{% get_static_prefix %}richie/images/logo-{{LANGUAGE_CODE}}.svg" class="topbar__logo" alt="{{ SITE.name }}">
+                    {% endblock branding_topbar %}
+                    </a>
 
-{% block branding_topbar %}
-    {% get_current_language as LANGUAGE_CODE %}
-    <img src="{% get_static_prefix %}richie/images/logo-{{LANGUAGE_CODE}}.svg" class="topbar__logo" alt="{{ SITE.name }}">
-{% endblock branding_topbar %}
+                    <button
+                        class="topbar__hamburger"
+                        data-target="main-menu"
+                        aria-label="{% trans "Menu" %}"
+                        aria-expanded="false"
+                    >&#8801;</button>
+                </div>
+
+                <nav class="topbar__menu">
+                    <ul class="topbar__list">
+                        {% show_menu 0 100 0 0 "menu/header_menu.html" %}
+                    </ul>
+                </nav>
+
+                <div class="topbar__menu topbar__menu--aside">
+                    {% block topbar_searchbar %}{% endblock topbar_searchbar %}
+                    <ul class="topbar__list topbar__list--controls">
+                        {% block userlogin %}
+                            {% if AUTHENTICATION %}
+                                <li class="topbar__item topbar__item--login richie-react richie-react--user-login" data-props='{"profileUrls": {{ AUTHENTICATION.profile_urls }}}'></li>
+                            {% endif %}
+                        {% endblock userlogin %}
+                        {% block topbar_contact %}{% endblock topbar_contact %}
+                    </ul>
+
+                    {% language_chooser "menu/language_menu.html" %}
+                </div>
+            </header>
+        </div>
+    </div>
+</div>
+{% endblock body_header %}
+
+{% block breadcrumbs %}
+    <div class="breadcrumbs__wrapper">
+        {% include "menu/breadcrumbs.html" %}
+        <div class="breadcrumbs__aside richie-react richie-react--root-search-suggest-field"
+            data-props='{"courseSearchPageUrl": "{% page_url 'courses' %}"}'></div>
+    </div>
+{% endblock breadcrumbs %}
 
 {% block body_footer_title %}{% endblock body_footer_title %}
 

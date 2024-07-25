@@ -1,0 +1,101 @@
+.topbar {
+  &__container {
+    max-width: 100%;
+
+    @include media-breakpoint-up(xl) {
+      @include make-container();
+      @include make-container-max-widths();
+    }
+  }
+
+  &__brand {
+    @include media-breakpoint-up($r-topbar-breakpoint) {
+      margin-right: 0;
+    }
+    @include media-breakpoint-up(xl) {
+      margin-right: 0;
+    }
+    @include media-breakpoint-up(xxl) {
+      margin-right: 0;
+    }
+  }
+
+  &__list {
+    &--controls {
+      @include media-breakpoint-up($r-topbar-breakpoint) {
+        align-items: flex-end;
+      }
+
+      .topbar__item + .topbar__item {
+        @include media-breakpoint-up($r-topbar-breakpoint) {
+          margin-left: 0;
+        }
+        @include media-breakpoint-up(xl) {
+          margin-left: 0.5rem;
+        }
+      }
+    }
+  }
+
+  &__menu {
+    @include sv-flex(1, 0, auto);
+    order: 2;
+    font-family: $r-font-family-montserrat;
+    font-weight: $font-weight-boldest;
+
+    @include media-breakpoint-only(lg) {
+      font-size: 0.7rem;
+    }
+
+    .topbar__list {
+      justify-content: flex-end;
+    }
+
+    &--aside {
+      @include sv-flex(0, 0, auto);
+      order: 3;
+      font-family: $r-font-family-montserrat;
+      font-weight: $font-weight-boldest;
+
+      .selector__button {
+        font-size: inherit;
+      }
+      .selector__list__link {
+        font-size: inherit;
+        font-weight: normal;
+      }
+    }
+  }
+
+  &__item {
+    & > a {
+      @include media-breakpoint-up($r-topbar-breakpoint) {
+        padding-bottom: 2rem;
+        align-items: flex-end;
+      }
+      @include media-breakpoint-only(lg) {
+        padding-left: 0.7rem;
+        padding-right: 0.7rem;
+      }
+    }
+
+    &--login {
+      @include media-breakpoint-up($r-topbar-breakpoint) {
+        padding-bottom: 1.2rem;
+        align-items: flex-end;
+      }
+    }
+  }
+
+  .richie-react--language-selector {
+    align-items: flex-end;
+
+    @include media-breakpoint-up($r-topbar-breakpoint) {
+      padding-bottom: 1.2rem;
+    }
+  }
+
+  .user-login__btn--sign-up {
+    display: none;
+  }
+}
