@@ -1,0 +1,66 @@
+.topbar {
+  &__container {
+    max-width: 100%;
+
+    @include media-breakpoint-up(xl) {
+      @include make-container();
+      @include make-container-max-widths();
+    }
+  }
+
+  &__brand {
+    @include media-breakpoint-up($r-topbar-breakpoint) {
+      margin-right: 0;
+    }
+    @include media-breakpoint-up(xl) {
+      margin-right: 0;
+    }
+    @include media-breakpoint-up(xxl) {
+      margin-right: 0;
+    }
+  }
+
+  &__list {
+    &--controls {
+      @include media-breakpoint-up($r-topbar-breakpoint) {
+        align-items: flex-end;
+      }
+
+      .topbar__item + .topbar__item {
+        @include media-breakpoint-up($r-topbar-breakpoint) {
+          margin-left: 0;
+        }
+        @include media-breakpoint-up(xl) {
+          margin-left: 0.5rem;
+        }
+      }
+    }
+  }
+
+  &__item {
+    & > a {
+      @include media-breakpoint-up($r-topbar-breakpoint) {
+        padding-bottom: 2rem;
+      }
+    }
+
+    &--login {
+      @include media-breakpoint-up($r-topbar-breakpoint) {
+        padding-bottom: 1.2rem;
+      }
+    }
+  }
+
+  .richie-react--language-selector {
+    align-items: flex-end;
+
+    @include media-breakpoint-up($r-topbar-breakpoint) {
+      padding-bottom: 1.2rem;
+    }
+  }
+
+  // Temporary hide signup button which is not wanted anymore
+  .user-login__btn--sign-up {
+    display: none;
+  }
+}

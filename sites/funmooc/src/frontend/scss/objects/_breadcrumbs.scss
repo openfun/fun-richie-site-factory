@@ -1,0 +1,30 @@
+
+.breadcrumbs__wrapper {
+  @include make-container();
+  @include make-container-max-widths();
+  padding: 0;
+  display: flex;
+
+  .breadcrumbs {
+    @include sv-flex(1, 0, 65%);
+  }
+
+  .breadcrumbs__aside {
+    @include sv-flex(1, 0, 35%);
+    display: flex;
+    align-items: center;
+
+    .react-autosuggest__container {
+      width: 100%;
+      margin-bottom: 0;
+    }
+    .react-autosuggest__input {
+      &::placeholder {
+        color: r-color('white');
+      }
+      &--focused::placeholder {
+        color: r-theme-val(base-search, input-border);
+      }
+    }
+  }
+}

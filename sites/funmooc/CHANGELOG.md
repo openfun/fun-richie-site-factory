@@ -8,6 +8,10 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Changed
+
+- Update 'funmooc' site integration to move up main menu and move down the search bar
+
 ## [1.34.1] - 2024-06-21
 
 ### Fixed
