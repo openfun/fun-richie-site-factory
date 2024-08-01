@@ -8,6 +8,10 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Changed
+
+- Migrate to new STORAGES settings
+
 ## [1.26.1] - 2023-11-02
 
 ### Fixed
