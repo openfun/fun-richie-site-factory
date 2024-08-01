@@ -195,7 +195,14 @@ class Base(StyleguideMixin, DRFMixin, RichieCoursesConfigurationMixin, Configura
     # For static files, we want to use a backend that includes a hash in
     # the filename, that is calculated from the file content, so that browsers always
     # get the updated version of each file.
-    STATICFILES_STORAGE = values.Value("base.storage.CDNManifestStaticFilesStorage")
+    STORAGES = {
+        "default": {
+            "BACKEND": "django.core.files.storage.FileSystemStorage",
+        },
+        "staticfiles": {
+            "BACKEND": "base.storage.CDNManifestStaticFilesStorage",
+        },
+    }
 
     AUTHENTICATION_BACKENDS = ("django.contrib.auth.backends.ModelBackend",)
 
@@ -309,18 +316,6 @@ class Base(StyleguideMixin, DRFMixin, RichieCoursesConfigurationMixin, Configura
     USE_L10N = True
     USE_TZ = True
     LOCALE_PATHS = [os.path.join(BASE_DIR, "locale")]
-
-    # Mapping between edx and richie profile fields
-    EDX_USER_PROFILE_TO_DJANGO = {
-        "preferred_username": "username",
-        "email": "email",
-        "name": "full_name",
-        "given_name": "first_name",
-        "family_name": "last_name",
-        "locale": "language",
-        "user_id": "user_id",
-        "administrator": "is_staff",
-    }
 
     # Templates
     TEMPLATES = [
@@ -708,7 +703,14 @@ class Development(Base):
 class Test(Base):
     """Test environment settings"""
 
-    STATICFILES_STORAGE = "django.contrib.staticfiles.storage.StaticFilesStorage"
+    STORAGES = {
+        "default": {
+            "BACKEND": "django.core.files.storage.FileSystemStorage",
+        },
+        "staticfiles": {
+            "BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage",
+        },
+    }
 
 
 class ContinuousIntegration(Test):
@@ -734,8 +736,6 @@ class Production(Base):
     SECURE_BROWSER_XSS_FILTER = True
     SECURE_CONTENT_TYPE_NOSNIFF = True
     SESSION_COOKIE_SECURE = True
-
-    DEFAULT_FILE_STORAGE = "base.storage.MediaStorage"
     AWS_DEFAULT_ACL = None
     AWS_LOCATION = "media"
 
@@ -750,6 +750,15 @@ class Production(Base):
     AWS_S3_REGION_NAME = values.Value("eu-west-1")
 
     AWS_MEDIA_BUCKET_NAME = values.Value("production-richie-media")
+
+    STORAGES = {
+        "default": {
+            "BACKEND": "base.storage.MediaStorage",
+        },
+        "staticfiles": {
+            "BACKEND": "base.storage.CDNManifestStaticFilesStorage",
+        },
+    }
 
     # CDN domain for static/media urls. It is passed to the frontend to load built chunks
     CDN_DOMAIN = values.Value()

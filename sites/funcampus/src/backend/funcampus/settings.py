@@ -195,7 +195,14 @@ class Base(StyleguideMixin, DRFMixin, RichieCoursesConfigurationMixin, Configura
     # For static files, we want to use a backend that includes a hash in
     # the filename, that is calculated from the file content, so that browsers always
     # get the updated version of each file.
-    STATICFILES_STORAGE = values.Value("base.storage.CDNManifestStaticFilesStorage")
+    STORAGES = {
+        "default": {
+            "BACKEND": "django.core.files.storage.FileSystemStorage",
+        },
+        "staticfiles": {
+            "BACKEND": "base.storage.CDNManifestStaticFilesStorage",
+        },
+    }
 
     # Login/registration related settings
     LOGIN_REDIRECT_URL = "/"
@@ -877,7 +884,14 @@ class Development(Base):
 class Test(Base):
     """Test environment settings"""
 
-    STATICFILES_STORAGE = "django.contrib.staticfiles.storage.StaticFilesStorage"
+    STORAGES = {
+        "default": {
+            "BACKEND": "django.core.files.storage.FileSystemStorage",
+        },
+        "staticfiles": {
+            "BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage",
+        },
+    }
 
 
 class ContinuousIntegration(Test):
@@ -904,7 +918,14 @@ class Production(Base):
     SECURE_CONTENT_TYPE_NOSNIFF = True
     SESSION_COOKIE_SECURE = True
 
-    DEFAULT_FILE_STORAGE = "base.storage.MediaStorage"
+    STORAGES = {
+        "default": {
+            "BACKEND": "base.storage.MediaStorage",
+        },
+        "staticfiles": {
+            "BACKEND": "base.storage.CDNManifestStaticFilesStorage",
+        },
+    }
     AWS_DEFAULT_ACL = None
     AWS_LOCATION = "media"
 
