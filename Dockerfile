@@ -8,10 +8,10 @@ ARG BUILD_NEXT_FRONT=0
 ARG DOCKER_USER=10000
 
 # ---- base image to inherit from ----
-FROM python:3.11-bookworm as base
+FROM python:3.11-bookworm AS base
 
 # ---- front-end builder image ----
-FROM node:20.13 as front-builder
+FROM node:20.13 AS front-builder
 
 ARG SITE
 ARG BUILD_NEXT_FRONT
@@ -33,7 +33,7 @@ RUN yarn compile-translations && \
     yarn build-sass-production
 
 # ---- back-end builder image ----
-FROM base as back-builder
+FROM base AS back-builder
 
 ARG SITE
 
@@ -46,14 +46,14 @@ COPY ./sites/${SITE}/requirements/base.txt /builder/requirements.txt
 RUN pip install --upgrade pip
 
 RUN mkdir /install && \
-    pip install --prefix=/install -r requirements.txt \
+    pip install --prefix=/install -r requirements.txt && \
     # The django-cms fork includes drillable search feature,
     # it should be removed when this feature will be officially released.
     pip install --prefix=/install \
     git+https://github.com/jbpenrath/django-cms@fun-3.11.6#egg=django-cms
 
 # ---- Core application image ----
-FROM base as core
+FROM base AS core
 
 ARG SITE
 
@@ -93,7 +93,7 @@ RUN chmod g=u /etc/passwd
 ENTRYPOINT [ "/usr/local/bin/entrypoint" ]
 
 # ---- Static files/links collector ----
-FROM core as collector
+FROM core AS collector
 
 ARG STATIC_ROOT
 
@@ -110,7 +110,7 @@ RUN python manage.py collectstatic --noinput
 RUN rdfind -makesymlinks true ${STATIC_ROOT}
 
 # ---- Development image ----
-FROM core as development
+FROM core AS development
 
 ARG SITE
 
@@ -128,7 +128,7 @@ USER ${DOCKER_USER}
 CMD python manage.py runserver 0.0.0.0:8000
 
 # ---- Production image ----
-FROM core as production
+FROM core AS production
 
 ARG DOCKER_USER
 ARG SITE
@@ -146,7 +146,7 @@ USER ${DOCKER_USER}
 CMD gunicorn -c /usr/local/etc/gunicorn/app.py ${SITE}.wsgi:application
 
 # ---- Nginx ----
-FROM ${NGINX_IMAGE_NAME}:${NGINX_IMAGE_TAG} as nginx
+FROM ${NGINX_IMAGE_NAME}:${NGINX_IMAGE_TAG} AS nginx
 
 ARG STATIC_ROOT
 
@@ -155,7 +155,7 @@ RUN mkdir -p ${STATIC_ROOT}
 COPY --from=collector ${STATIC_ROOT} ${STATIC_ROOT}
 
 # ---- Canary image ----
-FROM production as canary
+FROM production AS canary
 
 ARG DOCKER_USER
 
