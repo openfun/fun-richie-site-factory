@@ -67,7 +67,10 @@
 
 // Cunningham patchs
 @import './trumps/cunningham';
+
 // CMS patchs
 @import 'richie-education/scss/trumps/cms';
 // IE11 patchs
 @import 'richie-education/scss/trumps/ie11-fixes';
+// Bootstrap patchs
+@import 'richie-education/scss/trumps/bootstrap';

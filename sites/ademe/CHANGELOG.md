@@ -11,6 +11,7 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Changed
 
+- Upgrade to richie 2.28.1
 - Migrate to new STORAGES settings
 
 ## [0.20.1] - 2024-04-18

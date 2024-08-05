@@ -170,7 +170,7 @@ const CourseGlimpseBase = ({ context, course }: CourseGlimpseProps & CommonDataP
             </span>
           </div>
         ) : null}
-        <CourseGlimpseFooter context={context} courseState={course.state} />
+        <CourseGlimpseFooter context={context} course={course} />
       </div>
     </div>
   );
