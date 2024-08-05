@@ -2,6 +2,6 @@
   "extends": "./node_modules/richie-education/tsconfig.json",
   "include": [
     "./**/*",
-    "./node_modules/richie-education/js/types/globals.d.ts"
+    "./node_modules/richie-education/js/types/**/*.d.ts"
   ]
 }
