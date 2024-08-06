@@ -11,6 +11,7 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Changed
 
+- Setup and customize Cunningham tokens
 - Upgrade to richie 2.28.1
 - Migrate to Sentry SDK 2.0
 - Migrate to new STORAGES settings

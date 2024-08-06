@@ -48,7 +48,7 @@ div#tarteaucitronRoot {
     border-radius: 100vw !important;
   }
 
-  .tarteaucitronCTAButton{
+  .tarteaucitronCTAButton {
     transition: opacity 0.2s ease-in-out !important;
     &:hover {
       opacity: 0.75;
@@ -71,17 +71,16 @@ div#tarteaucitronRoot {
     }
 
     & > #tarteaucitronCloseAlert,
-    & > #tarteaucitronPrivacyUrl{
+    & > #tarteaucitronPrivacyUrl {
       background: none !important;
       border: none !important;
       color: r-theme-val(cookie-consent, link-color) !important;
     }
-
   }
 
   // Modal
   #tarteaucitron {
-    [aria-pressed="true"] {
+    [aria-pressed='true'] {
       border-color: r-theme-val(cookie-consent, link-color) !important;
     }
     div#tarteaucitronServices {
