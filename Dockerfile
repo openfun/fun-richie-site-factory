@@ -45,12 +45,7 @@ COPY ./sites/${SITE}/requirements/base.txt /builder/requirements.txt
 # Upgrade pip to its latest release to speed up dependencies installation
 RUN pip install --upgrade pip
 
-RUN mkdir /install && \
-    pip install --prefix=/install -r requirements.txt && \
-    # The django-cms fork includes drillable search feature,
-    # it should be removed when this feature will be officially released.
-    pip install --prefix=/install \
-    git+https://github.com/jbpenrath/django-cms@fun-3.11.6#egg=django-cms
+RUN mkdir /install && pip install --prefix=/install -r requirements.txt
 
 # ---- Core application image ----
 FROM base AS core
