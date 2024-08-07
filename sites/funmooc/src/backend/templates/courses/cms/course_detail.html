@@ -1,0 +1,10 @@
+{% extends "courses/cms/course_detail.html" %}
+{% load cms_tags %}
+
+{% block breadcrumbs %}
+    <div class="breadcrumbs__wrapper">
+        {% include "menu/breadcrumbs.html" %}
+        <div class="breadcrumbs__aside richie-react richie-react--root-search-suggest-field"
+            data-props='{"courseSearchPageUrl": "{% page_url 'courses' %}"}'></div>
+    </div>
+{% endblock breadcrumbs %}
