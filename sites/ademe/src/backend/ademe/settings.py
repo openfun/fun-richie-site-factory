@@ -1055,6 +1055,8 @@ class Production(Base):
     # Security
     SECRET_KEY = values.SecretValue()
     CSRF_COOKIE_SECURE = True
+    CSRF_TRUSTED_ORIGINS = values.ListValue([])
+    CSRF_COOKIE_DOMAIN = values.Value(None)
     SECURE_BROWSER_XSS_FILTER = True
     SECURE_CONTENT_TYPE_NOSNIFF = True
     SESSION_COOKIE_SECURE = True
