@@ -8,6 +8,8 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [1.35.2] - 2024-09-23
+
 ### Fixed
 
 - Upgrade to richie 2.29.2
@@ -738,7 +740,8 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 - Static and media files are stored in AWS S3 buckets and distributed _via_
   Amazon CloudFront
 
-[unreleased]: https://github.com/openfun/fun-richie-site-factory/compare/funmooc-1.35.1...HEAD
+[unreleased]: https://github.com/openfun/fun-richie-site-factory/compare/funmooc-1.35.2...HEAD
+[1.35.2]: https://github.com/openfun/fun-richie-site-factory/compare/funmooc-1.35.1...funmooc-1.35.2
 [1.35.1]: https://github.com/openfun/fun-richie-site-factory/compare/funmooc-1.35.0...funmooc-1.35.1
 [1.35.0]: https://github.com/openfun/fun-richie-site-factory/compare/funmooc-1.34.1...funmooc-1.35.0
 [1.34.1]: https://github.com/openfun/fun-richie-site-factory/compare/funmooc-1.34.0...funmooc-1.34.1
