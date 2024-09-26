@@ -50,11 +50,11 @@ services:
   app-canary:
     build:
       context: .
-      target: canary
+      target: production
       args:
         DOCKER_USER: ${DOCKER_USER:-1000}
         SITE: ${RICHIE_SITE:-funmooc}
-        BUILD_NEXT_FRONT: 1
+        BUILD_NEXT_VERSION: 1
     image: "${RICHIE_SITE:-funmooc}:canary"
     environment:
       - DB_NAME=richie_${RICHIE_SITE:-funmooc}
@@ -127,7 +127,7 @@ services:
         NGINX_IMAGE_NAME: ${NGINX_IMAGE_NAME:-fundocker/openshift-nginx}
         NGINX_IMAGE_TAG: ${NGINX_IMAGE_TAG:-1.13}
         SITE: ${RICHIE_SITE:-funmooc}
-        BUILD_NEXT_FRONT: 1
+        BUILD_NEXT_VERSION: 1
     image: "${RICHIE_SITE:-funmooc}-nginx:canary"
     ports:
       - "8082:8081"
