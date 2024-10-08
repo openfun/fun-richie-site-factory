@@ -47,10 +47,6 @@
       font-size: 0.7rem;
     }
 
-    .topbar__list {
-      justify-content: flex-end;
-    }
-
     &--aside {
       @include sv-flex(0, 0, auto);
       order: 3;
@@ -70,7 +66,7 @@
   &__item {
     & > a {
       @include media-breakpoint-up($r-topbar-breakpoint) {
-        padding-bottom: 2rem;
+        padding-bottom: 1.9rem;
         align-items: flex-end;
       }
       @include media-breakpoint-only(lg) {
