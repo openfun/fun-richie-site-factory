@@ -137,6 +137,18 @@ $r-theme: recursive-map-merge(
       cta-color: r-color('white'),
       cta-border: r-color('lipstick'),
     ),
+    compacted-banner: (
+      title-color: r-color('lipstick'),
+      title-alt-color: r-color('black-two'),
+      content-color: r-color('black'),
+      search-input-background: r-color('white'),
+      search-btn-background: r-color('lipstick'),
+      search-icon-fill: r-color('white'),
+      cta-variant-from: r-color('lipstick'),
+      cta-variant-to: scale-color(r-color('lipstick'), $lightness: -10%),
+      cta-color: r-color('white'),
+      cta-border: r-color('lipstick'),
+    ),
     section-plugin: (
       title-emphased-color: r-color('lipstick'),
     ),
