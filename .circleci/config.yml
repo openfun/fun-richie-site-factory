@@ -359,7 +359,7 @@ jobs:
                 POSTGRES_DB: richie
                 POSTGRES_PASSWORD: pass
                 POSTGRES_USER: richie_user
-              image: cimg/postgres:12.10
+              image: cimg/postgres:13.16
             - environment:
                 ALLOW_EMPTY_PASSWORD: "yes"
                 REDIS_REPLICATION_MODE: master
@@ -452,66 +452,11 @@ workflows:
                 name: no-change-funcorporate
     funmooc:
         jobs:
-            - check-changelog:
-                filters:
-                    branches:
-                        ignore: main
-                name: check-changelog-funmooc
-                site: funmooc
-            - lint-changelog:
-                filters:
-                    branches:
-                        ignore: main
-                    tags:
-                        only: /^funmooc-.*/
-                name: lint-changelog--funmooc
-                site: funmooc
-            - build-front-production:
+            - no-change:
                 filters:
                     tags:
-                        only: /^funmooc-.*/
-                name: build-front-production-funmooc
-                site: funmooc
-            - lint-front:
-                filters:
-                    tags:
-                        only: /^funmooc-.*/
-                name: lint-front-funmooc
-                requires:
-                    - build-front-production-funmooc
-                site: funmooc
-            - build-back:
-                filters:
-                    tags:
-                        only: /^funmooc-.*/
-                name: build-back-funmooc
-                site: funmooc
-            - lint-back:
-                filters:
-                    tags:
-                        only: /^funmooc-.*/
-                name: lint-back-funmooc
-                requires:
-                    - build-back-funmooc
-                site: funmooc
-            - test-back:
-                filters:
-                    tags:
-                        only: /^funmooc-.*/
-                name: test-back-funmooc
-                requires:
-                    - build-back-funmooc
-                site: funmooc
-            - hub:
-                filters:
-                    tags:
-                        only: /^funmooc-.*/
-                image_name: funmooc
-                name: hub-funmooc
-                requires:
-                    - lint-front-funmooc
-                    - lint-back-funmooc
-                site: funmooc
+                        only: /.*/
+                name: no-change-funmooc
     site-factory:
         jobs:
             - lint-git:
