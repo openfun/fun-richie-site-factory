@@ -58,6 +58,7 @@ module.exports = {
           'mediumturquoise': '#becde1',
           'robin-egg-blue': '#4fd0e7',
           'ocean-blue': '#0069b3',
+          'tory-blue': '#0b51a1',
           'darkish-blue': '#002d7f',
           'navy-blue': '#001f50',
           'lipstick': '#e51a2d',

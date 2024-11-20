@@ -359,7 +359,7 @@ jobs:
                 POSTGRES_DB: richie
                 POSTGRES_PASSWORD: pass
                 POSTGRES_USER: richie_user
-              image: cimg/postgres:12.10
+              image: cimg/postgres:16.4
             - environment:
                 ALLOW_EMPTY_PASSWORD: "yes"
                 REDIS_REPLICATION_MODE: master
@@ -431,128 +431,18 @@ workflows:
                 - << pipeline.schedule.name >>
     demo:
         jobs:
-            - check-changelog:
-                filters:
-                    branches:
-                        ignore: main
-                name: check-changelog-demo
-                site: demo
-            - lint-changelog:
-                filters:
-                    branches:
-                        ignore: main
-                    tags:
-                        only: /^demo-.*/
-                name: lint-changelog--demo
-                site: demo
-            - build-front-production:
+            - no-change:
                 filters:
                     tags:
-                        only: /^demo-.*/
-                name: build-front-production-demo
-                site: demo
-            - lint-front:
-                filters:
-                    tags:
-                        only: /^demo-.*/
-                name: lint-front-demo
-                requires:
-                    - build-front-production-demo
-                site: demo
-            - build-back:
-                filters:
-                    tags:
-                        only: /^demo-.*/
-                name: build-back-demo
-                site: demo
-            - lint-back:
-                filters:
-                    tags:
-                        only: /^demo-.*/
-                name: lint-back-demo
-                requires:
-                    - build-back-demo
-                site: demo
-            - test-back:
-                filters:
-                    tags:
-                        only: /^demo-.*/
-                name: test-back-demo
-                requires:
-                    - build-back-demo
-                site: demo
-            - hub:
-                filters:
-                    tags:
-                        only: /^demo-.*/
-                image_name: richie-demo
-                name: hub-demo
-                requires:
-                    - lint-front-demo
-                    - lint-back-demo
-                site: demo
+                        only: /.*/
+                name: no-change-demo
     funcampus:
         jobs:
-            - check-changelog:
-                filters:
-                    branches:
-                        ignore: main
-                name: check-changelog-funcampus
-                site: funcampus
-            - lint-changelog:
-                filters:
-                    branches:
-                        ignore: main
-                    tags:
-                        only: /^funcampus-.*/
-                name: lint-changelog--funcampus
-                site: funcampus
-            - build-front-production:
+            - no-change:
                 filters:
                     tags:
-                        only: /^funcampus-.*/
-                name: build-front-production-funcampus
-                site: funcampus
-            - lint-front:
-                filters:
-                    tags:
-                        only: /^funcampus-.*/
-                name: lint-front-funcampus
-                requires:
-                    - build-front-production-funcampus
-                site: funcampus
-            - build-back:
-                filters:
-                    tags:
-                        only: /^funcampus-.*/
-                name: build-back-funcampus
-                site: funcampus
-            - lint-back:
-                filters:
-                    tags:
-                        only: /^funcampus-.*/
-                name: lint-back-funcampus
-                requires:
-                    - build-back-funcampus
-                site: funcampus
-            - test-back:
-                filters:
-                    tags:
-                        only: /^funcampus-.*/
-                name: test-back-funcampus
-                requires:
-                    - build-back-funcampus
-                site: funcampus
-            - hub:
-                filters:
-                    tags:
-                        only: /^funcampus-.*/
-                image_name: funcampus
-                name: hub-funcampus
-                requires:
-                    - lint-front-funcampus
-                    - lint-back-funcampus
-                site: funcampus
+                        only: /.*/
+                name: no-change-funcampus
     funcorporate:
         jobs:
             - no-change:
@@ -562,11 +452,66 @@ workflows:
                 name: no-change-funcorporate
     funmooc:
         jobs:
-            - no-change:
+            - check-changelog:
+                filters:
+                    branches:
+                        ignore: main
+                name: check-changelog-funmooc
+                site: funmooc
+            - lint-changelog:
+                filters:
+                    branches:
+                        ignore: main
+                    tags:
+                        only: /^funmooc-.*/
+                name: lint-changelog--funmooc
+                site: funmooc
+            - build-front-production:
                 filters:
                     tags:
-                        only: /.*/
-                name: no-change-funmooc
+                        only: /^funmooc-.*/
+                name: build-front-production-funmooc
+                site: funmooc
+            - lint-front:
+                filters:
+                    tags:
+                        only: /^funmooc-.*/
+                name: lint-front-funmooc
+                requires:
+                    - build-front-production-funmooc
+                site: funmooc
+            - build-back:
+                filters:
+                    tags:
+                        only: /^funmooc-.*/
+                name: build-back-funmooc
+                site: funmooc
+            - lint-back:
+                filters:
+                    tags:
+                        only: /^funmooc-.*/
+                name: lint-back-funmooc
+                requires:
+                    - build-back-funmooc
+                site: funmooc
+            - test-back:
+                filters:
+                    tags:
+                        only: /^funmooc-.*/
+                name: test-back-funmooc
+                requires:
+                    - build-back-funmooc
+                site: funmooc
+            - hub:
+                filters:
+                    tags:
+                        only: /^funmooc-.*/
+                image_name: funmooc
+                name: hub-funmooc
+                requires:
+                    - lint-front-funmooc
+                    - lint-back-funmooc
+                site: funmooc
     site-factory:
         jobs:
             - lint-git:

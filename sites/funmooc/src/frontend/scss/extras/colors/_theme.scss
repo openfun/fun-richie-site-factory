@@ -580,5 +580,9 @@ $r-theme: recursive-map-merge(
       content-color: r-color(purplish-grey),
       title-color: r-color('charcoal'),
     ),
+    simpletext-variant-box: (
+      primary-color: r-color('tory-blue'),
+      secondary-color: r-color('white'),
+    )
   )
 );
