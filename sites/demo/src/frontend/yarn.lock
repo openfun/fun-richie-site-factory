@@ -10456,9 +10456,9 @@ map-or-similar@^1.5.0:
   integrity sha512-0aF7ZmVon1igznGI4VS30yugpduQW3y3GkcgGJOp7d8x8QrizhigUxjI/m2UojsXXto+jLAH3KSz+xOJTiORjg==
 
 markdown-to-jsx@^7.1.8:
-  version "7.2.0"
-  resolved "https://registry.yarnpkg.com/markdown-to-jsx/-/markdown-to-jsx-7.2.0.tgz#e7b46b65955f6a04d48a753acd55874a14bdda4b"
-  integrity sha512-3l4/Bigjm4bEqjCR6Xr+d4DtM1X6vvtGsMGSjJYyep8RjjIvcWtrXBS8Wbfe1/P+atKNMccpsraESIaWVplzVg==
+  version "7.7.0"
+  resolved "https://registry.yarnpkg.com/markdown-to-jsx/-/markdown-to-jsx-7.7.0.tgz#98424780af4b9cccd55873c5bc7e43c0b00ff579"
+  integrity sha512-130nIMbJY+woOQJ11xTqEtYko60t6EpNkZuqjKMferL3udtob3nRfzXOdsiA26NPemiR7w/hR8M3/B9yiYPGZg==
 
 mdast-util-definitions@^4.0.0:
   version "4.0.0"
