@@ -1,6 +1,6 @@
 {
   "name": "funmooc",
-  "version": "1.38.0",
+  "version": "1.39.0",
   "description": "Richie-powered CMS for fun-mooc.fr",
   "scripts": {
     "build-sass": "sass scss/_main.scss ../backend/base/static/richie/css/main.css --load-path=node_modules",
