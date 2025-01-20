@@ -55,7 +55,7 @@ class TemplateProfessionalTrainingDetailTestCase(TestCase):
 
         # The template should extend the `courses/cms/course_detail.html` template
         with self.assertTemplateUsed("courses/cms/course_detail.html"):
-            response = self.client.get(url)
+            response = self.client.get(url, follow=True)
 
         self.assertEqual(response.status_code, 200)
         html = lxml.html.fromstring(str(response.content.decode("utf-8")))
