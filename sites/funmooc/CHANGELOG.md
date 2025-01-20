@@ -8,6 +8,10 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Added
+
+- Add a middleware in charge of detecting malformed query strings
+
 ## [1.39.0] - 2024-12-02
 
 ### Changed
