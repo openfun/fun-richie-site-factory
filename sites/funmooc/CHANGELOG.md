@@ -8,6 +8,8 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [1.40.0] - 2025-01-23
+
 ### Added
 
 - Add a middleware in charge of detecting malformed query strings
@@ -769,7 +771,8 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 - Static and media files are stored in AWS S3 buckets and distributed _via_
   Amazon CloudFront
 
-[unreleased]: https://github.com/openfun/fun-richie-site-factory/compare/funmooc-1.39.0...HEAD
+[unreleased]: https://github.com/openfun/fun-richie-site-factory/compare/funmooc-1.40.0...HEAD
+[1.40.0]: https://github.com/openfun/fun-richie-site-factory/compare/funmooc-1.39.0...funmooc-1.40.0
 [1.39.0]: https://github.com/openfun/fun-richie-site-factory/compare/funmooc-1.38.0...funmooc-1.39.0
 [1.38.0]: https://github.com/openfun/fun-richie-site-factory/compare/funmooc-1.37.0...funmooc-1.38.0
 [1.37.0]: https://github.com/openfun/fun-richie-site-factory/compare/funmooc-1.36.0...funmooc-1.37.0
