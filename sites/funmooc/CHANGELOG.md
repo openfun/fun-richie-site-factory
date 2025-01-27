@@ -8,6 +8,10 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Fixed
+
+- Ignore admin endpoints in the middleware that detects malformed query strings
+
 ## [1.40.0] - 2025-01-23
 
 ### Added

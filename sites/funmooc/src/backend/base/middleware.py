@@ -1,8 +1,9 @@
 """Middleware for the FUN Mooc base app."""
 
+import re
 from urllib.parse import unquote, urlparse
 
-from django.core.exceptions import BadRequest
+from django.http import HttpResponseBadRequest
 from django.utils.deprecation import MiddlewareMixin
 
 
@@ -12,6 +13,12 @@ class MalformedQueryStringMiddleware(MiddlewareMixin):
     query string then raise a BadRequest exception if one is found.
     """
 
+    EXCLUDED_PATH_REGEX = (
+        r"(^/api/v)"  # Exclude API endpoints
+        r"|"
+        r"(^/[a-z-]+/admin/)"  # Exclude admin paths
+    )
+
     def process_request(self, request):
         """
         Catch the path of the request and raise a BadRequest exception if
@@ -20,6 +27,11 @@ class MalformedQueryStringMiddleware(MiddlewareMixin):
         """
         parsed_url = urlparse(request.get_full_path())
 
-        if request.method == "GET" and not parsed_url.path.startswith("/api/v"):
+        if (
+            request.method == "GET"
+            and re.search(self.EXCLUDED_PATH_REGEX, parsed_url.path) is None
+        ):
             if unquote(parsed_url.query).find("?") != -1:
-                raise BadRequest("URL query string is malformed.")
+                return HttpResponseBadRequest("URL query string is malformed.")
+
+        return None
