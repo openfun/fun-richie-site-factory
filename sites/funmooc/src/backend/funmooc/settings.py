@@ -640,6 +640,10 @@ class Base(StyleguideMixin, DRFMixin, RichieCoursesConfigurationMixin, Configura
         ],
     }
 
+    # - Sub menu settings
+    RICHIE_MAINMENUENTRY_ALLOW_CREATION = False
+    RICHIE_MAINMENUENTRY_MENU_ALLOWED_LEVEL = 0
+
     # - Django Parler
     PARLER_LANGUAGES = CMS_LANGUAGES
 
