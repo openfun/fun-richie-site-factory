@@ -8,6 +8,10 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Fixed
+
+- Disable category_additional_information block in course detail page
+
 ## [1.41.0] - 2025-02-13
 
 ### Changed
