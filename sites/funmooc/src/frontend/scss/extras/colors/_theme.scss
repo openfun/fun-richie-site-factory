@@ -460,6 +460,8 @@ $r-theme: recursive-map-merge(
     ),
     program-detail: (
       cover-empty-background: r-color('white-three'),
+      checkmark-list-decoration: url('../../richie/images/components/checkmark.svg'),
+      checkmark-list-decoration-color: r-color('ocean-blue'),
     ),
     search-results: (
       overlay: r-color('black'),

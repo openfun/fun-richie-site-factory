@@ -227,7 +227,7 @@ class Base(StyleguideMixin, DRFMixin, RichieCoursesConfigurationMixin, Configura
             "BACKEND": "django.core.files.storage.FileSystemStorage",
         },
         "staticfiles": {
-            "BACKEND": "base.storage.CDNManifestStaticFilesStorage",
+            "BACKEND": "richie.apps.core.storage.CDNManifestStaticFilesStorage",
         },
     }
 
@@ -403,6 +403,11 @@ class Base(StyleguideMixin, DRFMixin, RichieCoursesConfigurationMixin, Configura
     # Placeholders
     CMS_PLACEHOLDER_CONF_OVERRIDES = {
         "courses/cms/course_detail.html course_teaser": {
+            "name": _("Teaser"),
+            "plugins": ["LTIConsumerPlugin"],
+            "limits": {"LTIConsumerPlugin": 1},
+        },
+        "courses/cms/program_detail.html program_teaser": {
             "name": _("Teaser"),
             "plugins": ["LTIConsumerPlugin"],
             "limits": {"LTIConsumerPlugin": 1},
@@ -736,7 +741,7 @@ class Base(StyleguideMixin, DRFMixin, RichieCoursesConfigurationMixin, Configura
         {
             "default": {
                 "BACKEND": values.Value(
-                    "base.cache.RedisCacheWithFallback",
+                    "richie.apps.core.cache.RedisCacheWithFallback",
                     environ_name="CACHE_DEFAULT_BACKEND",
                     environ_prefix=None,
                 ),
@@ -1128,10 +1133,10 @@ class Production(Base):
 
     STORAGES = {
         "default": {
-            "BACKEND": "base.storage.MediaStorage",
+            "BACKEND": "richie.apps.core.storage.MediaStorage",
         },
         "staticfiles": {
-            "BACKEND": "base.storage.CDNManifestStaticFilesStorage",
+            "BACKEND": "richie.apps.core.storage.CDNManifestStaticFilesStorage",
         },
     }
     AWS_DEFAULT_ACL = None
