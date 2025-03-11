@@ -57,6 +57,7 @@ module.exports = {
           'turquoise-blue': '#0498be',
           'mediumturquoise': '#becde1',
           'robin-egg-blue': '#4fd0e7',
+          'pastel-blue': '#7ea8ce',
           'ocean-blue': '#0069b3',
           'tory-blue': '#0b51a1',
           'darkish-blue': '#002d7f',
