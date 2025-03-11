@@ -21,11 +21,11 @@
   }
 
   &__list {
-    &--controls {
-      @include media-breakpoint-up($r-topbar-breakpoint) {
-        align-items: flex-end;
-      }
+    @include media-breakpoint-up($r-topbar-breakpoint) {
+      align-items: flex-end;
+    }
 
+    &--controls {
       .topbar__item + .topbar__item {
         @include media-breakpoint-up($r-topbar-breakpoint) {
           margin-left: 0;
@@ -64,14 +64,37 @@
   }
 
   &__item {
-    & > a {
+    // Color classes for the menu items defined in the settings.py file
+    &--dark-blue.dropdown {
+      --active-background-color: #{r-color('darkish-blue')};
+    }
+
+    &--tory-blue.dropdown {
+      --active-background-color: #{r-color('tory-blue')};
+    }
+
+    &--light-blue.dropdown {
+      --active-background-color: #{r-color('pastel-blue')};
+    }
+
+    &--red.dropdown {
+      --active-background-color: #{r-color('lipstick')};
+    }
+
+
+    & > a,
+    & > button {
       @include media-breakpoint-up($r-topbar-breakpoint) {
         padding-bottom: 1.9rem;
         align-items: flex-end;
       }
-      @include media-breakpoint-only(lg) {
+      @include media-breakpoint-only(xl) {
         padding-left: 0.7rem;
         padding-right: 0.7rem;
+      }
+      @include media-breakpoint-only(lg) {
+        padding-left: 0.35rem;
+        padding-right: 0.35rem;
       }
     }
 
@@ -81,6 +104,11 @@
         align-items: flex-end;
       }
     }
+  }
+
+  &__sublist {
+    top: 80%;
+    z-index: 300;
   }
 
   .richie-react--language-selector {

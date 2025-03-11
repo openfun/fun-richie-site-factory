@@ -11,6 +11,7 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 ### Changed
 
 - Upgrade to richie next version
+- Enable dropdown menu in topbar
 
 ## [1.41.1] - 2025-02-13
 

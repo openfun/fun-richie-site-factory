@@ -646,8 +646,15 @@ class Base(StyleguideMixin, DRFMixin, RichieCoursesConfigurationMixin, Configura
     }
 
     # - Sub menu settings
-    RICHIE_MAINMENUENTRY_ALLOW_CREATION = False
+    RICHIE_MAINMENUENTRY_ALLOW_CREATION = True
     RICHIE_MAINMENUENTRY_MENU_ALLOWED_LEVEL = 0
+    # Take a look at the header.scss file to see the colors classes
+    RICHIE_MENU_ENTRY_COLOR_CLASSES = (
+        ("dark-blue", _("Dark blue")),
+        ("tory-blue", _("Long life learning blue")),
+        ("light-blue", _("Light blue")),
+        ("red", _("Red")),
+    )
 
     # - Django Parler
     PARLER_LANGUAGES = CMS_LANGUAGES
