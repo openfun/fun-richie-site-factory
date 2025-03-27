@@ -238,6 +238,13 @@ $r-theme: recursive-map-merge(
       organization-shadow: 0 0 6px r-color('light-grey'),
       svg-icon-fill: r-color('red'),
       footer: $lipstick-scheme,
+      footer-offer-paid: $eastern-blue-scheme,
+      footer-offer-subscription: $eastern-blue-scheme,
+      footer-offer-partially_free: $eastern-blue-scheme,
+      footer-offer-certificate: null,
+      offer-icon-visibility: visible,
+      offer-certificate-icon-visibility: visible,
+      offer-price-visibility: hidden,
     ),
     category-badges: (
       primary-item: $lipstick-scheme,
