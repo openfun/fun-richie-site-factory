@@ -59,7 +59,7 @@ module.exports = {
           'robin-egg-blue': '#4fd0e7',
           'pastel-blue': '#7ea8ce',
           'ocean-blue': '#0069b3',
-          'tory-blue': '#0b51a1',
+          'eastern-blue': '#1BA0A8',
           'darkish-blue': '#002d7f',
           'navy-blue': '#001f50',
           'lipstick': '#e51a2d',
