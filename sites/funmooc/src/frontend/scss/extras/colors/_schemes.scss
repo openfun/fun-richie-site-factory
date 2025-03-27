@@ -142,3 +142,11 @@ $clear-blue-scheme: (
   background: r-color('white'),
   hover-font-color: r-color('darkish-blue'),
 );
+$eastern-blue-scheme: (
+  font-color: r-color('white'),
+  h1-color: r-color('white'),
+  h2-color: r-color('white'),
+  svg-color: r-color('white'),
+  background: r-color('eastern-blue'),
+  hover-font-color: r-color('white'),
+);

@@ -11,6 +11,7 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 ### Changed
 
 - Upgrade to latest richie dev version
+- Customize course glimpse look'n feel for course with a paid offer
 
 ## [1.42.0-beta.0] - 2025-03-11
 
