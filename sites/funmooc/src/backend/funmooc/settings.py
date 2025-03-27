@@ -651,7 +651,7 @@ class Base(StyleguideMixin, DRFMixin, RichieCoursesConfigurationMixin, Configura
     # Take a look at the header.scss file to see the colors classes
     RICHIE_MENU_ENTRY_COLOR_CLASSES = (
         ("dark-blue", _("Dark blue")),
-        ("tory-blue", _("Long life learning blue")),
+        ("life-learning-blue", _("Long life learning blue")),
         ("light-blue", _("Light blue")),
         ("red", _("Red")),
     )
