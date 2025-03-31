@@ -11,6 +11,7 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 ### Changed
 
 - Upgrade to latest richie dev version
+- Enable Slider plugin
 
 ## [1.42.0-beta.1] - 2025-03-27
 

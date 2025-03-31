@@ -456,6 +456,7 @@ class Base(StyleguideMixin, DRFMixin, RichieCoursesConfigurationMixin, Configura
         "richie.plugins.section",
         "richie.plugins.simple_picture",
         "richie.plugins.simple_text_ckeditor",
+        "richie.plugins.slider",
         "richie",
         # Third party apps
         "dj_pagination",
@@ -896,6 +897,7 @@ class Base(StyleguideMixin, DRFMixin, RichieCoursesConfigurationMixin, Configura
             "lti_consumer.change_lticonsumer",
             "lti_consumer.delete_lticonsumer",
             "lti_consumer.view_lticonsumer",
+            "nesteditem.add_nesteditem",
             "nesteditem.add_nesteditem",
             "nesteditem.change_nesteditem",
             "nesteditem.delete_nesteditem",
