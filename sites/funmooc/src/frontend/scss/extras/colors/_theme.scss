@@ -600,6 +600,14 @@ $r-theme: recursive-map-merge(
     simpletext-variant-box: (
       primary-color: r-color('tory-blue'),
       secondary-color: r-color('white'),
-    )
+    ),
+    slider-plugin: (
+      arrows-fill-color: r-color('white'),
+      arrows-stroke-color: r-color('black'),
+      arrows-stroke-width: 0.5px,
+      index-color: r-color('light-grey'),
+      index-hover-color: r-color('darkish-blue'),
+      index-active-color: r-color('ocean-blue'),
+    ),
   )
 );
