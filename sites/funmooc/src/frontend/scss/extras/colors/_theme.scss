@@ -244,7 +244,7 @@ $r-theme: recursive-map-merge(
       footer-offer-certificate: null,
       offer-icon-visibility: visible,
       offer-certificate-icon-visibility: visible,
-      offer-price-visibility: hidden,
+      offer-price-visibility: visible,
     ),
     category-badges: (
       primary-item: $lipstick-scheme,
