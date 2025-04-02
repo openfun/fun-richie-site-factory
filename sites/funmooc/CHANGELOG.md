@@ -8,6 +8,11 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Changed
+
+- Hide offer icon for free courses
+- Show offer price
+
 ## [1.42.0-beta.2] - 2025-03-31
 
 ### Changed

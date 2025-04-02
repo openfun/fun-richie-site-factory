@@ -1,3 +1,8 @@
 .course-glimpse {
   background-color: transparent;
+
+  &--offer-free .offer__icon {
+    display: none;
+    visibility: hidden;
+  }
 }
