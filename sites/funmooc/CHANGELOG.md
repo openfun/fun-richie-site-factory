@@ -12,6 +12,7 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 - Hide offer icon for free courses
 - Show offer price
+- Upgrade to richie 3.0.0
 
 ## [1.42.0-beta.2] - 2025-03-31
 

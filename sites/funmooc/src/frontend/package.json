@@ -36,7 +36,7 @@
   },
   "homepage": "https://github.com/openfun/fun-richie-site-factory#readme",
   "dependencies": {
-    "richie-education": "2.34.1-dev51",
+    "richie-education": "3.0.0",
     "tarteaucitronjs": "1.14.0"
   },
   "devDependencies": {
@@ -54,7 +54,7 @@
     "webpack-cli": "6.0.1"
   },
   "resolutions": {
-    "@types/react": "19.0.10",
+    "@types/react": "19.0.12",
     "@types/react-dom": "19.0.4"
   },
   "volta": {
