@@ -3,7 +3,7 @@ import { defineMessages, useIntl } from 'react-intl';
 
 import { CommonDataProps } from 'richie-education/js/types/commonDataProps';
 import { Icon, IconTypeEnum } from 'richie-education/js/components/Icon';
-import { CourseGlimpseCourse } from '.';
+import { CourseGlimpseCourse } from 'richie-education/js/components/CourseGlimpse';
 
 const messages = defineMessages({
   dateIconAlt: {
@@ -24,8 +24,12 @@ export const CourseGlimpseFooter: React.FC<{ course: CourseGlimpseCourse } & Com
 
   return (
     <div className="course-glimpse-footer">
-      <div className="course-glimpse-footer__date">
-        <Icon name={IconTypeEnum.CLOCK} title={intl.formatMessage(messages.dateIconAlt)} />
+      <div className="course-glimpse-footer__column course-glimpse-footer__date">
+        <Icon
+          name={IconTypeEnum.CLOCK}
+          title={intl.formatMessage(messages.dateIconAlt)}
+          size="small"
+        />
         {course.duration}
       </div>
     </div>

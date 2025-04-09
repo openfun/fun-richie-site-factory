@@ -1,7 +1,8 @@
 """Test fun-corporate views."""
+
 from django.test import TestCase
 
-from lxml import etree  # nosec
+import lxml.html  # nosec
 from richie.apps.core.factories import UserFactory
 
 
@@ -26,7 +27,7 @@ class DjangoCheckSeoTestCase(TestCase):
         self.client.login(username=user.username, password="password")  # nosec
 
         response = self.client.get(url)
-        html = etree.fromstring(response.content)  # nosec
+        html = lxml.html.fromstring(response.content)  # nosec
         page_title = html.cssselect("title")[0].text
 
         self.assertEqual(response.status_code, 200)

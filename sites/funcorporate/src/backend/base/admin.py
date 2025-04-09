@@ -1,4 +1,5 @@
 """Admin overrides for fun-corporate."""
+
 from django.contrib import admin, auth
 from django.contrib.auth.admin import UserAdmin
 from django.http import JsonResponse
