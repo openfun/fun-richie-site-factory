@@ -5,7 +5,7 @@ build-back:
     site:
       type: string
   docker:
-    - image: cimg/python:3.11
+    - image: cimg/python:3.11.11
   working_directory: ~/fun/sites/<< parameters.site >>
   steps:
     - checkout:
@@ -30,7 +30,7 @@ lint-back:
     site:
       type: string
   docker:
-    - image: cimg/python:3.11
+    - image: cimg/python:3.11.11
   working_directory: ~/fun/sites/<< parameters.site >>/src/backend/
   environment:
     PYTHONPATH: /home/circleci/fun/sites/<< parameters.site >>/src/backend
@@ -64,7 +64,7 @@ test-back:
     site:
       type: string
   docker:
-    - image: cimg/python:3.11
+    - image: cimg/python:3.11.11
       environment:
         DJANGO_SETTINGS_MODULE: << parameters.site >>.settings
         PYTHONPATH: /home/circleci/fun/src/backend

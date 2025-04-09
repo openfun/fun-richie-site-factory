@@ -8,7 +8,7 @@ ARG BUILD_NEXT_VERSION=0
 ARG DOCKER_USER=10000
 
 # ---- base image to inherit from ----
-FROM python:3.11-bookworm AS base
+FROM python:3.11.11-bookworm AS base
 
 # ---- front-end builder image ----
 FROM node:20.13 AS front-builder
