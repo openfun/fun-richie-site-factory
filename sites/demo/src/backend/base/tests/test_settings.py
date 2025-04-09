@@ -1,4 +1,5 @@
 """Test demo configuration."""
+
 from unittest import mock
 
 from django.conf import settings
