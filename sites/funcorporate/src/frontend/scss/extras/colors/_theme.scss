@@ -1,5 +1,5 @@
 // Theme schemes
-$r-theme: map-merge(
+$r-theme: recursive-map-merge(
   $r-theme,
   (
     // Used from styleguide to build available scheme to demonstrate, used to create button variant
@@ -45,6 +45,14 @@ $r-theme: map-merge(
       item-cta-hollow-background: transparent,
       item-cta-hollow-border: transparent,
       item-divider-border: r-color('light-grey'),
+      dropdown-border-radius: 8px,
+      dropdown-padding: 0.5rem,
+      dropdown-gap: 0.5rem,
+      dropdown-background-color: r-color('azure2'),
+      dropdown-item-background-color: r-color('blue-green'),
+      dropdown-item-text-color: r-color('white'),
+      dropdown-item-border-radius: 4px,
+      dropdown-item-padding: 0.5rem 1rem,
     ),
     body-content: (
       base-color: r-color('black'),
@@ -126,6 +134,18 @@ $r-theme: map-merge(
       cta-color: r-color('blue-green'),
       cta-border: r-color('white'),
     ),
+    compacted-banner: (
+      title-color: r-color('blue-green'),
+      title-alt-color: r-color('dark-grey'),
+      content-color: r-color('slate-grey'),
+      search-input-background: rgba(r-color('white'), 0.7),
+      search-btn-background: r-color('blue-green'),
+      search-icon-fill: r-color('white'),
+      cta-variant-from: rgba(r-color('white'), 0.8),
+      cta-variant-to: rgba(r-color('white'), 0.8),
+      cta-color: r-color('blue-green'),
+      cta-border: r-color('white'),
+    ),
     section-plugin: (
       title-emphased-color: r-color('blue-green'),
     ),
@@ -170,6 +190,10 @@ $r-theme: map-merge(
       title-color: r-color('black') !important,
       content-color: r-color('slate-grey') !important,
     ),
+    category-glimpse-badges: (
+      base-border: r-color('azure2'),
+      tag: $blue-green-scheme,
+    ),
     category-glimpse: (
       base-border: rgba(r-color('black'), 0.125),
       base-hover-border: r-color('blue-green'),
@@ -196,12 +220,19 @@ $r-theme: map-merge(
       icon: $dark-gradient-scheme,
       content-color: r-color('slate-grey'),
       title-color: r-color('black'),
-      organization-media-empty-background: r-color('smoke'),
       organization-color: r-color('blue-green'),
-      organization-shadow: 0 0 6px r-color('light-grey'),
       code-color: r-color('slate-grey'),
+      organization-media-empty-background: r-color('smoke'),
+      organization-shadow: 0 0 6px r-color('light-grey'),
       svg-icon-fill: r-color('white'),
       footer: $blue-green-scheme,
+      footer-offer-paid: null,
+      footer-offer-subscription: null,
+      footer-offer-partially_free: null,
+      footer-offer-certificate: null,
+      offer-icon-visibility: visible,
+      offer-certificate-icon-visibility: visible,
+      offer-price-visibility: visible,
     ),
     category-badges: (
       primary-item: $blue-green-scheme,
@@ -232,7 +263,10 @@ $r-theme: map-merge(
       input-checked-border: transparent,
       input-checked-color: r-color('white'),
       input-unchecked-color: transparent,
+      input-disabled-background: r-color('grey87'),
+      input-hover-color: r-color('grey59'),
       message-color: r-color('grey32'),
+      required-note-color: r-color('indianred3'),
     ),
     organization-glimpse-list: (
       empty-color: r-color('slate-grey'),
@@ -367,6 +401,8 @@ $r-theme: map-merge(
     ),
     program-detail: (
       cover-empty-background: r-color('smoke'),
+      checkmark-list-decoration: url('../../richie/images/components/checkmark.svg'),
+      checkmark-list-decoration-color: r-color('blue-green'),
     ),
     search-results: (
       overlay: r-color('black'),
@@ -389,9 +425,6 @@ $r-theme: map-merge(
       base-background: r-color('white'),
       base-border: r-color('slate-grey'),
       base-color: r-color('slate-grey'),
-      close-background: r-color('white'),
-      close-border: r-color('light-grey'),
-      close-color: r-color('black'),
       overlay-background: rgba(r-color('black'), 0.75),
     ),
     search-filters-group-modal: (
@@ -429,9 +462,26 @@ $r-theme: map-merge(
       hover-color: r-color('charcoal'),
       base-border: r-color('light-grey'),
     ),
+    shadowed-box: (
+      base-background: r-color('white'),
+      base-shadow: 0 2px 4px rgba(5, 18, 42, 0.19),
+    ),
     spinner: (
       base-color: r-color('denim'),
       base-color-light: r-color('white'),
-    )
+      base-color-primary: r-color('blue-green'),
+    ),
+    simpletext-variant-box: (
+      primary-color: r-color('blue-green'),
+      secondary-color: r-color('white'),
+    ),
+    slider-plugin: (
+      arrows-fill-color: r-color('white'),
+      arrows-stroke-color: r-color('black'),
+      arrows-stroke-width: 0.5px,
+      index-color: r-color('azure2'),
+      index-hover-color: r-color('blue-green'),
+      index-active-color: r-color('denim'),
+    ),
   )
 );

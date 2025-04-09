@@ -70,7 +70,6 @@ module.exports = {
       components: {
         button: {
           'font-family': 'Montserrat',
-
         },
       },
     },
