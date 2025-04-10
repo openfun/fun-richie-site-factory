@@ -1,4 +1,5 @@
 """Test fun-campus configuration."""
+
 from unittest import mock
 
 from django.conf import settings

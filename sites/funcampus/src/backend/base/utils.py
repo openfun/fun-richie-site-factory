@@ -1,3 +1,5 @@
+"""Utils module for funcampus base application."""
+
 import collections.abc
 from datetime import datetime, timedelta
 from functools import wraps
@@ -20,7 +22,7 @@ def merge_dict(base_dict, update_dict):
     return base_dict
 
 
-class throttle(object):
+class throttle:  # pylint: disable=invalid-name
     """
     Throttle Decorator
 
@@ -50,5 +52,7 @@ class throttle(object):
             if elapsed_since_last_call > self.throttle_interval:
                 self.time_of_last_call = now
                 return callback(*args, **kwargs)
+
+            return None
 
         return wrapper

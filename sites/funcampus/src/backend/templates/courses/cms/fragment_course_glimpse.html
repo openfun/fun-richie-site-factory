@@ -2,8 +2,8 @@
 {% load i18n %}
 {% block course_glimpse_footer %}
 <div class="course-{{ course_variant }}-footer">
-  <div class="course-{{ course_variant }}-footer__date">
-    <svg role="img" aria-label="{% trans "Course duration" %}" class="icon icon--medium">
+  <div class="course-{{ course_variant }}-footer__column course-{{ course_variant }}-footer__date">
+    <svg role="img" aria-label="{% trans "Course duration" %}" class="icon icon--small">
       <title>{% trans "Course duration" %}</title>
       <use xlink:href="#icon-clock" />
     </svg>
