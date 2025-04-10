@@ -40,14 +40,14 @@
     "tarteaucitronjs": "1.14.0"
   },
   "devDependencies": {
-    "@formatjs/cli": "6.6.1",
+    "@formatjs/cli": "6.6.2",
     "@openfun/cunningham-tokens": "2.2.0",
     "babel-loader": "10.0.0",
     "eslint": ">=8.57.0 <9",
     "eslint-import-resolver-webpack": "0.13.10",
-    "nodemon": "3.1.9 ",
-    "prettier": "3.5.2",
-    "sass": "1.85.1",
+    "nodemon": "3.1.9",
+    "prettier": "3.5.3",
+    "sass": "1.86.0",
     "source-map-loader": "5.0.0",
     "typescript": "5.8.2",
     "webpack": "5.98.0",

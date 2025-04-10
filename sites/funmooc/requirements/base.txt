@@ -1,7 +1,7 @@
 boto3<1.36
 django-check-seo==1.0.1
 # Our django-cms fork which includes drillable search feature
-git+https://github.com/openfun/django-cms@fun-3.11.9#egg=django-cms
+git+https://github.com/openfun/django-cms@fun-3.11.10#egg=django-cms
 django-configurations==2.5.1
 django-storages==1.14.5
 dockerflow==2024.4.2
@@ -9,4 +9,4 @@ factory-boy==3.3.3
 gunicorn==23.0.0
 psycopg2-binary==2.9.10
 richie==3.0.0
-sentry-sdk==2.22.0
+sentry-sdk==2.24.1
