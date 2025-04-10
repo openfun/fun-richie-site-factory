@@ -1,6 +1,7 @@
 """
 fun-campus urls
 """
+
 from django.conf import settings
 from django.conf.urls.i18n import i18n_patterns
 from django.contrib import admin
@@ -29,7 +30,7 @@ admin.site.enable_nav_sidebar = False
 urlpatterns = [
     path(r"sitemap.xml", sitemap, {"sitemaps": {"cmspages": CMSSitemap}}),
     re_path(
-        r"api/{}/".format(API_PREFIX),
+        rf"api/{API_PREFIX}/",
         include([*courses_urlpatterns, *search_urlpatterns, *plugins_urlpatterns]),
     ),
     re_path(r"^redirects/", include([*courses_redirects_urlpatterns])),

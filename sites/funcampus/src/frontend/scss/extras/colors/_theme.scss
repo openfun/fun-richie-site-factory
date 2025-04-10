@@ -45,6 +45,14 @@ $r-theme: map-merge(
       item-cta-hollow-background: transparent,
       item-cta-hollow-border: transparent,
       item-divider-border: r-color('light-grey'),
+      dropdown-border-radius: 8px,
+      dropdown-padding: 0.5rem,
+      dropdown-gap: 0.5rem,
+      dropdown-background-color: r-color('azure2'),
+      dropdown-item-background-color: r-color('orange'),
+      dropdown-item-text-color: r-color('white'),
+      dropdown-item-border-radius: 4px,
+      dropdown-item-padding: 0.5rem 1rem,
     ),
     body-content: (
       base-color: r-color('black'),
@@ -125,6 +133,18 @@ $r-theme: map-merge(
       cta-color: r-color('white'),
       cta-border: r-color('orange'),
     ),
+    compacted-banner: (
+      title-color: r-color('orange'),
+      title-alt-color: r-color('dark-grey'),
+      content-color: r-color('slate-grey'),
+      search-input-background: rgba(r-color('white'), 0.7),
+      search-btn-background: r-color('orange'),
+      search-icon-fill: r-color('white'),
+      cta-variant-from: r-color('orange'),
+      cta-variant-to: r-color('orange'),
+      cta-color: r-color('white'),
+      cta-border: r-color('orange'),
+    ),
     section-plugin: (
       title-emphased-color: r-color('orange'),
     ),
@@ -169,6 +189,10 @@ $r-theme: map-merge(
       title-color: r-color('black') !important,
       content-color: r-color('slate-grey') !important,
     ),
+    category-glimpse-badges: (
+      base-border: rgba(r-color('black'), 0.125),
+      tag: $orange-scheme,
+    ),
     category-glimpse: (
       base-border: rgba(r-color('black'), 0.125),
       base-hover-border: r-color('orange'),
@@ -201,6 +225,13 @@ $r-theme: map-merge(
       code-color: r-color('slate-grey'),
       svg-icon-fill: r-color('white'),
       footer: $orange-scheme,
+      footer-offer-paid: null,
+      footer-offer-subscription: null,
+      footer-offer-partially_free: null,
+      footer-offer-certificate: null,
+      offer-icon-visibility: visible,
+      offer-certificate-icon-visibility: visible,
+      offer-price-visibility: visible,
     ),
     category-badges: (
       primary-item: $orange-scheme,
@@ -231,7 +262,10 @@ $r-theme: map-merge(
       input-checked-border: transparent,
       input-checked-color: r-color('white'),
       input-unchecked-color: transparent,
+      input-disabled-background: r-color('grey87'),
+      input-hover-color: r-color('grey59'),
       message-color: r-color('grey32'),
+      required-note-color: r-color('indianred3'),
     ),
     organization-glimpse-list: (
       empty-color: r-color('slate-grey'),
@@ -366,6 +400,8 @@ $r-theme: map-merge(
     ),
     program-detail: (
       cover-empty-background: r-color('smoke'),
+      checkmark-list-decoration: url('../../richie/images/components/checkmark.svg'),
+      checkmark-list-decoration-color: r-color('orange'),
     ),
     search-results: (
       overlay: r-color('black'),
@@ -389,9 +425,6 @@ $r-theme: map-merge(
       base-background: r-color('white'),
       base-border: r-color('slate-grey'),
       base-color: r-color('slate-grey'),
-      close-background: r-color('white'),
-      close-border: r-color('light-grey'),
-      close-color: r-color('black'),
       overlay-background: rgba(r-color('black'), 0.75),
     ),
     search-filters-group-modal: (
@@ -429,9 +462,26 @@ $r-theme: map-merge(
       hover-color: r-color('charcoal'),
       base-border: r-color('light-grey'),
     ),
+    shadowed-box: (
+      base-background: r-color('white'),
+      base-shadow: 0 2px 4px rgba(5, 18, 42, 0.19),
+    ),
     spinner: (
       base-color: r-color('denim'),
       base-color-light: r-color('white'),
-    )
+      base-color-primary: r-color('orange'),
+    ),
+    simpletext-variant-box: (
+      primary-color: r-color('orange'),
+      secondary-color: r-color('white'),
+    ),
+    slider-plugin: (
+      arrows-fill-color: r-color('white'),
+      arrows-stroke-color: r-color('dark-grey'),
+      arrows-stroke-width: 0.5px,
+      index-color: r-color('azure2'),
+      index-hover-color: r-color('orange'),
+      index-active-color: r-color('denim2'),
+    ),
   )
 );
