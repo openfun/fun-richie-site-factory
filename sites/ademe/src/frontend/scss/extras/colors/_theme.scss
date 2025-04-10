@@ -1,5 +1,5 @@
 // Theme schemes
-$r-theme: map-merge(
+$r-theme: recursive-map-merge(
   $r-theme,
   (
     banner: (
@@ -54,6 +54,14 @@ $r-theme: map-merge(
       item-cta-secondary: $topaz-scheme,
       item-cta-tertiary: $light-teal-scheme,
       item-divider-border: r-color('silver'),
+      dropdown-border-radius: 8px,
+      dropdown-padding: 0.5rem,
+      dropdown-gap: 0.5rem,
+      dropdown-background-color: r-color('pale-grey'),
+      dropdown-item-background-color: r-color('tealish'),
+      dropdown-item-text-color: r-color('white'),
+      dropdown-item-border-radius: 4px,
+      dropdown-item-padding: 0.5rem 1rem,
     ),
     body-content: (
       base-color: r-color('dark'),
@@ -125,6 +133,18 @@ $r-theme: map-merge(
     hero-intro: (
       insert-background-image: null,
       inner-background: rgba(r-color('white'), 0.89),
+      title-color: r-color('tealish'),
+      title-alt-color: r-color('dark'),
+      content-color: r-color('dark-aquamarine'),
+      search-input-background: r-color('white'),
+      search-btn-background: r-color('tealish'),
+      search-icon-fill: r-color('white'),
+      cta-variant-from: r-color('tealish'),
+      cta-variant-to: scale-color(r-color('tealish'), $lightness: -10%),
+      cta-color: r-color('white'),
+      cta-border: r-color('tealish'),
+    ),
+    compacted-banner: (
       title-color: r-color('tealish'),
       title-alt-color: r-color('dark'),
       content-color: r-color('dark-aquamarine'),
@@ -223,6 +243,13 @@ $r-theme: map-merge(
       code-color: r-color('battleship-grey'),
       svg-icon-fill: r-color('white'),
       footer: $dark-aquamarine-scheme,
+      footer-offer-paid: null,
+      footer-offer-subscription: null,
+      footer-offer-partially_free: null,
+      footer-offer-certificate: null,
+      offer-icon-visibility: hidden,
+      offer-certificate-icon-visibility: hidden,
+      offer-price-visibility: hidden,
     ),
     category-badges: (
       primary-item: $burnt-orange-scheme,
@@ -253,7 +280,10 @@ $r-theme: map-merge(
       input-checked-border: transparent,
       input-checked-color: r-color('white'),
       input-unchecked-color: transparent,
+      input-disabled-background: r-color('grey87'),
+      input-hover-color: r-color('grey59'),
       message-color: r-color('battleship-grey'),
+      required-note-color: r-color('indianred3'),
     ),
     organization-glimpse-list: (
       empty-color: r-color('battleship-grey'),
@@ -373,6 +403,7 @@ $r-theme: map-merge(
       plan-title-color: r-color('burnt-orange'),
       license-label-color: r-color('topaz'),
       checkmark-list-decoration: url('../../richie/images/components/checkmark.svg'),
+      checkmark-list-decoration-color: r-color('burnt-orange'),
       view-more-runs-color: r-color('burnt-orange'),
       run-catalog-visibility-hidden-logo: url('../../richie/images/catalog_visibility/hidden.svg'),
       run-catalog-visibility-course-only-logo:
@@ -390,6 +421,8 @@ $r-theme: map-merge(
     ),
     program-detail: (
       cover-empty-background: r-color('white-three'),
+      checkmark-list-decoration: url('../../richie/images/components/checkmark.svg'),
+      checkmark-list-decoration-color:  r-color('burnt-orange'),
     ),
     search-results: (
       overlay: r-color('black'),
@@ -412,9 +445,6 @@ $r-theme: map-merge(
       base-background: r-color('white'),
       base-border: r-color('battleship-grey'),
       base-color: r-color('battleship-grey'),
-      close-background: r-color('white'),
-      close-border: transparent,
-      close-color: r-color('battleship-grey'),
       overlay-background: rgba(r-color('black'), 0.75),
     ),
     product-item: (
@@ -470,9 +500,15 @@ $r-theme: map-merge(
       hover-color: r-color('dark'),
       base-border: r-color('silver'),
     ),
+
+    shadowed-box: (
+      base-background: r-color('white'),
+      base-shadow: 0 2px 4px rgba(5, 18, 42, 0.19),
+    ),
     spinner: (
       base-color: r-color('turquoise-blue'),
       base-color-light: r-color('white'),
+      base-color-primary: r-color('pumpkin-orange'),
     ),
     steps-breadcrumb: (
       icon-background-active: r-color('dark-aquamarine'),
@@ -508,6 +544,18 @@ $r-theme: map-merge(
       light-color: r-color('white'),
       dark-color: r-color('dark'),
       link-color: r-color('dark-aquamarine'),
+    ),
+    simpletext-variant-box: (
+      primary-color: r-color('tory-blue'),
+      secondary-color: r-color('white'),
+    ),
+    slider-plugin: (
+      arrows-fill-color: r-color('white'),
+      arrows-stroke-color: r-color('black'),
+      arrows-stroke-width: 0.5px,
+      index-color: r-color('silver'),
+      index-hover-color: r-color('dark-aquamarine'),
+      index-active-color: r-color('tealish'),
     ),
   )
 );
