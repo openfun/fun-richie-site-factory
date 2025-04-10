@@ -8,6 +8,10 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Changed
+
+- Upgrade all deps
+
 ## [1.42.0] - 2025-04-08
 
 ### Changed
