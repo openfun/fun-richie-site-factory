@@ -1,6 +1,3 @@
 {
-  "overrides": {
-    "CourseGlimpse/utils.ts": "../../../../../js/components/CourseGlimpse/utils.ts",
-    "CourseGlimpse/index.tsx": "../../../../../js/components/CourseGlimpse/index.tsx"
-  }
+  "overrides": {}
 }
