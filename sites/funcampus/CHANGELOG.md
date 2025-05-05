@@ -8,6 +8,8 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [1.27.0] - 2025-05-05
+
 ### Added
 
 - Add a middleware in charge of detecting malformed query strings
@@ -328,7 +330,8 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 - First `funcampus` image
 
-[unreleased]: https://github.com/openfun/fun-richie-site-factory/compare/funcampus-1.26.0...HEAD
+[unreleased]: https://github.com/openfun/fun-richie-site-factory/compare/funcampus-1.27.0...HEAD
+[1.27.0]: https://github.com/openfun/fun-richie-site-factory/compare/funcampus-1.26.0...funcampus-1.27.0
 [1.26.0]: https://github.com/openfun/fun-richie-site-factory/compare/funcampus-1.25.0...funcampus-1.26.0
 [1.25.0]: https://github.com/openfun/fun-richie-site-factory/compare/funcampus-1.24.0...funcampus-1.25.0
 [1.24.0]: https://github.com/openfun/fun-richie-site-factory/compare/funcampus-1.23.0...funcampus-1.24.0
