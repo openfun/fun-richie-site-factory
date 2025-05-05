@@ -8,6 +8,10 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Added
+
+- Add a middleware in charge of detecting malformed query strings
+
 ### Changed
 
 - Upgrade richie to 3.0.0

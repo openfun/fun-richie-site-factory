@@ -258,6 +258,7 @@ class Base(StyleguideMixin, DRFMixin, RichieCoursesConfigurationMixin, Configura
     }
 
     MIDDLEWARE = (
+        "base.middleware.MalformedQueryStringMiddleware",
         "richie.apps.core.cache.LimitBrowserCacheTTLHeaders",
         "cms.middleware.utils.ApphookReloadMiddleware",
         "django.middleware.security.SecurityMiddleware",
