@@ -9,6 +9,8 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.22.0] - 2025-05-05
+
 ### Added
 
 - Add a middleware in charge of detecting malformed query strings
@@ -221,7 +223,8 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 - First `ademe` image
 
-[unreleased]: https://github.com/openfun/fun-richie-site-factory/compare/ademe-0.21.1...HEAD
+[unreleased]: https://github.com/openfun/fun-richie-site-factory/compare/ademe-0.22.0...HEAD
+[0.22.0]: https://github.com/openfun/fun-richie-site-factory/compare/ademe-0.21.1...ademe-0.22.0
 [0.21.1]: https://github.com/openfun/fun-richie-site-factory/compare/ademe-0.21.0...ademe-0.21.1
 [0.21.0]: https://github.com/openfun/fun-richie-site-factory/compare/ademe-0.20.1...ademe-0.21.0
 [0.20.1]: https://github.com/openfun/fun-richie-site-factory/compare/ademe-0.20.0...ademe-0.20.1
