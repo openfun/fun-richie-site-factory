@@ -9,6 +9,8 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.23.0] - 2025-05-19
+
 ### Changed
 
 - Upgrade richie to 3.1.0
@@ -227,7 +229,8 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 - First `ademe` image
 
-[unreleased]: https://github.com/openfun/fun-richie-site-factory/compare/ademe-0.22.0...HEAD
+[unreleased]: https://github.com/openfun/fun-richie-site-factory/compare/ademe-0.23.0...HEAD
+[0.23.0]: https://github.com/openfun/fun-richie-site-factory/compare/ademe-0.22.0...ademe-0.23.0
 [0.22.0]: https://github.com/openfun/fun-richie-site-factory/compare/ademe-0.21.1...ademe-0.22.0
 [0.21.1]: https://github.com/openfun/fun-richie-site-factory/compare/ademe-0.21.0...ademe-0.21.1
 [0.21.0]: https://github.com/openfun/fun-richie-site-factory/compare/ademe-0.20.1...ademe-0.21.0

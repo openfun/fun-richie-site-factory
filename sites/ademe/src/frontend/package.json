@@ -1,6 +1,6 @@
 {
   "name": "ademe",
-  "version": "0.22.0",
+  "version": "0.23.0",
   "description": "Richie-powered CMS for www.mooc-batiment-durable.fr",
   "scripts": {
     "build-sass": "sass scss/_main.scss ../backend/base/static/richie/css/main.css --load-path=node_modules",
