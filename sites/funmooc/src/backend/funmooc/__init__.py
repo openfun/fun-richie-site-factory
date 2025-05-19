@@ -1,3 +1,3 @@
 """funmooc application"""
 
-__version__ = "1.42.0"
+__version__ = "1.43.0"
