@@ -10,6 +10,7 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Changed
 
+- Upgrade richie to 3.1.0
 - Upgrade all deps
 
 ## [1.42.0] - 2025-04-08
