@@ -20,7 +20,7 @@ hub:
     - setup_remote_docker
     - run:
         name: Build docker images
-        command: make env.d/aws && make build
+        command: make env.d/aws && make env.d/scw && make build
     - run:
         name: Check built image availability
         command: |
@@ -131,7 +131,7 @@ hub-canary:
     - setup_remote_docker
     - run:
         name: Build docker images
-        command: make env.d/aws && make build-canary
+        command: make env.d/aws && make env.d/scw && make build-canary
     - run:
         name: Check built image availability
         command: |

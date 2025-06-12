@@ -65,9 +65,9 @@ a DynamoDB lock table) to store your Terraform state file (and its locking) by
 typing the following commands in your terminal:
 
 ```
-$ bin/state init
-$ bin/state workspace new {{ your_site }}
-$ bin/state apply
+$ bin/state --provider aws init
+$ bin/state --provider aws workspace new {{ your_site }}
+$ bin/state --provider aws apply
 ```
 
 And voilà! Your shared state is now available to anyone contributing to the
@@ -147,7 +147,7 @@ to configure your project's runtime environment with the secrets allowing your
 Django application to access to those buckets and CloudFront distributions.
 The following environment variables should be defined:
 
-- `DJANGO_AWS_CLOUDFRONT_DOMAIN`
+- `DJANGO_CDN_DOMAIN`
 - `DJANGO_AWS_ACCESS_KEY_ID`
 - `DJANGO_AWS_SECRET_ACCESS_KEY`
 

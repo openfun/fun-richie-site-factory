@@ -1,6 +1,7 @@
 # env
 .env
 env.d/aws
+env.d/scw
 
 # virtualenv
 .venv
@@ -54,6 +55,8 @@ yarn-error.log
 *.tfstate.backup
 **/aws/environment
 **/aws/plugins
+**/scw/environment
+**/scw/providers
 
 # CircleCI
 .circleci/src/workflows/@*.yml
