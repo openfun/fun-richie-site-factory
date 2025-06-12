@@ -110,7 +110,7 @@ jobs:
                 site: << parameters.site >>
             - setup_remote_docker
             - run:
-                command: make env.d/aws && make build
+                command: make env.d/aws && make env.d/scw && make build
                 name: Build docker images
             - run:
                 command: |
@@ -201,7 +201,7 @@ jobs:
                 site: << parameters.site >>
             - setup_remote_docker
             - run:
-                command: make env.d/aws && make build-canary
+                command: make env.d/aws && make env.d/scw && make build-canary
                 name: Build docker images
             - run:
                 command: |
@@ -452,66 +452,11 @@ workflows:
                 name: no-change-funcorporate
     funmooc:
         jobs:
-            - check-changelog:
-                filters:
-                    branches:
-                        ignore: main
-                name: check-changelog-funmooc
-                site: funmooc
-            - lint-changelog:
-                filters:
-                    branches:
-                        ignore: main
-                    tags:
-                        only: /^funmooc-.*/
-                name: lint-changelog--funmooc
-                site: funmooc
-            - build-front-production:
+            - no-change:
                 filters:
                     tags:
-                        only: /^funmooc-.*/
-                name: build-front-production-funmooc
-                site: funmooc
-            - lint-front:
-                filters:
-                    tags:
-                        only: /^funmooc-.*/
-                name: lint-front-funmooc
-                requires:
-                    - build-front-production-funmooc
-                site: funmooc
-            - build-back:
-                filters:
-                    tags:
-                        only: /^funmooc-.*/
-                name: build-back-funmooc
-                site: funmooc
-            - lint-back:
-                filters:
-                    tags:
-                        only: /^funmooc-.*/
-                name: lint-back-funmooc
-                requires:
-                    - build-back-funmooc
-                site: funmooc
-            - test-back:
-                filters:
-                    tags:
-                        only: /^funmooc-.*/
-                name: test-back-funmooc
-                requires:
-                    - build-back-funmooc
-                site: funmooc
-            - hub:
-                filters:
-                    tags:
-                        only: /^funmooc-.*/
-                image_name: funmooc
-                name: hub-funmooc
-                requires:
-                    - lint-front-funmooc
-                    - lint-back-funmooc
-                site: funmooc
+                        only: /.*/
+                name: no-change-funmooc
     site-factory:
         jobs:
             - lint-git:

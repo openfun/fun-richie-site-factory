@@ -43,6 +43,7 @@ default: help
 
 bootstrap: \
   env.d/aws \
+  env.d/scw \
   data/media/$(RICHIE_SITE)/.keep \
   data/db/$(RICHIE_SITE) \
   stop \
@@ -158,6 +159,10 @@ watch-ts: ## watch changes in js files
 # == AWS/Terraform
 env.d/aws:
 	cp env.d/aws.dist env.d/aws
+
+# == Scaleway/Terraform
+env.d/scw:
+	cp env.d/scw.dist env.d/scw
 
 # == Django
 check: ## perform django checks

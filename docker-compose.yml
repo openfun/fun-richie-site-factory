@@ -149,23 +149,23 @@ services:
 
   terraform-state:
     image: hashicorp/terraform:latest
-    env_file: env.d/aws
+    env_file: env.d/${PROVIDER:-aws}
     user: ${DOCKER_USER:-1000}
     working_dir: /app
     volumes:
-      - ./aws/create_state_bucket:/app
+      - ./${PROVIDER:-aws}/create_state_bucket:/app
 
   terraform:
-    image: hashicorp/terraform:0.12.29
+    image: hashicorp/terraform:latest
     environment:
       - TF_VAR_SITE=${RICHIE_SITE:-funmooc}
       - TF_DATA_DIR=/config
-    env_file: env.d/aws
+    env_file: env.d/${PROVIDER:-aws}
     user: ${DOCKER_USER:-1000}
     working_dir: /app
     volumes:
-      - ./aws:/app
-      - ./sites/${RICHIE_SITE:-funmooc}/aws:/config
+      - ./${PROVIDER:-aws}:/app
+      - ./sites/${RICHIE_SITE:-funmooc}/${PROVIDER:-aws}:/config
 
   redis-sentinel:
     image: docker.io/bitnami/redis-sentinel:6.0-debian-10

@@ -4,9 +4,28 @@ set -eo pipefail
 # Run Terraform commands on the create_state_bucket project in the Hashicorp
 # docker container, passing our environment variables
 
+# Default provider
+PROVIDER="${PROVIDER:-aws}"
+
+if [[ "$1" == "--provider" ]]; then
+    shift
+    PROVIDER="$1"
+    shift
+fi
+
+SUPPORTED_PROVIDERS=("aws" "scw")
+
+if [[ ! " ${SUPPORTED_PROVIDERS[*]} " =~ ${PROVIDER} ]]; then
+  echo "❌ Unknown provider: '${PROVIDER}'"
+  echo "✅ Supported providers are: ${SUPPORTED_PROVIDERS[*]}"
+  exit 1
+fi
+
+echo "Using provider: $PROVIDER"
 
 docker compose pull terraform-state
 
 # Run Terraform commands in the Hashicorp docker container via docker compose
 DOCKER_USER="$(id -u):$(id -g)" \
+    PROVIDER="$PROVIDER" \
     docker compose run --rm terraform-state "$@"
