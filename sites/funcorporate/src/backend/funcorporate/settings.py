@@ -886,36 +886,54 @@ class Production(Base):
     SECURE_CONTENT_TYPE_NOSNIFF = True
     SESSION_COOKIE_SECURE = True
 
-    STORAGES = {
-        "default": {
-            "BACKEND": "richie.apps.core.storage.MediaStorage",
+    # Using the S3Storage to be able to change the custom domain for media files without
+    # interfering with static files. Using the CDNManifestStaticFilesStorage with an
+    # undefined CDN_DOMAIN to use the custom `post_process` method.
+    STORAGES = values.DictValue(
+        {
+            "default": {
+                "BACKEND": values.Value(
+                    "storages.backends.s3.S3Storage",
+                    environ_name="STORAGES_DEFAULT_BACKEND",
+                ),
+                "OPTIONS": values.DictValue(
+                    {},
+                    environ_name="STORAGES_DEFAULT_OPTIONS",
+                ),
+            },
+            "staticfiles": {
+                "BACKEND": values.Value(
+                    "richie.apps.core.storage.CDNManifestStaticFilesStorage",
+                    environ_name="STORAGES_STATICFILES_BACKEND",
+                ),
+                "OPTIONS": values.DictValue(
+                    {},
+                    environ_name="STORAGES_STATICFILES_OPTIONS",
+                ),
+            },
         },
-        "staticfiles": {
-            "BACKEND": "richie.apps.core.storage.CDNManifestStaticFilesStorage",
-        },
-    }
+        environ_name="STORAGES",
+    )
     AWS_DEFAULT_ACL = None
     AWS_LOCATION = "media"
 
     AWS_ACCESS_KEY_ID = values.SecretValue()
     AWS_SECRET_ACCESS_KEY = values.SecretValue()
+    AWS_S3_REGION_NAME = values.Value("fr-par")
+    AWS_S3_ENDPOINT_URL = values.Value("https://s3.fr-par.scw.cloud")
 
     AWS_S3_OBJECT_PARAMETERS = {
         "Expires": "Thu, 31 Dec 2099 20:00:00 GMT",
         "CacheControl": "max-age=94608000",
     }
 
-    AWS_S3_REGION_NAME = values.Value("eu-west-1")
+    # CDN domain used to serve media files through the S3Storage
+    AWS_S3_CUSTOM_DOMAIN = values.Value(None)
+    AWS_STORAGE_BUCKET_NAME = values.Value("production-funcorporate-media")
+    AWS_S3_FILE_OVERWRITE = values.Value(False)
 
-    AWS_MEDIA_BUCKET_NAME = values.Value("production-funcorporate-media")
-
-    # CDN domain for static/media urls. It is passed to the frontend to load built chunks
-    CDN_DOMAIN = values.Value()
-
-    @property
-    def TEXT_CKEDITOR_BASE_PATH(self):  # pylint: disable=invalid-name
-        """Configure CKEditor with an absolute url as base path to point to CloudFront."""
-        return f"//{self.CDN_DOMAIN}/static/djangocms_text_ckeditor/ckeditor/"
+    # CDN domain for static urls. It is passed to the frontend to load built chunks.
+    CDN_DOMAIN = values.Value(None)
 
 
 class Feature(Production):
@@ -925,7 +943,7 @@ class Feature(Production):
     nota bene: it should inherit from the Production environment.
     """
 
-    AWS_MEDIA_BUCKET_NAME = values.Value("feature-funcorporate-media")
+    AWS_STORAGE_BUCKET_NAME = values.Value("feature-funcorporate-media")
 
 
 class Staging(Production):
@@ -935,7 +953,7 @@ class Staging(Production):
     nota bene: it should inherit from the Production environment.
     """
 
-    AWS_MEDIA_BUCKET_NAME = values.Value("staging-funcorporate-media")
+    AWS_STORAGE_BUCKET_NAME = values.Value("staging-funcorporate-media")
 
 
 class PreProduction(Production):
@@ -945,4 +963,4 @@ class PreProduction(Production):
     nota bene: it should inherit from the Production environment.
     """
 
-    AWS_MEDIA_BUCKET_NAME = values.Value("preprod-funcorporate-media")
+    AWS_STORAGE_BUCKET_NAME = values.Value("preprod-funcorporate-media")
