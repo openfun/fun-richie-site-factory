@@ -37,15 +37,28 @@ resource "scaleway_object_bucket_acl" "richie_media_acl" {
   acl    = "private"
 }
 
-
-# Defines a user (here an application) that should be able to write to the S3 bucket
+# Defines an application that should have access to the S3 bucket
 resource "scaleway_iam_application" "richie_application" {
   name = "${terraform.workspace}-${var.site}"
   description = "Richie application for the media bucket"
 }
 
+# Defines a policy so that the application have full access to Object Storage
+resource "scaleway_iam_policy" "application_object_full_access" {
+  name           = "${terraform.workspace}-${var.site}-media"
+  description    = "Full access to object storage for application"
+  application_id = scaleway_iam_application.richie_application.id
+
+  rule {
+    project_ids          = [var.scw_project_id]
+    permission_set_names = ["ObjectStorageFullAccess"]
+  }
+}
+
+# Defines an API key for the application
 resource "scaleway_iam_api_key" "richie_api_key" {
   application_id = scaleway_iam_application.richie_application.id
+  default_project_id = var.scw_project_id
 }
 
 

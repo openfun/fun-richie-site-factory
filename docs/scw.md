@@ -122,7 +122,7 @@ Django application to access to those buckets and Edge Services endpoints.
 The environment variables use the `AWS` prefix, as required by [django-storages](https://django-storages.readthedocs.io/en/latest/backends/s3_compatible/scaleway.html), even though Scaleway is being used.
 The following environment variables should be defined:
 
-- `DJANGO_CDN_DOMAIN`
+- `DJANGO_AWS_S3_CUSTOM_DOMAIN`
 - `DJANGO_AWS_ACCESS_KEY_ID`
 - `DJANGO_AWS_SECRET_ACCESS_KEY`
 
