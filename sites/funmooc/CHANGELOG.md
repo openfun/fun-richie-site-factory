@@ -8,6 +8,10 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Changed
+
+- Change settings to migrate media storage from AWS to Scaleway
+
 ## [1.43.2] - 2025-05-22
 
 ### Fixed
