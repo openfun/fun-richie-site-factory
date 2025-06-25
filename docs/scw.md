@@ -114,6 +114,8 @@ $ bin/terraform --provider scw apply
 _nota bene_: in the previous pattern, we use the `workspace` `new` or `select`
 subcommand depending on the workspace availability.
 
+_Note_: When provisioning the Scaleway Edge Service with Terraform, the `fqdns` attribute (`scaleway_edge_services_dns_stage.media.fqdns`) is not immediately available during the initial `terraform apply`. This results in an "Invalid index" error when trying to output the FQDN. To work around this, you would need to apply a second time.
+
 ## Configure runtime environment
 
 Once your buckets have been created for a targeted environment, you will need
