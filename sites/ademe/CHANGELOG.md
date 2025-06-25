@@ -9,6 +9,8 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.24.0] - 2025-06-25
+
 ### Changed
 
 - Change settings to migrate media storage from AWS to Scaleway
@@ -245,7 +247,8 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 - First `ademe` image
 
-[unreleased]: https://github.com/openfun/fun-richie-site-factory/compare/ademe-0.23.2...HEAD
+[unreleased]: https://github.com/openfun/fun-richie-site-factory/compare/ademe-0.24.0...HEAD
+[0.24.0]: https://github.com/openfun/fun-richie-site-factory/compare/ademe-0.23.2...ademe-0.24.0
 [0.23.2]: https://github.com/openfun/fun-richie-site-factory/compare/ademe-0.23.1...ademe-0.23.2
 [0.23.1]: https://github.com/openfun/fun-richie-site-factory/compare/ademe-0.23.0...ademe-0.23.1
 [0.23.0]: https://github.com/openfun/fun-richie-site-factory/compare/ademe-0.22.0...ademe-0.23.0
