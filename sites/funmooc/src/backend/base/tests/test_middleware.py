@@ -53,6 +53,30 @@ class TestMalformedQueryStringMiddleware(TestCase):
         response = MalformedQueryStringMiddleware(request).process_request(request)
         self.assertIsNone(response)
 
+    def test_malformed_query_string_middleware_ignore_cms_endpoints(self):
+        """
+        If the request path is a cms endpoint, the middleware should ignore it.
+        """
+        request = HttpRequest()
+        request.method = "GET"
+        request.META["QUERY_STRING"] = (
+            "?page=94&language=fr&edit&cms_path=/fr/orga/?edit&language=fr"
+        )
+        request.path = "/en/cms_wizard/create/"
+
+        response = MalformedQueryStringMiddleware(request).process_request(request)
+        self.assertIsNone(response)
+
+        request = HttpRequest()
+        request.method = "GET"
+        request.META["QUERY_STRING"] = (
+            "?page=94&language=fr&edit&cms_path=/fr/orga/?edit&language=fr"
+        )
+        request.path = "/en/cms_login/create/"
+
+        response = MalformedQueryStringMiddleware(request).process_request(request)
+        self.assertIsNone(response)
+
     def test_malformed_query_string_middleware_ignore_non_get_request(self):
         """
         If the request method is something else than GET,
