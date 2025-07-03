@@ -9,6 +9,10 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Fixed
+
+- Exclude CMS endpoints from malformed query parameters
+
 ## [0.24.0] - 2025-06-25
 
 ### Changed

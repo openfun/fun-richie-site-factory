@@ -17,6 +17,10 @@ class MalformedQueryStringMiddleware(MiddlewareMixin):
         r"(^/api/v)"  # Exclude API endpoints
         r"|"
         r"(^/[a-z-]+/admin/)"  # Exclude admin paths
+        r"|"
+        r"(^/[a-z-]+/cms_login/)"  # Exclude cms_login paths
+        r"|"
+        r"(^/[a-z-]+/cms_wizard/)"  # Exclude cms_wizard paths
     )
 
     def process_request(self, request):
