@@ -9,6 +9,8 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.24.1] - 2025-07-04
+
 ### Fixed
 
 - Exclude CMS endpoints from malformed query parameters
@@ -251,7 +253,8 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 - First `ademe` image
 
-[unreleased]: https://github.com/openfun/fun-richie-site-factory/compare/ademe-0.24.0...HEAD
+[unreleased]: https://github.com/openfun/fun-richie-site-factory/compare/ademe-0.24.1...HEAD
+[0.24.1]: https://github.com/openfun/fun-richie-site-factory/compare/ademe-0.24.0...ademe-0.24.1
 [0.24.0]: https://github.com/openfun/fun-richie-site-factory/compare/ademe-0.23.2...ademe-0.24.0
 [0.23.2]: https://github.com/openfun/fun-richie-site-factory/compare/ademe-0.23.1...ademe-0.23.2
 [0.23.1]: https://github.com/openfun/fun-richie-site-factory/compare/ademe-0.23.0...ademe-0.23.1
