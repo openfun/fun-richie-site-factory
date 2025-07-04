@@ -8,6 +8,8 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [1.29.1] - 2025-07-04
+
 ### Fixed
 
 - Exclude CMS endpoints from malformed query parameters
@@ -358,7 +360,8 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 - First `funcampus` image
 
-[unreleased]: https://github.com/openfun/fun-richie-site-factory/compare/funcampus-1.29.0...HEAD
+[unreleased]: https://github.com/openfun/fun-richie-site-factory/compare/funcampus-1.29.1...HEAD
+[1.29.1]: https://github.com/openfun/fun-richie-site-factory/compare/funcampus-1.29.0...funcampus-1.29.1
 [1.29.0]: https://github.com/openfun/fun-richie-site-factory/compare/funcampus-1.28.2...funcampus-1.29.0
 [1.28.2]: https://github.com/openfun/fun-richie-site-factory/compare/funcampus-1.28.1...funcampus-1.28.2
 [1.28.1]: https://github.com/openfun/fun-richie-site-factory/compare/funcampus-1.28.0...funcampus-1.28.1
