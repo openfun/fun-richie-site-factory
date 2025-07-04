@@ -8,6 +8,8 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [1.44.1] - 2025-07-04
+
 ### Fixed
 
 - Exclude CMS endpoints from malformed query parameters
@@ -847,7 +849,8 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 - Static and media files are stored in AWS S3 buckets and distributed _via_
   Amazon CloudFront
 
-[unreleased]: https://github.com/openfun/fun-richie-site-factory/compare/funmooc-1.44.0...HEAD
+[unreleased]: https://github.com/openfun/fun-richie-site-factory/compare/funmooc-1.44.1...HEAD
+[1.44.1]: https://github.com/openfun/fun-richie-site-factory/compare/funmooc-1.44.0...funmooc-1.44.1
 [1.44.0]: https://github.com/openfun/fun-richie-site-factory/compare/funmooc-1.43.2...funmooc-1.44.0
 [1.43.2]: https://github.com/openfun/fun-richie-site-factory/compare/funmooc-1.43.1...funmooc-1.43.2
 [1.43.1]: https://github.com/openfun/fun-richie-site-factory/compare/funmooc-1.43.0...funmooc-1.43.1
