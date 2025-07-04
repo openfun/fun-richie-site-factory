@@ -1,3 +1,3 @@
 """funcampus application"""
 
-__version__ = "1.29.0"
+__version__ = "1.29.1"
