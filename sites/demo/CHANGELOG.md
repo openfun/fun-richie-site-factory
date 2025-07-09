@@ -8,6 +8,8 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [1.29.1] - 2025-07-09
+
 ### Fixed
 
 - Update S3 bucket names to match those provisioned on Scaleway
@@ -382,7 +384,8 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 First demo image for richie to 2.0.0-beta.7
 
-[unreleased]: https://github.com/openfun/fun-richie-site-factory/compare/demo-1.29.0...HEAD
+[unreleased]: https://github.com/openfun/fun-richie-site-factory/compare/demo-1.29.1...HEAD
+[1.29.1]: https://github.com/openfun/fun-richie-site-factory/compare/demo-1.29.0...demo-1.29.1
 [1.29.0]: https://github.com/openfun/fun-richie-site-factory/compare/demo-1.28.2...demo-1.29.0
 [1.28.2]: https://github.com/openfun/fun-richie-site-factory/compare/demo-1.28.1...demo-1.28.2
 [1.28.1]: https://github.com/openfun/fun-richie-site-factory/compare/demo-1.28.0...demo-1.28.1
