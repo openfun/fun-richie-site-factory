@@ -802,7 +802,7 @@ class Production(Base):
 
     # CDN domain used to serve media files through the S3Storage
     AWS_S3_CUSTOM_DOMAIN = values.Value(None)
-    AWS_STORAGE_BUCKET_NAME = values.Value("production-richie-media")
+    AWS_STORAGE_BUCKET_NAME = values.Value("production-demo-media")
     AWS_S3_FILE_OVERWRITE = values.Value(False)
 
     # CDN domain for static urls. It is passed to the frontend to load built chunks.
@@ -816,7 +816,7 @@ class Feature(Production):
     nota bene: it should inherit from the Production environment.
     """
 
-    AWS_STORAGE_BUCKET_NAME = values.Value("feature-richie-media")
+    AWS_STORAGE_BUCKET_NAME = values.Value("feature-demo-media")
 
 
 class Staging(Production):
@@ -826,7 +826,7 @@ class Staging(Production):
     nota bene: it should inherit from the Production environment.
     """
 
-    AWS_STORAGE_BUCKET_NAME = values.Value("staging-richie-media")
+    AWS_STORAGE_BUCKET_NAME = values.Value("staging-demo-media")
 
 
 class PreProduction(Production):
@@ -836,4 +836,4 @@ class PreProduction(Production):
     nota bene: it should inherit from the Production environment.
     """
 
-    AWS_STORAGE_BUCKET_NAME = values.Value("preprod-richie-media")
+    AWS_STORAGE_BUCKET_NAME = values.Value("preprod-demo-media")
