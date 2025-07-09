@@ -8,6 +8,10 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Fixed
+
+- Update S3 bucket names to match those provisioned on Scaleway
+
 ## [1.29.0] - 2025-06-25
 
 ### Changed
