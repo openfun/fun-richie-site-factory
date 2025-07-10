@@ -8,6 +8,10 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Changed
+
+- Replace Paid offer color (eastern-blue) with #088488
+
 ## [1.44.1] - 2025-07-04
 
 ### Fixed
