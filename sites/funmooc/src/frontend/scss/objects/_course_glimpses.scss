@@ -6,3 +6,23 @@
     visibility: hidden;
   }
 }
+
+// Course Glimpse Variant according to the offer
+$offer-schemes: (
+  certificate: r-theme-val(course-glimpse, footer-offer-certificate),
+  free: r-theme-val(course-glimpse, footer-offer-free),
+  paid: r-theme-val(course-glimpse, footer-offer-paid),
+  partially_free: r-theme-val(course-glimpse, footer-offer-partially_free),
+  subscription: r-theme-val(course-glimpse, footer-offer-subscription),
+);
+
+@each $offer, $scheme in $offer-schemes {
+  @if $scheme != null {
+    .course-glimpse--offer-#{$offer} {
+      .course-glimpse__icon {
+        background: map-get($scheme, 'background');
+        color: map-get($scheme, 'font-color');
+      }
+    }
+  }
+}
