@@ -11,6 +11,7 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 ### Changed
 
 - Replace Paid offer color (eastern-blue) with #088488
+- Use glimpse footer color for glimpse label icon
 
 ## [1.44.1] - 2025-07-04
 
