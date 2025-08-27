@@ -8,10 +8,13 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [1.45.0] - 2025-08-27
+
 ### Changed
 
 - Replace Paid offer color (eastern-blue) with #088488
 - Use glimpse footer color for glimpse label icon
+- Upgrade richie to 3.2.0
 
 ## [1.44.1] - 2025-07-04
 
@@ -854,7 +857,8 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 - Static and media files are stored in AWS S3 buckets and distributed _via_
   Amazon CloudFront
 
-[unreleased]: https://github.com/openfun/fun-richie-site-factory/compare/funmooc-1.44.1...HEAD
+[unreleased]: https://github.com/openfun/fun-richie-site-factory/compare/funmooc-1.45.0...HEAD
+[1.45.0]: https://github.com/openfun/fun-richie-site-factory/compare/funmooc-1.44.1...funmooc-1.45.0
 [1.44.1]: https://github.com/openfun/fun-richie-site-factory/compare/funmooc-1.44.0...funmooc-1.44.1
 [1.44.0]: https://github.com/openfun/fun-richie-site-factory/compare/funmooc-1.43.2...funmooc-1.44.0
 [1.43.2]: https://github.com/openfun/fun-richie-site-factory/compare/funmooc-1.43.1...funmooc-1.43.2
