@@ -80,12 +80,12 @@ test-back:
         POSTGRES_DB: richie
         POSTGRES_USER: richie_user
         POSTGRES_PASSWORD: pass
-    - image: docker.io/bitnami/redis:6.0-debian-10
+    - image: docker.io/fundocker/redis:6.2.9-debian-11-r0
       name: redis-primary
       environment:
         ALLOW_EMPTY_PASSWORD: yes
         REDIS_REPLICATION_MODE: master
-    - image: docker.io/bitnami/redis-sentinel:6.0-debian-10
+    - image: docker.io/fundocker/redis-sentinel:6.2.9-debian-11-r0
       name: redis-sentinel
       environment:
         REDIS_MASTER_HOST: redis-primary
