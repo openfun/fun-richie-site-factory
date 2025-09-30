@@ -78,7 +78,7 @@ jobs:
             - checkout
             - run:
                 command: |
-                    git whatchanged --name-only --pretty="" origin..HEAD | grep sites/<< parameters.site >>/CHANGELOG
+                    git log --name-only --pretty="" origin..HEAD | grep sites/<< parameters.site >>/CHANGELOG
                 name: Check that the CHANGELOG has been modified in the current branch
         working_directory: ~/fun
     check-configuration:
