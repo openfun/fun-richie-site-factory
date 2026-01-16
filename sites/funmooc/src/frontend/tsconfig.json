@@ -1,4 +1,11 @@
 {
   "extends": "./node_modules/richie-education/tsconfig.json",
-  "include": ["./**/*", "./node_modules/richie-education/js/types/**/*.d.ts"]
+  "include": ["./**/*", "./node_modules/richie-education/js/types/**/*.d.ts"],
+  "compilerOptions": {
+    "baseUrl": "./node_modules/richie-education/js",
+    "paths": {
+      "intl-pluralrules": ["types/libs/intl-pluralrules"],
+      "keycloak-js": ["../../keycloak-js/lib/keycloak"]
+    }
+  }
 }
