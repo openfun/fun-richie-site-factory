@@ -8,6 +8,10 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Changed
+
+- Upgrade to latest richie dev version
+
 ## [1.48.0] - 2026-03-17
 
 ### Changed
@@ -213,7 +217,7 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 - Fix multiple page returned issue on edx redirect view
 - Upgrade richie to 2.25.1
-- Fix malformed dashboard url 
+- Fix malformed dashboard url
 
 ## [1.29.0] - 2024-04-11
 
@@ -225,7 +229,7 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 ### Changed
 
 - Upgrade richie to 2.25.0
-- Change deprecated `xiti` web analytics service to `pianoanalytics`  
+- Change deprecated `xiti` web analytics service to `pianoanalytics`
 - Configure Piano Analytics to also collect UTM parameters
 - Pin Piano Analytics JS SDK to 6.13.1
 
@@ -312,7 +316,7 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Fixed
 
-- Xiti issues when a course page has only one organization. 
+- Xiti issues when a course page has only one organization.
 
 ## [1.19.0] - 2022-10-18
 
