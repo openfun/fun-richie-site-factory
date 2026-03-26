@@ -11,6 +11,7 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 ### Changed
 
 - Upgrade to latest richie dev version
+- Update latest js dependencies
 
 ## [1.48.0] - 2026-03-17
 

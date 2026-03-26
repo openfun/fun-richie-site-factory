@@ -43,7 +43,7 @@ jobs:
         working_directory: ~/fun/sites/<< parameters.site >>
     build-front-production:
         docker:
-            - image: cimg/node:20.13
+            - image: cimg/node:20.19
         parameters:
             site:
                 type: string
@@ -299,7 +299,7 @@ jobs:
         working_directory: ~/fun
     lint-front:
         docker:
-            - image: cimg/node:20.13
+            - image: cimg/node:20.19
         parameters:
             site:
                 type: string

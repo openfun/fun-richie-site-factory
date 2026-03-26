@@ -11,7 +11,7 @@ ARG DOCKER_USER=10000
 FROM python:3.11.11-bookworm AS base
 
 # ---- front-end builder image ----
-FROM node:20.13 AS front-builder
+FROM node:20.19 AS front-builder
 
 ARG SITE
 ARG BUILD_NEXT_VERSION
