@@ -57,6 +57,11 @@
     "@types/react": "19.2.14",
     "@types/react-dom": "19.2.3"
   },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not op_mini all"
+  ],
   "volta": {
     "node": "20.19.0",
     "yarn": "1.22.19"
