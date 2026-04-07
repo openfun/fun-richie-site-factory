@@ -6,25 +6,25 @@ $themes: (
         'logo-2': #377FDB,
         'logo-1-dark': #95ABFF,
         'logo-2-dark': #95ABFF,
-        'brand-050': #EAF1FB,
-        'brand-100': #D5E4F7,
-        'brand-150': #C0D6F4,
-        'brand-200': #ABC9F0,
-        'brand-250': #96BCEC,
-        'brand-300': #80AEE8,
-        'brand-350': #6CA0E4,
-        'brand-400': #5693E0,
-        'brand-450': #4085DC,
-        'brand-500': #2976D8,
-        'brand-550': #1167D4,
-        'brand-600': #0659C5,
-        'brand-650': #1A509F,
-        'brand-700': #20467F,
-        'brand-750': #203C63,
-        'brand-800': #1D314C,
-        'brand-850': #1A2638,
-        'brand-900': #141C28,
-        'brand-950': #0C1117,
+        'brand-050': #fff0f1,
+        'brand-100': #ffcad1,
+        'brand-150': #f8b0b4,
+        'brand-200': #f19597,
+        'brand-250': #ed8083,
+        'brand-300': #e86a6f,
+        'brand-350': #ed575d,
+        'brand-400': #f2444b,
+        'brand-450': #f5383e,
+        'brand-500': #f63237,
+        'brand-550': #f72c30,
+        'brand-600': #e81f2f,
+        'brand-650': #d60f29,
+        'brand-700': #c90022,
+        'brand-750': #c2001b,
+        'brand-800': #bb0014,
+        'brand-850': #a30010,
+        'brand-900': #8c000d,
+        'brand-950': #6b0009,
         'gray-000': #FFFFFF,
         'gray-025': #F7F8F8,
         'gray-050': #F0F1F2,
@@ -418,12 +418,12 @@ $themes: (
         ),
         'semantic': (
           'brand': (
-            'primary': #1167D4,
-            'primary-hover': #1A509F,
-            'secondary': #D5E4F7,
-            'secondary-hover': #C0D6F4,
-            'tertiary': #EAF1FB,
-            'tertiary-hover': #D5E4F7
+            'primary': #f72c30,
+            'primary-hover': #d60f29,
+            'secondary': #ffcad1,
+            'secondary-hover': #f8b0b4,
+            'tertiary': #fff0f1,
+            'tertiary-hover': #ffcad1
           ),
           'neutral': (
             'primary': #686B6F,
@@ -476,9 +476,9 @@ $themes: (
         ),
         'palette': (
           'brand': (
-            'primary': #2976D8,
-            'secondary': #6CA0E4,
-            'tertiary': #C0D6F4
+            'primary': #f63237,
+            'secondary': #ed575d,
+            'tertiary': #f8b0b4
           ),
           'red': (
             'primary': #D83F3D,
@@ -540,10 +540,10 @@ $themes: (
         'logo2': #377FDB,
         'semantic': (
           'brand': (
-            'primary': #20467F,
-            'secondary': #0659C5,
-            'tertiary': #2976D8,
-            'on-brand': #EAF1FB
+            'primary': #c90022,
+            'secondary': #e81f2f,
+            'tertiary': #f63237,
+            'on-brand': #fff0f1
           ),
           'neutral': (
             'primary': #252627,
@@ -585,9 +585,9 @@ $themes: (
         ),
         'palette': (
           'brand': (
-            'primary': #2976D8,
-            'secondary': #6CA0E4,
-            'tertiary': #C0D6F4
+            'primary': #f63237,
+            'secondary': #ed575d,
+            'tertiary': #f8b0b4
           ),
           'red': (
             'primary': #D83F3D,
@@ -647,9 +647,9 @@ $themes: (
         ),
         'semantic': (
           'brand': (
-            'primary': #1167D4,
-            'secondary': #80AEE8,
-            'tertiary': #C0D6F4
+            'primary': #f72c30,
+            'secondary': #e86a6f,
+            'tertiary': #f8b0b4
           ),
           'contextual': (
             'primary': #FFFFFF33
@@ -685,9 +685,9 @@ $themes: (
         ),
         'palette': (
           'brand': (
-            'primary': #2976D8,
-            'secondary': #6CA0E4,
-            'tertiary': #C0D6F4
+            'primary': #f63237,
+            'secondary': #ed575d,
+            'tertiary': #f8b0b4
           ),
           'red': (
             'primary': #D83F3D,
@@ -1217,12 +1217,12 @@ $themes: (
         ),
         'semantic': (
           'brand': (
-            'primary': #1167D4,
-            'primary-hover': #1A509F,
-            'secondary': #20467F,
-            'secondary-hover': #203C63,
-            'tertiary': #203C63,
-            'tertiary-hover': #1D314C
+            'primary': #f72c30,
+            'primary-hover': #d60f29,
+            'secondary': #c90022,
+            'secondary-hover': #c2001b,
+            'tertiary': #c2001b,
+            'tertiary-hover': #bb0014
           ),
           'neutral': (
             'primary': #686B6F,
@@ -1275,9 +1275,9 @@ $themes: (
         ),
         'palette': (
           'brand': (
-            'primary': #6CA0E4,
-            'secondary': #4085DC,
-            'tertiary': #1167D4
+            'primary': #ed575d,
+            'secondary': #f5383e,
+            'tertiary': #f72c30
           ),
           'red': (
             'primary': #EE7C7B,
@@ -1336,10 +1336,10 @@ $themes: (
         'logo2': #95ABFF,
         'semantic': (
           'brand': (
-            'primary': #EAF1FB,
-            'secondary': #D5E4F7,
-            'tertiary': #96BCEC,
-            'on-brand': #EAF1FB
+            'primary': #fff0f1,
+            'secondary': #ffcad1,
+            'tertiary': #ed8083,
+            'on-brand': #fff0f1
           ),
           'neutral': (
             'primary': #F0F1F2,
@@ -1381,9 +1381,9 @@ $themes: (
         ),
         'palette': (
           'brand': (
-            'primary': #6CA0E4,
-            'secondary': #4085DC,
-            'tertiary': #1167D4
+            'primary': #ed575d,
+            'secondary': #f5383e,
+            'tertiary': #f72c30
           ),
           'red': (
             'primary': #EE7C7B,
@@ -1443,9 +1443,9 @@ $themes: (
         ),
         'semantic': (
           'brand': (
-            'primary': #4085DC,
-            'secondary': #0659C5,
-            'tertiary': #20467F
+            'primary': #f5383e,
+            'secondary': #e81f2f,
+            'tertiary': #c90022
           ),
           'contextual': (
             'primary': #00000033
@@ -1481,9 +1481,9 @@ $themes: (
         ),
         'palette': (
           'brand': (
-            'primary': #6CA0E4,
-            'secondary': #4085DC,
-            'tertiary': #1167D4
+            'primary': #ed575d,
+            'secondary': #f5383e,
+            'tertiary': #f72c30
           ),
           'red': (
             'primary': #EE7C7B,

@@ -12,6 +12,7 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 - Upgrade to latest richie dev version
 - Update latest js dependencies
+- Update cunningham design token
 
 ## [1.48.0] - 2026-03-17
 
