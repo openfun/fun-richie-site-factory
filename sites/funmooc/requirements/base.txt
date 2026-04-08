@@ -8,5 +8,5 @@ dockerflow==2024.4.2
 factory-boy==3.3.3
 gunicorn==23.0.0
 psycopg2-binary==2.9.10
-richie==3.3.2-dev31
+richie==3.3.2-dev32
 sentry-sdk==2.24.1
