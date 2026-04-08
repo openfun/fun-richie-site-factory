@@ -471,8 +471,8 @@
 	--c--contextuals--content--logo2: var(--c--globals--colors--logo-2);
 	--c--contextuals--content--semantic--brand--primary: var(--c--globals--colors--brand-700);
 	--c--contextuals--content--semantic--brand--secondary: var(--c--globals--colors--brand-600);
-	--c--contextuals--content--semantic--brand--tertiary: var(--c--globals--colors--brand-500);
-	--c--contextuals--content--semantic--brand--on-brand: var(--c--globals--colors--brand-050);
+	--c--contextuals--content--semantic--brand--tertiary: var(--c--globals--colors--gray-500);
+	--c--contextuals--content--semantic--brand--on-brand: var(--c--globals--colors--gray-050);
 	--c--contextuals--content--semantic--neutral--primary: var(--c--globals--colors--gray-850);
 	--c--contextuals--content--semantic--neutral--secondary: var(--c--globals--colors--gray-600);
 	--c--contextuals--content--semantic--neutral--tertiary: var(--c--globals--colors--gray-500);
