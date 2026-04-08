@@ -72,6 +72,13 @@ module.exports = {
           'font-family': 'Montserrat',
         },
       },
+      contextuals: {
+        content: {
+          semantic: {
+            brand: { 'on-brand': 'ref(globals.colors.gray-050)', tertiary: 'ref(globals.colors.gray-500)' },
+          },
+        },
+      },
       globals: {
         colors: {
           'brand-050': '#fff0f1',
