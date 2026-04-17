@@ -8,6 +8,10 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Added
+
+- Add `RICHIE_LMS_BACKENDS` configuration with configurable `JS_NEXT_URL` setting (`EDX_JS_NEXT_URL`)
+
 ## [1.31.0] - 2025-11-03
 
 ### Changed

@@ -9,6 +9,10 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Added
+
+- Add configurable `JS_NEXT_URL` setting to LMS backend (`EDX_JS_NEXT_URL`)
+
 ## [0.26.0] - 2025-11-03
 
 ### Changed
