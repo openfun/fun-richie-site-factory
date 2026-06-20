@@ -326,6 +326,39 @@ class Base(StyleguideMixin, DRFMixin, RichieCoursesConfigurationMixin, Configura
     # when their preferred language, whatever it is, is unavailable
     LANGUAGES = (("en", _("English")), ("fr", _("French")))
 
+    # LMS
+    RICHIE_LMS_BACKENDS = [
+        {
+            "BACKEND": values.Value(
+                "richie.apps.courses.lms.edx.EdXLMSBackend",
+                environ_name="EDX_BACKEND",
+                environ_prefix=None,
+            ),
+            "JS_BACKEND": values.Value(
+                "openedx-hawthorn",
+                environ_name="EDX_JS_BACKEND",
+                environ_prefix=None,
+            ),
+            "COURSE_REGEX": values.Value(
+                r"^.*/courses/(?P<course_id>.*)/course/?$",
+                environ_name="EDX_COURSE_REGEX",
+                environ_prefix=None,
+            ),
+            "JS_COURSE_REGEX": values.Value(
+                r"^.*/courses/(.*)/course/?$",
+                environ_name="EDX_JS_COURSE_REGEX",
+                environ_prefix=None,
+            ),
+            "BASE_URL": values.Value(environ_name="EDX_BASE_URL", environ_prefix=None),
+            "JS_NEXT_URL": values.Value(
+                "richie",
+                environ_name="EDX_JS_NEXT_URL",
+                environ_prefix=None,
+            ),
+        }
+    ]
+    RICHIE_COURSE_RUN_SYNC_SECRETS = values.ListValue([])
+
     # CMS
     # Minimum enrollment count value that would be shown on course detail page
     RICHIE_MINIMUM_COURSE_RUNS_ENROLLMENT_COUNT = values.Value(
