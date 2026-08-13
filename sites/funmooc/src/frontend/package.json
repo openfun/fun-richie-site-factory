@@ -45,15 +45,18 @@
     "babel-loader": "10.0.0",
     "eslint": ">=8.57.0 <9",
     "eslint-import-resolver-webpack": "0.13.10",
+    "eslint-plugin-storybook": "10.2.13",
     "nodemon": "3.1.14",
     "prettier": "3.8.1",
     "sass": "1.97.3",
     "source-map-loader": "5.0.0",
+    "storybook": "10.2.13",
     "typescript": "5.8.2",
     "webpack": "5.109.2",
     "webpack-cli": "6.0.1"
   },
   "resolutions": {
+    "@testing-library/jest-dom": "6.9.1",
     "@types/react": "19.2.14",
     "@types/react-dom": "19.2.3"
   },
