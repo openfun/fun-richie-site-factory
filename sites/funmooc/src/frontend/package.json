@@ -36,7 +36,7 @@
   },
   "homepage": "https://github.com/openfun/fun-richie-site-factory#readme",
   "dependencies": {
-    "richie-education": "3.4.1-dev22",
+    "richie-education": "3.5.0",
     "tarteaucitronjs": "1.14.0"
   },
   "devDependencies": {
