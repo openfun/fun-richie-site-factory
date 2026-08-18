@@ -9940,10 +9940,10 @@ reusify@^1.0.4:
   resolved "https://registry.yarnpkg.com/reusify/-/reusify-1.0.4.tgz#90da382b1e126efc02146e90845a88db12925d76"
   integrity sha512-U9nH88a3fc/ekCF1l0/UP1IosiuIjyTh7hBvXVMHYgVcfGvt897Xguj2UOLDeI5BG2m7/uwyaLVT6fbtCwTyzw==
 
-richie-education@3.5.0:
-  version "3.5.0"
-  resolved "https://registry.yarnpkg.com/richie-education/-/richie-education-3.5.0.tgz#7652963bf645d5de75a1e52f8df1e2ae6892e997"
-  integrity sha512-xmSZ25fr8cigP5PiIHgszW44BCieZYJPTO+ET2IvNc6dADl5KWahLUl2t6+FiU03/Y/t74RqewqRVi3vg6ShKw==
+richie-education@3.5.1-dev2:
+  version "3.5.1-dev2"
+  resolved "https://registry.yarnpkg.com/richie-education/-/richie-education-3.5.1-dev2.tgz#e9e093eef9cce420eab54a39e30d51b3c654cbeb"
+  integrity sha512-FzERDdhpTflbnBAUd1Zk0jc839yzuyFNNP599U38qsxV7yQ51aWl+IdpvvOEBjf3MIEsPoB/v8rOiOvMB09Eug==
   dependencies:
     "@babel/core" "7.29.0"
     "@babel/plugin-syntax-dynamic-import" "7.8.3"
