@@ -10196,10 +10196,10 @@ reusify@^1.0.4:
   resolved "https://registry.yarnpkg.com/reusify/-/reusify-1.0.4.tgz#90da382b1e126efc02146e90845a88db12925d76"
   integrity sha512-U9nH88a3fc/ekCF1l0/UP1IosiuIjyTh7hBvXVMHYgVcfGvt897Xguj2UOLDeI5BG2m7/uwyaLVT6fbtCwTyzw==
 
-richie-education@3.5.2-dev21:
-  version "3.5.2-dev21"
-  resolved "https://registry.yarnpkg.com/richie-education/-/richie-education-3.5.2-dev21.tgz#f0c27d6bde3f6ca938e8e68daa3ff842001aed7c"
-  integrity sha512-W5zX91CtWjkU4f1MDifCzhy9qdY5dCA2ddPTkIMVfB4X6gECWJB4w0E2fTc0u2eg2u2eho5o9NULFQ88YIJuJA==
+richie-education@3.6.0:
+  version "3.6.0"
+  resolved "https://registry.yarnpkg.com/richie-education/-/richie-education-3.6.0.tgz#59cb90defd156809dd70f2b90e7bfde043e02ff4"
+  integrity sha512-jGIz9zaw+K9KlESJAmH+3GsvJzXwn3p/6l0ddTkMkgg7fV1crQbvLW5aeil1JxD1mr2tnizJSvPr4BtmPZtRAw==
   dependencies:
     "@babel/core" "8.0.6"
     "@babel/plugin-transform-modules-commonjs" "8.0.1"
